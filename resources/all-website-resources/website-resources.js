@@ -49,7 +49,7 @@ linkOffsetNode.src = "resources/js/link-offset/link-offset.js";
 insertAfter(copyFunc, linkOffsetNode);
 
 let litjs = document.createElement('script')
-litjs.src = 'resources/css/litlibs/litcss/main/js/litjs.js';
+litjs.src = 'resources/css/libs/litcss/main/js/litjs.js';
 insertAfter(linkOffsetNode, litjs)
 
 window.onload = function () {

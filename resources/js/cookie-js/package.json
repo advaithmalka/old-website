@@ -1,0 +1,19 @@
+{
+	"name": "web-cookies-js",
+	"version": "1.2.1",
+	"description": "Easily create and manage cookies for your new website with Cookie JS",
+	"main": "main/cookie.js",
+	"scripts": {
+		"test": "echo \"Error: no test specified\" && exit 1"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/AdvaithM26/Cookie-JS.git"
+	},
+	"author": "Advaith Malka",
+	"license": "MIT",
+	"bugs": {
+		"url": "https://github.com/AdvaithM26/Cookie-JS/issues"
+	},
+	"homepage": "https://github.com/AdvaithM26/Cookie-JS#readme"
+}

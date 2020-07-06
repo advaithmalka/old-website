@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+	
+		<head>
+			<meta charset="utf-8" />
+			<title>Challenge: Mad Libs</title>
+	
+			<link href="css/Star-wars_Mad_Lib.css" type="text/css" rel="stylesheet" />
+			
+		</head>
+		
+		
+		
+	
+	
+	<body>
+		<body>
+			
+        <h1>Advaith's Star Wars Mad Lib</h1>
+        
+        <img src='https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcRorhlb0ZeBt92nYZrWCfYWiY9xA0IAlPUc8H4z06jcLPaCRQAZ&usqp=CAU' class='vader' width='200'/>
+
+        <img src='https://i.pinimg.com/originals/9d/5e/48/9d5e483dd3babfc9148870eb69fd09af.jpg' class='darth vader' width='200'/>
+
+        
+
+
+        <!--input fields-->
+		<ul>
+			<li>Noun 1: <input type="text" id="noun" required  value=''></li>
+			<li>Noun 2: <input type="text" id="noun2" required /></li>
+			<li>Noun 3: <input type="text" id="noun3" required /></li>
+			<li>Noun 4: <input type="text" id="noun4" required /></li>
+			<li>Noun 5: <input type="text" id="noun5" required /></li>
+			<li>
+				Adjective 1:
+				<input type="text" id="adjective" required />
+			</li>
+			<li>
+				Adjective 2:
+				<input type="text" id="adjective2" required />
+			</li>
+			<li>
+				Adjective 3:
+				<input type="text" id="adjective3" required />
+			</li>
+			<li>
+				Adjective 4:
+				<input type="text" id="adjective4" required />
+			</li>
+			<li>
+				Adjective 5:
+				<input type="text" id="adjective5" required />
+			</li>
+			<li>
+				Adjective 6:
+				<input type="text" id="adjective6" required />
+			</li>
+			<li>
+				Adjective 7:
+				<input type="text" id="adjective7" required />
+			</li>
+			<li>
+				Adjective 8:
+				<input type="text" id="adjective8" required />
+			</li>
+			<li>Verb 1: <input type="text" id="verb" required /></li>
+			<li>Verb 2: <input type="text" id="verb2" required /></li>
+			<li>Verb 3: <input type="text" id="verb3" required /></li>
+			<li>Large Noun: <input type="text" id="large-noun" required /></li>
+			<li>
+				Large Number: <input type="number" id="large-number" required />
+            </li>
+            <li>
+				Number 1: <input type="number" id="number" required />
+            </li>
+            <li>
+				Number 2: <input type="number" id="number2" required />
+			</li>
+        </ul>
+        <img src='https://inteng-storage.s3.amazonaws.com/images/uploads/sizes/starwars-1_resize_md.jpg' class='star' width='200'/>
+        
+
+		<button id="lib-button">Create your story</button>
+
+		<p>
+			Your Star Wars story:
+			<div id="story"></div>
+		</p>
+
+		<script>
+			let libButton = document.getElementById("lib-button");
+			let libIt = function () {
+				let noun = document.getElementById("noun").value;
+				let noun2 = document.getElementById("noun2").value;
+				let noun3 = document.getElementById("noun3").value;
+				let noun4 = document.getElementById("noun4").value;
+				let noun5 = document.getElementById("noun5").value;
+
+				let adj = document.getElementById("adjective").value;
+				let adj2 = document.getElementById("adjective2").value;
+				let adj3 = document.getElementById("adjective3").value;
+				let adj4 = document.getElementById("adjective4").value;
+				let adj5 = document.getElementById("adjective5").value;
+				let adj6 = document.getElementById("adjective6").value;
+				let adj7 = document.getElementById("adjective7").value;
+				let adj8 = document.getElementById("adjective8").value;
+
+				let verb = document.getElementById("verb").value;
+				let verb2 = document.getElementById("verb2").value;
+				let verb3 = document.getElementById("verb3").value;
+
+				let largeNoun = document.getElementById("large-noun").value;
+
+                let largeNumber = document.getElementById("large-number").value;
+                
+                let number = document.getElementById("number").value;
+                let number2 = document.getElementById("number2").value;
+
+				let storyDiv = document.getElementById("story");
+
+				storyDiv.innerHTML = `The Death Star is a ${noun} and super ${noun2} built by the Galactic ${noun3}. A Death Star is ${adj} shaped and so ${adj2} that it's the size of a ${largeNoun}. This ${noun4} is so ${adj3} it can ${verb} an entire planet with its ${adj4} ${noun5}. About ${largeNumber} people ${verb2} inside of the Death Star, which also holds ${adj5} ships called ${adj6} fighters. Despite ${adj7}, The ${adj8} Alliance was able to ${verb3} not it ${number} time(s) but ${number2} time(s).`;
+			};
+
+			libButton.addEventListener("click", libIt);
+		</script>
+		
+	</body>
+	
+</html>
+
+

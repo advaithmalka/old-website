@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Processing.JS inside Webpages: Template</title>
+		<style>
+			body {
+				width: 575px;
+				margin: auto;
+			}
+		</style>
+		<!--FAVICON-->
+		<link
+			rel="apple-touch-icon"
+			sizes="180x180"
+			href="pics/favicon_io/apple-touch-icon.png"
+		/>
+		<link
+			rel="icon"
+			type="image/png"
+			sizes="32x32"
+			href="pics/favicon_io/favicon-32x32.png"
+		/>
+		<link
+			rel="icon"
+			type="image/png"
+			sizes="16x16"
+			href="pics/favicon_io/favicon-16x16.png"
+		/>
+		<link rel="manifest" href="pics/favicon_io/site.webmanifest" />
+	</head>
+	<body>
+		<!--This draws the canvas on the webpage -->
+		<canvas id="mycanvas"></canvas>
+	</body>
+
+	<!-- Include the processing.js library -->
+	<!-- See https://khanacademy.zendesk.com/hc/en-us/articles/202260404-What-parts-of-ProcessingJS-does-Khan-Academy-support- for differences -->
+	<script src="resources/js/processing.js/processing.js"></script>
+	<script>
+		var programCode = function (processingInstance) {
+			with (processingInstance) {
+				size(575, 575);
+				frameRate(30);
+
+				// PASTE PROCESSING.JS CODE HERE
+				noStroke();
+				var x = 288;
+				var y = 288;
+				var faceSize = 202;
+
+				draw = function () {
+					background(207, 254, 255);
+					fill(102, 51, 0);
+					ellipse(
+						x - (faceSize * 3) / 8,
+						y - (faceSize * 9) / 20,
+						faceSize / 2,
+						faceSize / 2
+					); //ear
+					ellipse(
+						x + (faceSize * 3) / 8,
+						y - (faceSize * 9) / 20,
+						faceSize / 2,
+						faceSize / 2
+					); //ear
+					ellipse(x, y, faceSize, faceSize); //face
+					fill(255, 148, 157);
+					ellipse(
+						x - (faceSize * 3) / 8,
+						y - (faceSize * 9) / 20,
+						(faceSize * 3) / 10,
+						(faceSize * 3) / 10
+					); //inner ear
+					ellipse(
+						x + (faceSize * 3) / 8,
+						y - (faceSize * 9) / 20,
+						(faceSize * 3) / 10,
+						(faceSize * 3) / 10
+					); //inner ear
+					fill(240, 209, 36);
+					ellipse(
+						x - (faceSize * 1) / 8,
+						y,
+						(faceSize * 3) / 8,
+						(faceSize * 3) / 4
+					); //right eye face
+					ellipse(
+						x + (faceSize * 1) / 8,
+						y,
+						(faceSize * 3) / 8,
+						(faceSize * 3) / 4
+					); //left eye face
+					ellipse(x, y + (faceSize * 1) / 4, faceSize, faceSize / 2); //mouth face
+					fill(255, 255, 255);
+					ellipse(
+						x - (faceSize * 1) / 8,
+						y - (faceSize * 3) / 20,
+						(faceSize * 3) / 20,
+						(faceSize * 3) / 10
+					); //eye
+					ellipse(
+						x + (faceSize * 1) / 8,
+						y - (faceSize * 3) / 20,
+						(faceSize * 3) / 20,
+						(faceSize * 3) / 10
+					); // eye
+					fill(0, 0, 0);
+					ellipse(
+						x - (faceSize * 1) / 8,
+						y - (faceSize * 1) / 8,
+						(faceSize * 1) / 20,
+						(faceSize * 1) / 20
+					); //pupil
+					ellipse(
+						x + (faceSize * 1) / 8,
+						y - (faceSize * 1) / 8,
+						(faceSize * 1) / 20,
+						(faceSize * 1) / 20
+					); //pupil
+					ellipse(
+						x,
+						y + (faceSize * 1) / 4,
+						(faceSize * 17) / 20,
+						(faceSize * 3) / 8
+					); //mouth
+					fill(255, 148, 157);
+					ellipse(x, y, (faceSize * 11) / 100, (faceSize * 3) / 50); //nose
+					faceSize = faceSize + 1;
+					y = y - 0.3;
+				};
+			}
+		};
+
+		// Get the canvas that ProcessingJS will use
+		var canvas = document.getElementById("mycanvas");
+		// Pass the function to ProcessingJS constructor
+		var processingInstance = new Processing(canvas, programCode);
+	</script>
+</html>

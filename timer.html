@@ -1,0 +1,225 @@
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>Timer</title>
+		<link href="css/timer.css" type="text/css" rel="stylesheet" />
+	</head>
+	<body>
+		<!--NAV LINKS-->
+		<!--NAV LINKS-->
+		<nav>
+			<a href="./clock.html"
+				><button class="link button" id="clock">
+					Clock
+				</button></a
+			>
+			<a href="./stopWatch.html"
+				><button class="link button" id="stopwatch">
+					Stopwatch
+				</button></a
+			><a href="./timer.html"
+				><button class="link button" id="timer">Timer</button></a
+			>
+		</nav>
+
+		<div id="input" class="display">
+			<input
+				class="inner-input"
+				id="hours"
+				type="number"
+				placeholder="00"
+				oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
+				type="number"
+				maxlength="2"
+				value="00"
+			/>:<input
+				class="inner-input"
+				id="mins"
+				type="number"
+				placeholder="00"
+				oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
+				type="number"
+				maxlength="2"
+				value="00"
+			/>:<input
+				class="inner-input"
+				id="seconds"
+				type="number"
+				placeholder="00"
+				oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
+				type="number"
+				maxlength="2"
+				value="00"
+			/>
+		</div>
+		<h1 id="display" class="display">
+			<span id="hoursD"></span>:<span id="minsD"></span>:<span
+				id="secondsD"
+			></span>
+		</h1>
+
+		<button
+			id="start-button"
+			onclick="startCountDown()"
+			class="button"
+			type="button"
+		>
+			Start
+		</button>
+
+		<button id="pause-button" class="button" type="button">
+			pause
+		</button>
+
+		<button id="resume-button" class="button" type="button">
+			resume
+		</button>
+
+		<button id="reset-button" class="button" type="button">
+			reset
+		</button>
+		<button id="ok-button" class="button" type="button">
+			ok
+		</button>
+		<!--<p id="debug">debug</p>-->
+		<script>
+			let start = document.getElementById("start-button");
+			let pause = document.getElementById("pause-button");
+			let resume = document.getElementById("resume-button");
+			let reset = document.getElementById("reset-button");
+			let ok = document.getElementById("ok-button");
+
+			pause.style.display = "none";
+			resume.style.display = "none";
+			reset.style.display = "none";
+			ok.style.display = "none";
+
+			let input = document.getElementById("input");
+			let display = document.getElementById("display");
+
+			let debug = document.getElementById("debug");
+
+			display.style.display = "none";
+
+			let hours = document.getElementById("hours");
+			let mins = document.getElementById("mins");
+			let seconds = document.getElementById("seconds");
+
+			let hoursD = document.getElementById("hoursD");
+			let minsD = document.getElementById("minsD");
+			let secondsD = document.getElementById("secondsD");
+
+			let startCountDown = () => {
+				hoursD.innerHTML = hours.value;
+				minsD.innerHTML = mins.value;
+				secondsD.innerHTML = seconds.value;
+
+				if (secondsD.innerHTML.length === 0) {
+					secondsD.innerHTML = "00";
+				}
+				if (minsD.innerHTML.length === 0) {
+					minsD.innerHTML = "00";
+				}
+				if (hoursD.innerHTML.length === 0) {
+					hoursD.innerHTML = "00";
+				}
+
+				if (
+					parseFloat(secondsD.innerHTML) === 0 &&
+					parseFloat(minsD.innerHTML) === 0 &&
+					parseFloat(hoursD.innerHTML) === 0
+				) {
+					alert("Please set a valid time");
+					return;
+				}
+
+				let beep = new Audio("sounds/timer-beep.mp3");
+
+				resumeCount();
+				function resumeCount() {
+					let input = document.getElementById("input");
+					let display = document.getElementById("display");
+
+					pause.style.display = "inline-block";
+					resume.style.display = "none";
+					reset.style.display = "inline-block";
+
+					input.style.display = "none";
+					display.style.display = "block";
+					start.style.display = "none";
+					ok.style.display = "none";
+
+					let counter = window.setInterval(countDown, 1000);
+					countDown();
+					function countDown() {
+						if (
+							parseFloat(secondsD.innerHTML) === 0 &&
+							parseFloat(minsD.innerHTML) > 0
+						) {
+							secondsD.innerHTML = "60";
+							minsD.innerHTML = parseFloat(minsD.innerHTML) - 1;
+						}
+						if (
+							parseFloat(minsD.innerHTML) === 0 &&
+							parseFloat(hoursD.innerHTML) > 0 &&
+							parseFloat(secondsD.innerHTML) === 0
+						) {
+							minsD.innerHTML = "59";
+							hoursD.innerHTML = parseFloat(hoursD.innerHTML) - 1;
+							secondsD.innerHTML = "60";
+						}
+						if (
+							parseFloat(secondsD.innerHTML) === 0 &&
+							parseFloat(minsD.innerHTML) === 0 &&
+							parseFloat(hoursD.innerHTML) === 0
+						) {
+							window.clearInterval(counter);
+							pause.style.display = "none";
+
+							start.style.display = "none";
+							display.style.display = "none";
+							input.style.display = "block";
+							ok.style.display = "inline-block";
+							beep.play();
+
+							return;
+						}
+
+						//debug.innerHTML = secondsD.innerHTML.length
+						secondsD.innerHTML = parseFloat(secondsD.innerHTML) - 1;
+
+						if (secondsD.innerHTML.length === 1) {
+							secondsD.innerHTML = "0" + secondsD.innerHTML;
+						}
+
+						if (minsD.innerHTML.length === 1) {
+							minsD.innerHTML = "0" + minsD.innerHTML;
+						}
+
+						if (hoursD.innerHTML.length === 1) {
+							hoursD.innerHTML = "0" + hoursD.innerHTML;
+						}
+					}
+
+					let pauseCountDown = () => {
+						window.clearInterval(counter);
+						pause.style.display = "none";
+						resume.style.display = "inline-block";
+					};
+
+					let resetCount = () => {
+						location.reload(true);
+					};
+
+					pause.addEventListener("click", pauseCountDown);
+					reset.addEventListener("click", resetCount);
+					ok.addEventListener("click", function stopBeep() {
+						beep.pause();
+						ok.style.display = "none";
+					});
+				}
+				resume.addEventListener("click", resumeCount);
+			};
+		</script>
+	</body>
+</html>

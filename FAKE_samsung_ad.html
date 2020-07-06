@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<script src="./resources/all-website-resources/website-resources-head.js"></script>
+		<title>FAKE Samsung ad</title>
+
+		<script src="js/include-html.js"></script>
+	</head>
+	<body class="dark-mode">
+		<!--NAVBAR-->
+		<div class="sticky-top my-0" w3-include-html="navbar.html"></div>
+
+		<div class="container">
+			<nav aria-label="breadcrumb">
+				<ol class="breadcrumb my-1 py-2">
+					<li class="breadcrumb-item">
+						<a class="breadcrumb-link" href="index.html">Home</a>
+					</li>
+					<li class="breadcrumb-item">
+						<a class="breadcrumb-link" href="projects.html"
+							>Projects</a
+						>
+					</li>
+					<li class="breadcrumb-item">
+						<a class="breadcrumb-link" href="pjs.html"
+							>Processing.js</a
+						>
+					</li>
+					<li class="breadcrumb-item active">Fake Samsung Ad</li>
+				</ol>
+			</nav>
+		</div>
+		<!--This draws the canvas on the webpage -->
+		<div style="background-color: black;">
+			<div
+				class="container justify-content-center mx-auto"
+				style="width: 400px;"
+			>
+				<canvas class="my-5" id="mycanvas"></canvas>
+			</div>
+		</div>
+	</body>
+
+	<!-- Include the processing.js library -->
+	<!-- See https://khanacademy.zendesk.com/hc/en-us/articles/202260404-What-parts-of-ProcessingJS-does-Khan-Academy-support- for differences -->
+	<script src="resources/js/processing.js/processing.js"></script>
+	<script>
+		var programCode = function (processingInstance) {
+			with (processingInstance) {
+				size(400, 520);
+				frameRate(30);
+
+				// PASTE PROCESSING.JS CODE HERE
+
+				noStroke();
+				background(0, 0, 0);
+				fill(255, 0, 0);
+				textSize(30);
+				text("The new Samsung Galaxy", 10, 30);
+				textSize(20);
+				text("s2000 ULTRA MEGA MAX (PLUS)", 20, 66);
+				fill(252, 252, 252);
+				rect(300, 75, 66, 117, 10);
+				fill(0, 0, 0);
+				ellipse(332, 81, 5, 5);
+				fill(119, 0, 255);
+				textSize(16);
+				text("With a black hole camera to", 16, 96);
+				text("remind you of the end of the world", 16, 116);
+				text("and a beautiful 543Hz display", 23, 139);
+				rect(300, 200, 66, 117, 10);
+				fill(10, 10, 10);
+				rect(304, 206, 25, 39, 10);
+				fill(255, 255, 255);
+				ellipse(311, 214, 5, 5);
+				ellipse(322, 214, 5, 5);
+				ellipse(311, 222, 5, 5);
+				ellipse(322, 222, 5, 5);
+				rect(309, 231, 5, 5);
+				textSize(6);
+				text("SAMSUNG", 317, 258);
+				fill(119, 0, 255);
+				textSize(16);
+				text("take photos with confidence with", 17, 179);
+				text("(as long as you don't drop it)", 17, 200);
+				text("the s20/s 1080 megapixel camera", 17, 217);
+				text(
+					"With 59 cameras, the s20 has no** limits where you take your ",
+					17,
+					222,
+					250,
+					50
+				);
+				text("pictures (the only being its ugly design)", 17, 270);
+				rect(304, 331, 50, 50, 5);
+				text(
+					"Equipped with the latest and greatest processor , S2000 will not slow you down wherever, whenever",
+					15,
+					279,
+					250,
+					102
+				);
+				textSize(13);
+				text("**it has limits", 15, 375);
+				fill(0, 0, 0);
+				textSize(6);
+				text("PROCESSOR", 309, 358);
+			}
+		};
+
+		// Get the canvas that ProcessingJS will use
+		var canvas = document.getElementById("mycanvas");
+		// Pass the function to ProcessingJS constructor
+		var processingInstance = new Processing(canvas, programCode);
+	</script>
+	<!--ALL SCRIPTS NEEDED TO RUN THE WEBSITE-->
+	<script src="./resources/all-website-resources/website-resources.js"></script>
+</html>

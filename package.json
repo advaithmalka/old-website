@@ -1,0 +1,15 @@
+{
+  "name": "website-main",
+  "version": "2.1.0",
+  "description": "Main website that contains all of Advaith Malka's projects",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Advaith Malka",
+  "license": "ISC",
+  "dependencies": {
+    "grid-view-js": "^1.4.0",
+    "node-schedule": "^1.3.2"
+  }
+}

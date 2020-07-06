@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<script src="./resources/all-website-resources/website-resources-head.js"></script>
+		<meta charset="utf-8" />
+		<title>Challenge: Mad Libs</title>
+
+		<link href="css/Mad_Lib.css" type="text/css" rel="stylesheet" />
+		<script src="js/include-html.js"></script>
+	</head>
+	<body class="dark-mode">
+		<!--NAVBAR-->
+		<div class="sticky-top my-0" w3-include-html="navbar.html"></div>
+
+		<div class="container">
+			<nav aria-label="breadcrumb">
+				<ol class="breadcrumb my-1 py-2">
+					<li class="breadcrumb-item">
+						<a class="breadcrumb-link" href="index.html">Home</a>
+					</li>
+					<li class="breadcrumb-item">
+						<a class="breadcrumb-link" href="projects.html"
+							>Projects</a
+						>
+					</li>
+					<li class="breadcrumb-item">
+						<a class="breadcrumb-link" href="html-projects.html"
+							>HTML</a
+						>
+					</li>
+					<li class="breadcrumb-item active">Lame Mad-Lib</li>
+				</ol>
+			</nav>
+		</div>
+
+		<div class="b container">
+			<h1>Advaith's Mad Lib</h1>
+
+			<ul>
+				<li>Noun: <input type="text" id="noun" required /></li>
+				<li>
+					Paste tense adjective:
+					<input type="text" id="adjective" required />
+				</li>
+				<li>
+					Someone's Name: <input type="text" id="person" required />
+				</li>
+			</ul>
+
+			<button id="lib-button">Lib it!</button>
+
+			<p>
+				Your story:
+				<span id="story"></span>
+			</p>
+		</div>
+
+		<script>
+			var libButton = document.getElementById("lib-button");
+			var libIt = function () {
+				var noun = document.getElementById("noun").value;
+				var adj = document.getElementById("adjective").value;
+				var person = document.getElementById("person").value;
+				var storyDiv = document.getElementById("story");
+				storyDiv.innerHTML =
+					"Once upon a time there was a smart " +
+					noun +
+					" that couldn't talk, move, or interact. So one day the " +
+					noun +
+					" did the impossible: it " +
+					adj +
+					" onto " +
+					person +
+					". ";
+			};
+			libButton.addEventListener("click", libIt);
+		</script>
+
+		<!--ALL SCRIPTS NEEDED TO RUN THE WEBSITE-->
+		<script src="./resources/all-website-resources/website-resources.js"></script>
+	</body>
+</html>

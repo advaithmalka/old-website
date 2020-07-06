@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<script src="./resources/all-website-resources/website-resources-head.js"></script>
+		<title>LitCSS home</title>
+		<script src="js/include-html.js"></script>
+	</head>
+
+	<!--ALL CARDS MUST HAVE THE CLASS .card-dark AND HAVE THE ID "card"-->
+	<body class="dark-mode">
+		<!--NAVBAR-->
+		<div class="sticky-top my-0" w3-include-html="navbar.html"></div>
+
+		<div class="container">
+			<nav aria-label="breadcrumb">
+				<ol class="breadcrumb my-1 py-2">
+					<li class="breadcrumb-item">
+						<a class="breadcrumb-link" href="index.html">Home</a>
+					</li>
+					<li class="breadcrumb-item">
+						<a class="breadcrumb-link" href="projects.html"
+							>Projects</a
+						>
+					</li>
+					<li class="breadcrumb-item">
+						<a class="breadcrumb-link" href="libraries.html"
+							>Libraries</a
+						>
+					</li>
+					<li class="breadcrumb-item active">LitCSS</li>
+				</ol>
+			</nav>
+		</div>
+		<!--CONTENT START-->
+		<div class="container">
+			<div class="jumbotron darker-item light-black mt-4">
+				<div class="row">
+					<div class="col-8">
+						<h1 class="display-4 mb-5">LitCSS</h1>
+						<p class="lead wrap mb-4">
+							A CSS utility library that makes your coding life just a little bit easier
+						</p>
+						<a
+							class="btn btn-outline-primary btn-lg fs-25 mt-5 ml-xl-4"
+							href="#download"
+							role="button"
+							>Download</a
+						>
+						<a
+							class="btn btn-outline-primary fs-25 btn-lg mt-5 mr-xl-3"
+							href="litcss-docs.html"
+							role="button"
+							>Docs</a
+						>
+					</div>
+					<div class="col-4">
+						<img
+							class="float-right lib-img round"
+							src="icons/new-litcss-fav/android-chrome-512x512.png"
+							width="300"
+						/>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="container mb-5" style="margin-top: 100px;">
+			<div class="card card-dark">
+				<div class="container mt-4">
+					<h2 id="download">
+						Download
+						<a href="#download"
+							><img
+								class="link-icon"
+								src="icons/link.png"
+								width="30"
+						/></a>
+					</h2>
+					<p class="fs-20">
+						Download the latest version of LitCSS directly to your PC
+					</p>
+
+					<a
+						href="download-links/grid-view-js.zip"
+						download
+						class="btn btn-outline-primary mb-3 fs-18"
+						id="gvjs-download-btn"
+						type="submit"
+					>
+						<img src="icons/download_52px.png" width="20" />
+						Download
+					</a>
+
+					<h4 class="mt-3">JSdelivr CDN</h4>
+					<p>
+						Copy and paste this code somewhere at the end of your
+						HTML document
+					</p>
+
+					<div class="codebox my-3 mb-4">
+						<button
+							id="copy-grid-view"
+							class="btn btn-danger fs-10 p-1 float-right mt-1 mr-1"
+							onclick="this.blur()"
+						>
+							Copy
+						</button>
+						<pre><br><code id='codebox-1'>&lt;script src="https://cdn.jsdelivr.net/npm/web-cookies-js/main/cookie.min.js" crossorigin="anonymous"&gt;&lt;/script&gt;</code></pre>
+					</div>
+
+					<h4>NPM package manager</h4>
+					<div class="codebox my-3">
+						<button
+							id="copy-grid-npm"
+							class="btn btn-danger fs-10 p-1 float-right mt-1 mr-1"
+							onclick="this.blur()"
+						>
+							Copy
+						</button>
+						<pre><br><code id='codebox-npm'>npm i web-cookies-js</code></pre>
+					</div>
+
+					<h2 class="mt-4" id="github">
+						Github<a href="#github" data-offset="300"
+							><img
+								class="link-icon"
+								src="icons/link.png"
+								width="30"
+						/></a>
+					</h2>
+
+					<p class="mb-5">
+						Visit the
+						<a
+							class="doc-link"
+							target="_blank"
+							href="https://github.com/AdvaithM26/Cookie-JS"
+							>Github repository</a
+						>
+						for Cookie JS
+					</p>
+				</div>
+			</div>
+		</div>
+		<!--CONTENT END-->
+		<!--ALL SCRIPTS NEEDED TO RUN THE WEBSITE-->
+		<script src="./resources/all-website-resources/website-resources.js"></script>
+		<script>
+			window.addEventListener('load', () =>{
+				faviconGenerate('icons/new-litcss-fav')
+			})
+		</script>
+	</body>
+</html>

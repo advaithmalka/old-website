@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>Stopwatch</title>
+
+		<link href="css/stopWatch.css" type="text/css" rel="stylesheet" />
+	</head>
+	<body>
+		<!--NAV LINKS-->
+		<nav>
+			<a href="./clock.html"
+				><button class="link button" id="clock">
+					Clock
+				</button></a
+			>
+			<a href="./stopWatch.html"
+				><button class="link button" id="stopwatch">
+					Stopwatch
+				</button></a
+			><a href="./timer.html"
+				><button class="link button" id="timer">Timer</button></a
+			>
+		</nav>
+		<!--<h1><span id="seconds">0</span><span id='milliseconds'>0</span><span id="secDisplay"> seconds</span></h1>
+		<h6 id="debug"></h6>-->
+		<h1 id="displayH">
+			<span id="minutes2">0</span><span id="minutes1">0</span>:<span
+				id="seconds2"
+				>0</span
+			><span id="seconds1">0</span>.<span id="milliseconds2">0</span
+			><span id="milliseconds1">0</span>
+		</h1>
+
+		<button
+			class="button"
+			id="start-button"
+			type="button"
+			onclick="startCountUp()"
+		>
+			Start
+		</button>
+
+		<button
+			class="button"
+			id="resume-button"
+			type="button"
+			onclick="startCountUp()"
+		>
+			Resume
+		</button>
+
+		<button class="button" id="stop-button" type="button">Stop</button>
+
+		<button
+			class="button"
+			id="lap-button"
+			type="button"
+			onclick="lapTime()"
+		>
+			Lap
+		</button>
+
+		<button
+			class="button"
+			id="reset-button"
+			type="button"
+			onclick="resetPage()"
+		>
+			Reset
+		</button>
+
+		<p id="lap-time"></p>
+		<script>
+			/*
+			infoEl = document.getElementById('debug')
+			setInterval(info, .001)
+			function info() {
+			infoEl.innerHTML = new Date().getTime()
+			}*/
+
+			// counter function
+			const startEl = document.getElementById("start-button");
+			const resumeEl = document.getElementById("resume-button");
+			const resetEl = document.getElementById("reset-button");
+			const lapEl = document.getElementById("lap-button");
+			const stopEl = document.getElementById("stop-button");
+
+			let seconds1 = document.getElementById("seconds1");
+			let seconds2 = document.getElementById("seconds2");
+
+			let secDisplay = document.getElementById("secDisplay");
+
+			let milliseconds1 = document.getElementById("milliseconds1");
+			let milliseconds2 = document.getElementById("milliseconds2");
+
+			let min1 = document.getElementById("minutes1");
+			let min2 = document.getElementById("minutes2");
+
+			let displayH = document.getElementById("displayH");
+			//don't show the reset button, lap button, and stop button when the program loads
+			resetEl.style.display = "none";
+			lapEl.style.display = "none";
+			stopEl.style.display = "none";
+			resumeEl.style.display = "none";
+
+			function startCountUp() {
+				resetEl.style.display = "none";
+				lapEl.style.display = "inline-block";
+				stopEl.style.display = "inline-block";
+				startEl.style.display = "none";
+				resumeEl.style.display = "none";
+
+				//adds seconds
+				/*let countUp = () => {
+					seconds.innerHTML = parseFloat(seconds.innerHTML) + 1;
+					displayFunc();
+				};*/
+				let millisecondCount = () => {
+					milliseconds1.innerHTML =
+						parseFloat(milliseconds1.innerHTML) + 1;
+					if (parseFloat(milliseconds1.innerHTML) === 10) {
+						milliseconds1.innerHTML = "0";
+						milliseconds2.innerHTML =
+							parseFloat(milliseconds2.innerHTML) + 1;
+						//seconds.innerHTML = parseFloat(seconds.innerHTML) + 1;
+						//displayFunc();
+					}
+					if (parseFloat(milliseconds2.innerHTML) === 10) {
+						milliseconds2.innerHTML = "0";
+						seconds1.innerHTML = parseFloat(seconds1.innerHTML) + 1;
+					}
+					if (parseFloat(seconds1.innerHTML) === 10) {
+						seconds1.innerHTML = "0";
+						seconds2.innerHTML = parseFloat(seconds2.innerHTML) + 1;
+					}
+					if (parseFloat(seconds2.innerHTML) === 6) {
+						seconds2.innerHTML = "0";
+						min1.innerHTML = parseFloat(min1.innerHTML) + 1;
+					}
+					if (parseFloat(min1.innerHTML) === 10) {
+						min1.innerHTML = "0";
+						min2.innerHTML = parseFloat(min2.innerHTML) + 1;
+					}
+				};
+				//let timer = window.setInterval(countUp, 1000);
+				let timer = window.setInterval(millisecondCount, 10);
+				// stop button
+				let stopCountUp = () => {
+					resetEl.style.display = "inline-block";
+					resumeEl.style.display = "inline-block";
+					stopEl.style.display = "none";
+					lapEl.style.display = "none";
+					window.clearInterval(timer);
+				};
+				let stopButton = document.getElementById("stop-button");
+				stopButton.addEventListener("click", stopCountUp);
+			}
+			//resets the page
+			function resetPage() {
+				seconds1.textContent = "0";
+				seconds2.textContent = "0";
+				milliseconds1.textContent = "0";
+				milliseconds2.textContent = "0";
+				min1.textContent = "0";
+				min2.textContent = "0";
+				document.getElementById("lap-time").textContent = "";
+				resetEl.style.display = "none";
+				lapEl.style.display = "none";
+				stopEl.style.display = "none";
+				resumeEl.style.display = "none";
+				startEl.style.display = "inline-block";
+			}
+			//lap button function
+			function lapTime() {
+				document.getElementById(
+					"lap-time"
+				).textContent += `${displayH.textContent}   `;
+			}
+			function space() {
+				return "  ";
+			}
+			function lineBrake() {
+				let brake = new document.createElement("br");
+				document.body.appendChild("brake");
+			}
+			function lapFunc() {
+				if (parseFloat(seconds.innerHTML) === 1) {
+					return "second";
+				} else {
+					return "seconds";
+				}
+			}
+			function displayFunc() {
+				if (parseFloat(seconds.innerHTML) === 1) {
+					return (secDisplay.innerHTML = " second");
+				} else {
+					return (secDisplay.innerHTML = " seconds");
+				}
+			}
+		</script>
+	</body>
+</html>

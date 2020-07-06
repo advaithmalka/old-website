@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<script src="./resources/all-website-resources/website-resources-head.js"></script>
+		<title>Fish spawner</title>
+		<style>
+			body {
+				background-color: rgb(8, 216, 255);
+			}
+			#mycanvas {
+				width: 600px;
+			}
+		</style>
+
+		<script src="js/include-html.js"></script>
+	</head>
+	<body class="dark-mode">
+		<!--NAVBAR-->
+		<div class="sticky-top my-0" w3-include-html="navbar.html"></div>
+
+		<div class="container">
+			<nav aria-label="breadcrumb">
+				<ol class="breadcrumb my-1 py-2">
+					<li class="breadcrumb-item">
+						<a class="breadcrumb-link" href="index.html">Home</a>
+					</li>
+					<li class="breadcrumb-item">
+						<a class="breadcrumb-link" href="projects.html"
+							>Projects</a
+						>
+					</li>
+					<li class="breadcrumb-item">
+						<a class="breadcrumb-link" href="pjs.html"
+							>Processing.js</a
+						>
+					</li>
+					<li class="breadcrumb-item active">Fish spawner</li>
+				</ol>
+			</nav>
+		</div>
+		<!--This draws the canvas on the webpage -->
+
+		<div
+			class="container justify-content-center mx-auto"
+			style="width: 600px;"
+		>
+			<h1>Click to make fish!</h1>
+			<canvas class="" id="mycanvas"></canvas>
+			<p>Reload the page to clear the canvas</p>
+		</div>
+	</body>
+
+	<!-- Include the processing.js library -->
+	<!-- See https://khanacademy.zendesk.com/hc/en-us/articles/202260404-What-parts-of-ProcessingJS-does-Khan-Academy-support- for differences -->
+	<script src="resources/js/processing.js/processing.js"></script>
+	<script>
+		var programCode = function (processingInstance) {
+			with (processingInstance) {
+				size(400, 400);
+				frameRate(30);
+				background(100, 100, 100, 0);
+
+				// Paste code from Khan Academy here:
+				//Click anywhere on the screen to draw a fish
+
+				background(8, 216, 255);
+
+				var centerX = 200;
+				var centerY = 200;
+				var bodyLength = 75;
+				var bodyHeight = (bodyLength * 2) / 3;
+				var bodyColor = color(162, 0, 255);
+
+				//bubbles
+				{
+					fill(8, 216, 255);
+					ellipse(44, 53, 20, 20);
+					ellipse(283, 104, 20, 20);
+					ellipse(92, 187, 20, 20);
+					ellipse(319, 258, 20, 20);
+					ellipse(44, 297, 20, 20);
+					ellipse(187, 198, 20, 20);
+					ellipse(345, 53, 20, 20);
+					ellipse(369, 216, 20, 20);
+					ellipse(213, 229, 20, 20);
+					ellipse(196, 53, 20, 20);
+					ellipse(44, 53, 20, 20);
+					ellipse(283, 104, 20, 20);
+					ellipse(92, 141, 20, 20);
+					ellipse(319, 258, 20, 20);
+					ellipse(44, 249, 20, 20);
+					ellipse(187, 255, 20, 20);
+					ellipse(345, 53, 20, 20);
+					ellipse(369, 277, 20, 20);
+					ellipse(181, 149, 20, 20);
+					ellipse(196, 53, 20, 20);
+				} //might need to click restart to draw bubbles
+				//ground
+				fill(138, 77, 77);
+				rect(0, 400, 400, -84);
+				noStroke();
+
+				var drawFish = function (centerX, centerY) {
+					fill(bodyColor);
+					// body
+					ellipse(centerX, centerY, bodyLength, bodyHeight);
+					// tail
+					var tailWidth = bodyLength / 4;
+					var tailHeight = bodyHeight / 2;
+					triangle(
+						centerX - bodyLength / 2,
+						centerY,
+						centerX - bodyLength / 2 - tailWidth,
+						centerY - tailHeight,
+						centerX - bodyLength / 2 - tailWidth,
+						centerY + tailHeight
+					);
+					// eye
+					fill(33, 33, 33);
+					ellipse(
+						centerX + bodyLength / 4,
+						centerY,
+						bodyHeight / 5,
+						bodyHeight / 5
+					);
+				};
+
+				var mouseClicked = function () {
+					//when mouse is clicked call the drawFish function
+					drawFish(mouseX / 1.5, mouseY / 1.5);
+				};
+			}
+		};
+
+		// Get the canvas that ProcessingJS will use
+		var canvas = document.getElementById("mycanvas");
+		// Pass the function to ProcessingJS constructor
+		var processingInstance = new Processing(canvas, programCode);
+	</script>
+
+	<!--ALL SCRIPTS NEEDED TO RUN THE WEBSITE-->
+	<script src="./resources/all-website-resources/website-resources.js"></script>
+</html>

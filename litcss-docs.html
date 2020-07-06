@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<script src="./resources/all-website-resources/website-resources-head.js"></script>
+		<title>LitCSS documentation</title>
+		<script src="js/include-html.js"></script>
+	</head>
+
+	<!--ALL CARDS MUST HAVE THE CLASS .card-dark AND HAVE THE ID "card"-->
+	<body
+		class="dark-mode st w-100"
+		data-spy="scroll"
+		data-target="#grid-view-list"
+		data-offset="250"
+	>
+		<!--NAVBAR-->
+		<div class="sticky-top my-0" w3-include-html="navbar.html"></div>
+
+		<div class="progress-bg bg-transparent">
+			<div class="progress-bar lg-blue-lightblue-r" id="si-bar"></div>
+		</div>
+
+		<div class="container" style="margin-left: 70px;">
+			<nav aria-label="breadcrumb">
+				<ol class="breadcrumb my-1 py-2">
+					<li class="breadcrumb-item">
+						<a class="breadcrumb-link" href="index.html">Home</a>
+					</li>
+					<li class="breadcrumb-item">
+						<a class="breadcrumb-link" href="projects.html"
+							>Projects</a
+						>
+					</li>
+					<li class="breadcrumb-item">
+						<a class="breadcrumb-link" href="libraries.html"
+							>Libraries</a
+						>
+					</li>
+					<li class="breadcrumb-item">
+						<a class="breadcrumb-link" href="litcss.html">LitCSS</a>
+					</li>
+					<li class="breadcrumb-item active">LitCSS Docs</li>
+				</ol>
+			</nav>
+		</div>
+		<!--CONTENT START-->
+		<a class="back-to-top-btn pt-2" title="Back to top"
+			><img src="icons/svg/chevron-up.svg"
+		/></a>
+		<div
+			class="container-fluid bg-white darker-item light-black p-4"
+			style="overflow-x: hidden;"
+		>
+			<div class="row">
+				<div class="col-1 col-lg-2" id="collapse-col">
+					<button
+						id="gv-collapse"
+						type="button"
+						data-target="#grid-view-list"
+						aria-expanded="false"
+						aria-label="Toggle sidebar"
+						class="navbar-toggler d-lg-none outline-none mb-2"
+					>
+						<a class="hamburger-icon hamburger-spin m-0">
+							<span class="bar bg-white"></span>
+							<span class="bar bg-white"></span>
+							<span class="bar bg-white"></span>
+						</a>
+					</button>
+				</div>
+				<div
+					id="contents-col"
+					class="col-3 col-lg-2 d-none d-lg-block"
+					style="top: 200px;"
+				>
+					<div id="grid-view-list" class="list-group overflow-auto">
+						<a
+							class="list-group-item list-item-dark list-group-item-action"
+							href="#overview"
+							>Overview</a
+						>
+						<a
+							class="list-group-item list-item-dark list-group-item-action fs-md-23"
+							href="#setCookie"
+							><code>setCookie()</code></a
+						>
+						<a
+							class="list-group-item list-item-dark list-group-item-action fs-md-23"
+							data-offset="100"
+							href="#getCookie"
+							><code>getCookie()</code></a
+						>
+						<a
+							class="list-group-item list-item-dark list-group-item-action fs-md-23"
+							href="#deleteCookie"
+							><code>deleteCookie()</code></a
+						>
+					</div>
+				</div>
+				<div id="main" class="col-12 col-lg-9">
+					<div class="container-fluid">
+						<div>
+							<div>
+                
+								<h1 id="overview" class="mt-3">
+									Overview<a href="#overview"
+										><img
+											class="link-icon"
+											src="icons/link.png"
+											width="30"
+									/></a>
+                </h1>
+                <p class="lead">
+                 LitCSS is is usually used with <a class="doc-link" href="https://getbootstrap.com">Bootstrap CSS</a> but it can also be used by itself
+                </p>
+								<p>
+									Cookie JS consists of three main functions:
+								</p>
+
+								<ol>
+									<li>
+										<code>setCookie()</code> to create and
+										set the cookies settings
+									</li>
+									<li>
+										<code>getCookie()</code> to retrieve the
+										data of a cookie
+									</li>
+									<li>
+										<code>deleteCookie()</code> to delete a
+										cookie
+									</li>
+								</ol>
+
+								<p>
+									Place this at the end of your HTML document
+									if you haven't already:
+								</p>
+
+								<div class="codebox codebox-dark my-3 mt-4">
+									<button
+										id="copy-jquery"
+										class="copy-btn btn btn-danger fs-10 p-1 float-right"
+										onclick="this.blur()"
+									>
+										Copy
+									</button>
+
+									<pre><code id='codebox-usage'>&lt;!--Cookie JS--&gt;
+&lt;script src="https://cdn.jsdelivr.net/npm/web-cookies-js/main/cookie.min.js" crossorigin="anonymous"&gt;&lt;/script&gt;</code>
+</pre>
+								</div>
+
+								<h2 class="mt-5 fs-45" id="setCookie">
+									<code class="text-primary">setCookie()</code
+									><a href="#setCookie"
+										><img
+											class="link-icon"
+											src="icons/link.png"
+											width="40"
+									/></a>
+								</h2>
+								<p class="fs-25 fw-200">
+									Creates a cookie with the name, value, and
+									days until expiration set by the user
+								</p>
+
+								<h3 class="mt-4">Syntax</h3>
+								<p class="fs-25">
+									<code
+										>setCookie(<span class="param"
+											>cookieName</span
+										>,
+										<span class="param">cookieValue</span>,
+										<span class="param"
+											>daysUntilExpiration</span
+										>)</code
+									>
+								</p>
+
+								<h3>Parameters</h3>
+								<ol>
+									<li>
+										<code class="param fs-20"
+											>cookieName</code
+										>
+										(string) takes in the name of the cookie
+									</li>
+									<li>
+										<code class="param fs-20"
+											>cookieValue</code
+										>
+										(string) takes in the value assigned to
+										the cookie name
+									</li>
+									<li>
+										<code class="param fs-20"
+											>daysUntilExpiration</code
+										>
+										(number) takes in the number of days
+										until the cookie is automatically
+										deleted
+									</li>
+								</ol>
+
+								<h3>Example</h3>
+
+								<div
+									class="codebox codebox-dark my-4 overflow-auto"
+								>
+									<button
+										id="copy-cjs-setCookie"
+										class="copy-btn btn btn-danger fs-10 p-1 float-right"
+										onclick="this.blur()"
+									>
+										Copy
+									</button>
+									<pre
+										class="pt-3"
+									><code id='codebox-setCookie'>setCookie("cookie", "chocolate", 1)</code></pre>
+								</div>
+								<p>
+									This example sets a cookie named "cookie"
+									with the value "chocolate" which expires one
+									day from the time it was created
+								</p>
+								<p>Click the button to set the cookie above</p>
+								<a
+									class="gradient-btn gradient-btn-blue gradient-btn-sm gradient-btn-pop"
+									id="try-setCookie"
+									>setCookie</a
+								>
+
+								<p class="mt-2">
+									The alert is there only for demo purposes
+								</p>
+
+								<h2 class="mt-5 fs-45" id="getCookie">
+									<code class="text-primary">getCookie()</code
+									><a href="#getCookie"
+										><img
+											class="link-icon"
+											src="icons/link.png"
+											width="40"
+									/></a>
+								</h2>
+								<p class="fs-25 fw-200">
+									Returns the value (if any) that corresponds
+									with the cookie name inputted by the user
+								</p>
+								<h3 class="mt-4">Syntax</h3>
+								<p class="fs-25">
+									<code
+										>getCookie(<span class="param"
+											>cookieName</span
+										>)</code
+									>
+								</p>
+
+								<h3>Parameters</h3>
+								<ol>
+									<li>
+										<code class="param fs-20"
+											>cookieName</code
+										>
+										(string) takes in the name of the cookie
+										to return
+									</li>
+								</ol>
+
+								<h3>Example</h3>
+
+								<div
+									class="codebox codebox-dark my-4 overflow-auto"
+								>
+									<button
+										id="copy-cjs-getCookie"
+										class="copy-btn btn btn-danger fs-10 p-1 float-right"
+										onclick="this.blur()"
+									>
+										Copy
+									</button>
+									<pre
+										class="pt-3"
+									><code id='codebox-getCookie'>getCookie("cookie")</code></pre>
+								</div>
+								<p>
+									This example returns the value stored in the
+									cookie named "cookie"
+								</p>
+								<p>
+									Click the button to get the value of
+									"cookie"
+								</p>
+								<a
+									class="gradient-btn gradient-btn-blue gradient-btn-sm gradient-btn-pop"
+									id="try-getCookie"
+									>getCookie</a
+								>
+
+								<p class="mt-2">
+									The alert should return "chocolate"
+								</p>
+
+								<h2 class="mt-5 fs-45" id="deleteCookie">
+									<code class="text-primary"
+										>deleteCookie()</code
+									><a href="#deleteCookie"
+										><img
+											class="link-icon"
+											src="icons/link.png"
+											width="40"
+									/></a>
+								</h2>
+								<p class="fs-25 fw-200">
+									Deletes the cookie specified by the user
+								</p>
+								<h3 class="mt-4">Syntax</h3>
+								<p class="fs-25">
+									<code
+										>deleteCookie(<span class="param"
+											>cookieName</span
+										>)</code
+									>
+								</p>
+
+								<h3>Parameters</h3>
+								<ol>
+									<li>
+										<code class="param fs-20"
+											>cookieName</code
+										>
+										(string) takes in the name of the cookie
+										of which to be deleted
+									</li>
+								</ol>
+
+								<h3>Example</h3>
+
+								<div
+									class="codebox codebox-dark my-4 overflow-auto"
+								>
+									<button
+										id="copy-cjs-deleteCookie"
+										class="copy-btn btn btn-danger fs-10 p-1 float-right"
+										onclick="this.blur()"
+									>
+										Copy
+									</button>
+									<pre
+										class="pt-3"
+									><code id='codebox-deleteCookie'>deleteCookie("cookie")</code></pre>
+								</div>
+								<p>
+									This example completely deletes the
+									specified cookie before the expiration date
+								</p>
+								<p>
+									Click the button to delete "cookie"
+								</p>
+								<a
+									class="gradient-btn gradient-btn-blue gradient-btn-sm gradient-btn-pop"
+									id="try-deleteCookie"
+									>deleteCookie</a
+								>
+
+								<p class="mt-2">
+									The alert box shouldn't say anything
+								</p>
+								<p>
+									Try pressing the getCookie button from
+									before; it shouldn't return anything
+								</p>
+
+								<h3 class="mt-5">
+									Wow you actually read the documentation!
+								</h3>
+								<p class="fw-200 fs-23">
+									Now put your knowledge of Cookie JS to use
+									by making awesome websites!
+								</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!--CONTENT END-->
+		<!--ALL SCRIPTS NEEDED TO RUN THE WEBSITE-->
+		<script src="./resources/all-website-resources/website-resources.js"></script>
+		<script src="js/litcss-docs.js"></script>
+	</body>
+</html>

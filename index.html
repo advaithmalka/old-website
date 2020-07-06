@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<script src="./resources/all-website-resources/website-resources-head.js"></script>
+		<title>Home</title>
+		<script src="js/include-html.js"></script>
+	</head>
+	<body class="dark-mode">
+		<!--IMPORTANT ALERT-->
+		<div class="sticky-top" w3-include-html="important-alert.html"></div>
+		<!--NAVBAR-->
+		<div class="sticky-top my-0" w3-include-html="navbar.html"></div>
+		<!--BREADCRUMB-->
+		<div class="container">
+			<nav aria-label="breadcrumb">
+				<ol class="breadcrumb my-1 py-2">
+					<li class="breadcrumb-item active">Home</li>
+				</ol>
+			</nav>
+		</div>
+
+		<div class="container">
+			<div class="jumbotron text-primary" id='home-jumbo'>
+				<h1 class="display-4">Hello, world!</h1>
+				<p class="lead">
+					Welcome to my first website!
+				</p>
+				<hr class="my-4" />
+				<p class="mb-4 fs-20">
+					Hello! My name is Advaith Malka and I am the designer of
+					this website. This site includes all of my HTML and
+					Processing.js projects plus much more! To see whats new,
+					checkout the changelog on the NAV-bar, new stuff is being
+					added all the time! Feel free to navigate through the site
+					by using the nav links above and start exploring!
+				</p>
+				<a
+					class="btn btn-primary btn-lg"
+					href="about.html"
+					role="button"
+					>About Me</a
+				>
+			</div>
+			<h2>Featured</h2>
+
+			<div class="row">
+				<!--Timer-->
+				<div class="card card-dark my-4 mx-5" style="width: 25rem;">
+					<img
+						src="pics/misc/timer-image.jpg"
+						class="card-img-top"
+						alt="timer image"
+					/>
+					<div class="card-body">
+						<h5 class="card-title">Timer</h5>
+						<p class="card-text">
+							Struggling to focus or keep track of time? Our super-advanced, ground-breaking, and innovative timer will do the work for you. Our timer is extremely easy to use and keeps you focused during long work ours, all without you having to do anything. This timer is the last timer your ever need and you will definitely be glad that you fell for this ad.
+						</p>
+						<a href="timerW.html" class="btn btn-primary"
+							>Go to timer</a
+						>
+					</div>
+				</div>
+				<!--Star Wars mad lib-->
+				<div class="card card-dark my-4 mx-5" style="width: 25rem;">
+					<img
+						src="pics/misc/Star-wars-mad-lib.jpg"
+						class="card-img-top"
+						alt="timer image"
+					/>
+					<div class="card-body">
+						<h5 class="card-title">Mad-Libs</h5>
+						<p class="card-text">
+							Bored? Need something to do? Fear not 'cause we got you. Our Star Wars mad-lib is action packed and will definitely get you out of your seat, laughing. If you somehow don't like Star Wars or if you are lame you will surely like our super-lame mad-lib that I definitely put lots of effort in making.
+						</p>
+						<a href="Star-wars_Mad_LibW.html" class="btn btn-primary"
+							>Star Wars Mad-lib</a
+						>
+						<a href="Mad_Lib.html" class="mx-3 btn btn-primary"
+							>Lame Mad-lib</a
+						>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!--ALL SCRIPTS NEEDED TO RUN THE WEBSITE-->
+		<script src="./resources/all-website-resources/website-resources.js"></script>
+	</body>
+</html>

@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<script src="./resources/all-website-resources/website-resources-head.js"></script>
+		<title>Favorite Games</title>
+		<style>
+			#back {
+				background-color: rgb(106, 0, 255);
+			}
+		</style>
+		<script src="js/include-html.js"></script>
+	</head>
+	<body class="dark-mode">
+		<!--NAVBAR-->
+		<div class="sticky-top my-0" w3-include-html="navbar.html"></div>
+
+		<div class="container">
+			<nav aria-label="breadcrumb">
+				<ol class="breadcrumb my-1 py-2">
+					<li class="breadcrumb-item">
+						<a class="breadcrumb-link" href="index.html">Home</a>
+					</li>
+					<li class="breadcrumb-item">
+						<a class="breadcrumb-link" href="projects.html"
+							>Projects</a
+						>
+					</li>
+					<li class="breadcrumb-item">
+						<a class="breadcrumb-link" href="pjs.html"
+							>Processing.js</a
+						>
+					</li>
+					<li class="breadcrumb-item active">Cool games</li>
+				</ol>
+			</nav>
+		</div>
+		<!--This draws the canvas on the webpage -->
+		<div id="back">
+			<div
+				class="container justify-content-center mx-auto"
+				style="width: 400px;"
+			>
+				<canvas class="my-5" id="mycanvas"></canvas>
+			</div>
+		</div>
+	</body>
+
+	<!-- Include the processing.js library -->
+	<!-- See https://khanacademy.zendesk.com/hc/en-us/articles/202260404-What-parts-of-ProcessingJS-does-Khan-Academy-support- for differences -->
+	<script src="resources/js/processing.js/processing.js"></script>
+	<script>
+		var programCode = function (processingInstance) {
+			with (processingInstance) {
+				size(400, 520);
+				frameRate(30);
+
+				// PASTE PROCESSING.JS CODE HERE
+				/**
+ I will be rating video games instead of books
+ 
+ */
+
+				background(106, 0, 255);
+
+				var game1 = [
+					{
+						title: "Minecraft",
+						publisher: "Mojang Studios",
+						stars: "10/10",
+					},
+					{
+						title: "GTA V",
+						publisher: "Rockstar Games",
+						stars: "10/10",
+					},
+					{
+						title: "Far Cry 5",
+						publisher: "Ubisoft",
+						stars: "9/10",
+					},
+				];
+				var game2 = [
+					{
+						title: "Hitman 2",
+						publisher: "IO Interactive",
+						stars: "9/10",
+					},
+					{
+						title: "NBA 2k 17",
+						publisher: "2k games",
+						stars: "8.5/10",
+					},
+					{
+						title: "Just Cuase 4",
+						publisher: "Square Enix",
+						stars: "8.5/10",
+					},
+				];
+
+				// draw shelf
+				fill(173, 117, 33);
+				rect(0, 120, width, 10);
+				rect(0, 332, width, 10);
+
+				// draw the game
+				fill(84, 255, 135);
+
+				for (var r = 0; r < 287; r += 143) {
+					rect(r, 20, 113, 100);
+
+					if (r === 286) {
+						for (var w = 284; w > -1; w -= 142) {
+							rect(w, 232, 113, 100);
+						}
+					}
+				}
+				fill(0, 0, 0);
+
+				for (var a = 0; a < game1.length; a++) {
+					if (a >= 3) {
+						var y = 56;
+					} else {
+						var y = 29;
+					}
+					//shelf 1
+
+					textSize(21);
+					text(game1[a].title, a * 145 + 10, y, 104, 100);
+					textSize(13);
+					text(
+						"Publisher: " + game1[a].publisher,
+						a * 143 + 11,
+						y + 27,
+						100,
+						100
+					);
+					textSize(16);
+					text("Rating: " + game1[a].stars, a * 141 + 11, y + 76);
+					//shelf 2
+					textSize(18);
+					text(game2[a].title, a * 140 + 10, y + 209, 115, 100);
+					textSize(13);
+					text(
+						"Publisher: " + game2[a].publisher,
+						a * 145 + 10,
+						y + 236,
+						78,
+						100
+					);
+					textSize(16);
+					text("Rating: " + game2[a].stars, a * 143 + 3, y + 286);
+				}
+			}
+		};
+
+		// Get the canvas that ProcessingJS will use
+		var canvas = document.getElementById("mycanvas");
+		// Pass the function to ProcessingJS constructor
+		var processingInstance = new Processing(canvas, programCode);
+	</script>
+	<!--ALL SCRIPTS NEEDED TO RUN THE WEBSITE-->
+	<script src="./resources/all-website-resources/website-resources.js"></script>
+</html>

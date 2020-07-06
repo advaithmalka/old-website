@@ -1,0 +1,78 @@
+<!DOCTYPE .html>
+<html>
+	<head>
+        <meta charset="utf-8" />
+        <title>Clock</title>
+        <link href="css/clock.css" type="text/css" rel="stylesheet"/>
+    </head>
+	<body> 
+
+		<!--NAV LINKS-->
+		<nav>
+			<a href="./clock.html"
+				><button class="link button" id="clock">
+					Clock
+				</button></a
+			>
+			<a href="./stopWatch.html"
+				><button class="link button" id="stopwatch">
+					Stopwatch
+				</button></a
+			><a href="./timer.html"
+				><button class="link button" id="timer">Timer</button></a
+			>
+		</nav>
+
+        <p class='time'><div id='displayT'></div><div><span id='day'></span><span id='displayM'></span><span id='displayD'></span><span id='year'></span></div></p>
+			<p id='info'></p>
+		<script>
+			let month = new Date().getMonth();
+			let date = new Date().getDate().toString();
+			let day = new Date().getDay()
+			let year = new Date().getFullYear();
+
+			document.getElementById('year').innerHTML = ' ' + year;
+
+			let info = document.getElementById('info')
+			//info.innerHTML = day
+
+			/*day of the week determiner*/
+			/*PLIP PLop*/
+
+			let days = ["Sunday, ","Monday, ","Tuesday, ","Wednesday, ","Thursday, ","Friday, ","Saturday, "];
+
+			
+			document.getElementById('day').innerHTML = days[day]
+			
+			
+
+			/*date suffix determiner*/
+			if(parseFloat(date) === 11 || parseFloat(date) === 12 || parseFloat(date) === 13){
+				document.getElementById('displayD').innerHTML = " " + date + 'th,'
+			}
+			else if(parseFloat(date.charAt(date.length - 1)) === 1){
+				document.getElementById('displayD').innerHTML = " " + date + 'st,'
+			}
+			else if(parseFloat(date.charAt(date.length - 1)) === 2){
+				document.getElementById('displayD').innerHTML = " " + date + 'nd,'
+			}
+			else if(parseFloat(date.charAt(date.length - 1)) === 3){
+				document.getElementById('displayD').innerHTML = " " + date + 'rd,'
+			}else{
+				document.getElementById('displayD').innerHTML = " " + date + 'th,'
+			}
+
+			/*month determiner*/
+
+			let months = ["January","February","March","April","May","June","July","August","September","October","November","December"];
+
+			document.getElementById('displayM').innerHTML = months[month]
+
+			let counter = setInterval(myTimer, 100);
+			function myTimer() {
+				let time = new Date().toLocaleTimeString();
+				document.getElementById("displayT").innerHTML = time;
+			}
+		</script>
+	</body>
+</html>

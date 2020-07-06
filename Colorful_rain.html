@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<script src="./resources/all-website-resources/website-resources-head.js"></script>
+		<title>Snowy house</title>
+		<style>
+			body {
+				background-color: rgb(8, 216, 255);
+			}
+			#mycanvas {
+				width: 600px;
+			}
+		</style>
+		<script src="js/include-html.js"></script>
+	</head>
+	<body class="dark-mode">
+		<!--NAVBAR-->
+		<div class="sticky-top my-0" w3-include-html="navbar.html"></div>
+
+		<div class="container">
+			<nav aria-label="breadcrumb">
+				<ol class="breadcrumb my-1 py-2">
+					<li class="breadcrumb-item">
+						<a class="breadcrumb-link" href="index.html">Home</a>
+					</li>
+					<li class="breadcrumb-item">
+						<a class="breadcrumb-link" href="projects.html"
+							>Projects</a
+						>
+					</li>
+					<li class="breadcrumb-item">
+						<a class="breadcrumb-link" href="pjs.html"
+							>Processing.js</a
+						>
+					</li>
+					<li class="breadcrumb-item active">Snowy house</li>
+				</ol>
+			</nav>
+		</div>
+		<!--This draws the canvas on the webpage -->
+		<div
+			class="container justify-content-center mx-auto"
+			style="width: 600px;"
+		>
+			<h1>Click to make more rain!</h1>
+			<canvas id="mycanvas"></canvas>
+		</div>
+	</body>
+
+	<!-- Include the processing.js library -->
+	<!-- See https://khanacademy.zendesk.com/hc/en-us/articles/202260404-What-parts-of-ProcessingJS-does-Khan-Academy-support- for differences -->
+	<script src="resources/js/processing.js/processing.js"></script>
+	<script>
+		var programCode = function (processingInstance) {
+			with (processingInstance) {
+				size(400, 400);
+				frameRate(60);
+
+				// Paste code from Khan Academy here:
+
+				var xPos = [random(0, 400)];
+				var yPos = [random(0, 400)];
+
+				var colorZ = [
+					color(255, 0, 0),
+					color(255, 0, 102),
+					color(255, 0, 234),
+					color(225, 0, 255),
+					color(196, 0, 255),
+					color(123, 0, 255),
+					color(102, 0, 255),
+					color(21, 0, 255),
+					color(0, 51, 255),
+					color(0, 132, 255),
+					color(0, 162, 255),
+					color(0, 213, 255),
+					color(0, 255, 187),
+					color(0, 255, 174),
+					color(0, 255, 85),
+					color(0, 255, 43),
+					color(68, 255, 0),
+					color(119, 255, 0),
+					color(242, 255, 0),
+					color(255, 187, 0),
+					color(255, 64, 0),
+				];
+				var colors = [
+					color(random(0, 255), random(0, 255), random(0, 255)),
+					color(random(0, 255), random(0, 255), random(0, 255)),
+					color(random(0, 255), random(0, 255), random(0, 255)),
+				];
+
+				var draw = function () {
+					background(204, 247, 255);
+
+					if (mousePressed) {
+						xPos.push(mouseX);
+						yPos.push(mouseY);
+						//randon colors
+						//colors.push(color(random(0,255),random(0,255),random(0,255)));
+					}
+					//house
+					strokeWeight(1);
+					{
+						//house roof
+						fill(120, 77, 78);
+						triangle(212, 28, 382, 150, 40, 150);
+						//inner house wall
+						fill(130, 81, 81);
+						rect(59, 150, 301, 207);
+
+						//house wall
+						/*for (var x = 60; x < 325; x+=50) {
+    image(getImage("cute/RoofSouth"), x ,122,50,100);
+        for (var y = 192; y < 325; y+=70) {
+        image(getImage("cute/RoofSouth"), x ,y,50,100);
+        }
+    }*/
+						//door
+						fill(120, 80, 19);
+						rect(193, 284, 40, 77);
+
+						//doorknob
+						fill(255, 255, 0);
+						ellipse(225, 327, 8, 8);
+
+						//getImage("cute/RoofSouthWest");
+						//getImage("cute/TreeShort");
+
+						//grass
+						/*for (var g = 0; g < 375; g+=50) {
+    image(getImage("cute/GrassBlock"), g,330,50,100);
+    }*/
+
+						//windows
+						fill(209, 209, 209);
+
+						for (var w = 95; w < 264; w += 168) {
+							rect(w, 275, 60, 60);
+							line(w + 31, 276, w + 31, 335);
+							line(w + 1, 305, w + 61, 305);
+							for (var e = 275; e > 116; e -= 92) {
+								rect(w, e, 60, 60);
+								line(w + 31, e + 1, w + 31, e + 60);
+								line(w + 1, e + 30, w + 61, e + 30);
+							}
+						}
+
+						//sun
+						fill(255, 183, 0);
+						ellipse(347, 48, 50, 50);
+					}
+
+					noStroke();
+
+					xPos.push(random(0, -400)); //random x positions
+					yPos.push(random(0, -400)); //random y positions
+					for (var i = 0; i < xPos.length; i++) {
+						fill(colors[i]);
+
+						var e = random(1, 3);
+						ellipse(xPos[i], yPos[i], 7, 7);
+						xPos[i] += e;
+						yPos[i] += e;
+
+						if (yPos[i] === 400) {
+							yPos[i] = random(0, -400);
+							xPos[i] = random(0, -400);
+							//random colors
+							/*if(colors[i] === colors.length) {
+                var newIndex = floor(random(colors.length));
+                colors[i] = colors[newIndex];
+                }*/
+						}
+						//colors.push(color(random(0, 255), random(0, 255), random(0, 255)));
+					}
+				};
+			}
+		};
+
+		// Get the canvas that ProcessingJS will use
+		var canvas = document.getElementById("mycanvas");
+		// Pass the function to ProcessingJS constructor
+		var processingInstance = new Processing(canvas, programCode);
+	</script>
+	<!--ALL SCRIPTS NEEDED TO RUN THE WEBSITE-->
+	<script src="./resources/all-website-resources/website-resources.js"></script>
+</html>

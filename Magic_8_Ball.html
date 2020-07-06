@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<script src="./resources/all-website-resources/website-resources-head.js"></script>
+		<title>Magic 8 Ball using Processing JS</title>
+		<link href="css/Magic_8_Ball.css" type="text/css" rel="stylesheet" />
+		<style>
+			#mycanvas {
+				width: 425px;
+			}
+		</style>
+		<script src="js/include-html.js"></script>
+		
+	</head>
+	<body class="dark-mode">
+
+		<!--NAVBAR-->
+		<div class="sticky-top my-0" w3-include-html="navbar.html"></div>
+		
+		<div class="container">
+			<nav aria-label="breadcrumb">
+				<ol class="breadcrumb my-1 py-2">
+					<li class="breadcrumb-item"><a class='breadcrumb-link' href="index.html">Home</a></li>
+					<li class="breadcrumb-item"><a class='breadcrumb-link' href="projects.html">Projects</a></li>
+					<li class="breadcrumb-item"><a class='breadcrumb-link' href="pjs.html">Processing.js</a></li>
+					<li class="breadcrumb-item active">Magic 8 Ball</li>
+				</ol>
+			</nav>
+		</div>
+		<!--This draws the canvas on the webpage -->
+
+		<div
+			class="container justify-content-center my-2 mx-auto"
+			style="width: 425px;"
+		>
+		<canvas id="mycanvas"></canvas>
+		<h1>Ask the Magic 8 Ball anything!</h1>
+	</body>
+	<button id="reload-button" class="button" onclick="reload()">
+		Ask again
+	</button>
+
+	<!-- Include the processing.js library -->
+	<!-- See https://khanacademy.zendesk.com/hc/en-us/articles/202260404-What-parts-of-ProcessingJS-does-Khan-Academy-support- for differences -->
+	<script src="resources/js/processing.js/processing.js"></script>
+	<script>
+		var programCode = function (processingInstance) {
+			with (processingInstance) {
+				size(400, 400);
+				frameRate(30);
+				background(100, 100, 100,0);
+
+				// Paste code from Khan Academy here:
+
+				fill(0, 0, 0);
+				ellipse(200, 200, 375, 375);
+				fill(90, 0, 255);
+				triangle(200, 325, 310, 125, 90, 125);
+				fill(255, 255, 255);
+				var answer = floor(random(1, 21));
+
+				if (answer === 1) {
+					text("IT IS", 187, 200);
+					text("CERTAIN", 173, 225);
+				} else if (answer === 2) {
+					text("IT IS", 187, 200);
+					text("DECIDEDLY SO", 158, 221);
+				} else if (answer === 3) {
+					text("WITHOUT", 174, 205);
+					text("A DOUBT", 175, 229);
+				} else if (answer === 4) {
+					text("YES", 187, 199);
+					text("DEFINITELY", 168, 221);
+				} else if (answer === 5) {
+					text("YOU MAY", 174, 199);
+					text("RELY ON IT", 170, 221);
+				} else if (answer === 6) {
+					text("AS I SEE IT,", 169, 199);
+					text("YES", 187, 224);
+				} else if (answer === 7) {
+					text("MOST LIKELY", 162, 207);
+				} else if (answer === 8) {
+					text("OUTLOOK GOOD", 152, 207);
+				} else if (answer === 9) {
+					text("YES", 187, 207);
+				} else if (answer === 10) {
+					text("SIGNS POINT TO", 153, 199);
+					text("YES", 187, 223);
+				} else if (answer === 11) {
+					text("REPLY HAZY", 167, 199);
+					text("TRY AGAIN", 170, 221);
+				} else if (answer === 12) {
+					text("ASK AGAIN", 172, 199);
+					text("LATER", 183, 223);
+				} else if (answer === 13) {
+					text("BETTER NOT", 165, 199);
+					text("TELL YOU NOW", 158, 226);
+				} else if (answer === 14) {
+					text("CANNOT PREDICT", 149, 199);
+					text("NOW", 187, 224);
+				} else if (answer === 15) {
+					text("CONCENTRATE AND", 143, 199);
+					text("ASK AGAIN", 168, 221);
+				} else if (answer === 16) {
+					text("DON'T COUNT", 164, 199);
+					text("ON IT ", 187, 221);
+				} else if (answer === 17) {
+					text("MY REPLY IS", 163, 199);
+					text("NO", 190, 221);
+				} else if (answer === 18) {
+					text("MY SOURCES SAY", 151, 199);
+					text("NO", 190, 223);
+				} else if (answer === 19) {
+					text("OUTLOOK NOT SO", 146, 199);
+					text("GOOD", 181, 223);
+				} else {
+					text("VERY", 180, 195);
+					text("DOUBTFUL", 166, 221);
+				}
+			}
+		};
+
+		// Get the canvas that ProcessingJS will use
+		var canvas = document.getElementById("mycanvas");
+		// Pass the function to ProcessingJS constructor
+		var processingInstance = new Processing(canvas, programCode);
+
+		function reload() {
+			location.reload(false);
+		}
+	</script>
+	<!--ALL SCRIPTS NEEDED TO RUN THE WEBSITE-->
+	<script src="./resources/all-website-resources/website-resources.js"></script>
+</html>

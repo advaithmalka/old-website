@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<script src="./resources/all-website-resources/website-resources-head.js"></script>
+		<title>Processing.JS inside Webpages: Template</title>
+		<style>
+			#mycanvas {
+				width: 600px;
+			}
+		</style>
+		<script src="js/include-html.js"></script>
+	</head>
+	<body class="dark-mode">
+		<!--NAVBAR-->
+		<div class="sticky-top my-0" w3-include-html="navbar.html"></div>
+
+		<div class="container">
+			<nav aria-label="breadcrumb">
+				<ol class="breadcrumb my-1 py-2">
+					<li class="breadcrumb-item">
+						<a class="breadcrumb-link" href="index.html">Home</a>
+					</li>
+					<li class="breadcrumb-item">
+						<a class="breadcrumb-link" href="projects.html"
+							>Projects</a
+						>
+					</li>
+					<li class="breadcrumb-item">
+						<a class="breadcrumb-link" href="pjs.html"
+							>Processing.js</a
+						>
+					</li>
+					<li class="breadcrumb-item active">Shooting Stars</li>
+				</ol>
+			</nav>
+		</div>
+		<!--This draws the canvas on the webpage -->
+
+		<div
+			class="container justify-content-center my-2 mx-auto"
+			style="width: 600px;"
+		>
+			<canvas id="mycanvas"></canvas>
+			<p>
+				This animation only runs once, so to see it again reload the
+				page
+			</p>
+		</div>
+	</body>
+
+	<!-- Include the processing.js library -->
+	<!-- See https://khanacademy.zendesk.com/hc/en-us/articles/202260404-What-parts-of-ProcessingJS-does-Khan-Academy-support- for differences -->
+	<script src="https://cdn.jsdelivr.net/processing.js/1.4.8/processing.min.js"></script>
+	<script>
+		var programCode = function (processingInstance) {
+			with (processingInstance) {
+				size(400, 400);
+				frameRate(60);
+
+				// PASTE PROCESSING.JS CODE HERE
+				var xPos = 14; //x cord of star 1
+				var yPos = 200; //y cord of star 1
+				var xPos2 = 357; //x cord of star 2
+				var yPos2 = 271; //y cord of star 2
+
+				draw = function () {
+					background(21, 34, 117);
+					fill(255, 255, 255);
+					noStroke();
+					//starry sky
+					ellipse(20, 20, 10, 10);
+					ellipse(338, 249, 10, 10);
+					ellipse(57, 104, 10, 10);
+					ellipse(27, 51, 10, 10);
+					ellipse(311, 189, 10, 10);
+					ellipse(204, 240, 10, 10);
+					ellipse(289, 294, 10, 10);
+					ellipse(132, 268, 10, 10);
+					ellipse(113, 37, 10, 10);
+					ellipse(264, 121, 20, 20);
+					ellipse(193, 109, 10, 10);
+					ellipse(82, 206, 15, 15);
+					ellipse(318, 72, 10, 10);
+					ellipse(329, 306, 10, 10);
+					ellipse(195, 345, 10, 10);
+					ellipse(145, 171, 10, 10);
+					ellipse(20, 320, 10, 10);
+					ellipse(147, 362, 10, 10);
+					ellipse(373, 120, 10, 10);
+					ellipse(82, 329, 10, 10);
+					fill(255, 242, 0);
+
+					//shooting stars
+					ellipse(xPos, yPos, 10, 10); //shooting star 1
+					ellipse(xPos2, yPos2, 10, 10); //shooting star 2
+					xPos++;
+					yPos -= 1;
+					xPos2--;
+					yPos2 -= 1;
+				};
+			}
+		};
+
+		// Get the canvas that ProcessingJS will use
+		var canvas = document.getElementById("mycanvas");
+		// Pass the function to ProcessingJS constructor
+		var processingInstance = new Processing(canvas, programCode);
+	</script>
+	<!--ALL SCRIPTS NEEDED TO RUN THE WEBSITE-->
+	<script src="./resources/all-website-resources/website-resources.js"></script>
+</html>

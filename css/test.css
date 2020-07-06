@@ -1,0 +1,132 @@
+/*Gradient buttons*/
+.gradient-btn-blue,
+.gradient-btn-blue:before {
+	background: linear-gradient(
+		to right,
+		#52a0fd 0%,
+		#00e2fa 80%,
+		#00e2fa 100%
+	);
+}
+
+.gradient-btn-green,
+.gradient-btn-green:before {
+	background: linear-gradient(
+		to right,
+		#44ea76 0%,
+		#39fad7 80%,
+		#39fad7 100%
+	);
+}
+
+.gradient-btn-orange,
+.gradient-btn-orange:before {
+	background: linear-gradient(
+		to right,
+		#fa6c9f 0%,
+		#ffe140 80%,
+		#ffe140 100%
+	);
+}
+
+a.gradient-btn{
+   text-decoration: none;
+}
+
+button.gradient-btn{
+   border: none;
+   outline: none;
+}
+
+.gradient-btn {
+	display: inline-block;
+	margin: 30px;
+	font-family: "Montserrat", Helvetica, Arial, sans-serif;
+	font-size: 17px;
+	letter-spacing: 0.03em;
+	text-transform: uppercase;
+	color: #ffffff;
+	position: relative;
+}
+.gradient-btn:before {
+	content: "";
+	display: inline-block;
+	height: 40px;
+	position: absolute;
+	bottom: -5px;
+	left: 30px;
+	right: 30px;
+	z-index: -1;
+	border-radius: 30em;
+	-webkit-filter: blur(20px) brightness(0.95);
+	filter: blur(20px) brightness(0.95);
+	-webkit-transform-style: preserve-3d;
+	transform-style: preserve-3d;
+	-webkit-transition: all 0.3s ease-out;
+	transition: all 0.3s ease-out;
+}
+
+.gradient-btn {
+	display: inline-block;
+	padding: 18px 60px;
+	border-radius: 50em;
+	position: relative;
+	z-index: 2;
+	will-change: transform, filter;
+	-webkit-transform-style: preserve-3d;
+	transform-style: preserve-3d;
+	-webkit-transition: all 0.3s ease-out;
+	transition: all 0.3s ease-out;
+}
+.gradient-btn:focus,
+.gradient-btn:active {
+	color: #ffffff;
+}
+
+.gradient-btn:not(.gradient-btn-pop):active{
+   transform: scale(0.9);
+}
+
+.gradient-btn:hover {
+	color: #ffffff;
+}
+.gradient-btn:hover {
+	-webkit-filter: brightness(1.05) contrast(1.05);
+	filter: brightness(1.05) contrast(1.05);
+	-webkit-transform: scale(0.95);
+	transform: scale(0.95);
+}
+.gradient-btn:hover:before {
+	bottom: 0;
+	-webkit-filter: blur(10px) brightness(0.95);
+	filter: blur(10px) brightness(0.95);
+}
+.gradient-btn.gradient-btn-pop:before {
+	opacity: 0;
+	bottom: 10px;
+}
+.gradient-btn.gradient-btn-pop:hover:before {
+	bottom: -7px;
+	opacity: 1;
+	-webkit-filter: blur(20px);
+	filter: blur(20px);
+}
+.gradient-btn.gradient-btn-pop:hover {
+	-webkit-transform: scale(1.04);
+	transform: scale(1.04);
+}
+.gradient-btn.gradient-btn-pop:hover:active {
+	-webkit-filter: brightness(1) contrast(1);
+	filter: brightness(1) contrast(1);
+	-webkit-transform: scale(1);
+	transform: scale(1);
+	-webkit-transition: all 0.15s ease-out;
+	transition: all 0.15s ease-out;
+}
+.gradient-btn.gradient-btn-pop:hover:active:before {
+	bottom: 0;
+	-webkit-filter: blur(10px) brightness(0.95);
+	filter: blur(10px) brightness(0.95);
+	-webkit-transition: all 0.2s ease-out;
+	transition: all 0.2s ease-out;
+}

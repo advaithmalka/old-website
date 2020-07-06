@@ -1,0 +1,43 @@
+html{
+	scroll-behavior: smooth;
+}
+ 
+body {
+	background-color: rgb(116, 240, 245) !important;
+	font-family: cursive !important;
+}
+h2 {
+	color: rgb(0, 0, 255);
+}
+.table {
+	color: rgb(68, 0, 255);
+	margin-left: -35px;
+}
+.steps {
+	color: rgb(0, 115, 255);
+	width: 400px;
+}
+
+.photo {
+	border: 10px ridge rgb(0, 4, 255);
+}
+#text {
+	margin: auto;
+	width: 525px;
+	border-left: 10px solid rgb(0, 0, 255);
+	border-right: 10px solid rgb(0, 0, 255);
+}
+main {
+	margin: auto +40px;
+	width: 500px;
+}
+.line {
+	width: 450px;
+	overflow: hidden;
+}
+table {
+	border: dashed rgb(0, 0, 0);
+}
+.steps li {
+	margin-bottom: 20px;
+}

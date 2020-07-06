@@ -1,0 +1,43 @@
+.btn {
+	border: none;
+}
+button {
+	border: none;
+	background-color: transparent;
+	outline: none;
+}
+.disabled {
+	opacity: 0.4;
+}
+.s-btn {
+	font-size: 30px;
+}
+#slide-div {
+	/*background-color: rgb(40, 40, 40);*/
+	border-radius: 10%;
+}
+img {
+	border-radius: 5px;
+}
+#file-chooser {
+	width: 500px;
+}
+#img-file {
+	display: inline-block;
+	width: 400px;
+}
+#img-submit {
+	display: inline-block;
+}
+#img-input {
+	width: 500px;
+}
+#trash-can{
+	position: relative;
+	bottom: 60px;
+	left: 280px;
+	fill: red
+}
+
+
+

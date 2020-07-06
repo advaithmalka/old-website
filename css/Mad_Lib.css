@@ -1,0 +1,13 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans&display=swap");
+.b {
+	width: 100% !important;
+	height: 720px;
+	margin: auto;
+	background-color: rgba(0, 183, 255, 0.329);
+	font-family: "Open Sans", sans-serif;
+}
+
+#navbar {
+	width: 100%;
+	margin: auto;
+}

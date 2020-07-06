@@ -1,0 +1,117 @@
+@font-face{ 
+	font-family: Raleway;
+	src: url(fonts/Raleway/Raleway-Light.ttf)
+}
+
+:root {
+	--main-col: rgb(0, 100, 255);
+	--main-col-dark: rgb(0, 58, 219);
+	--main-col-active: rgb(4, 116, 207);
+	--border-col:  rgb(0, 60, 255);
+	
+	--alt-main-col: #00203F;
+	--alt-sec-col: #ADEFD1;
+
+	--bg-col: rgb(31, 31, 31)
+}
+#hint-btn{
+	border-radius: 20px;
+	padding: 5px 10px;
+	font-size: 20px;
+	font-family: Raleway, sans-serif;
+}
+
+body {
+	font-family: Raleway, Arial, sans-serif;
+	background-color: var(--bg-col);
+	color: var(--main-col);
+}
+.container {
+	border: 3px var(--main-col) dashed;
+	padding: 50px 50px;
+	width: 50%;
+}
+#input {
+	background-color: var(--bg-col);
+	border: solid var(--main-col) 2px;
+	outline: none;
+	color: var(--main-col);
+	text-align: center;
+}
+form {
+	font-size: 1.5em;
+}
+.scrambled,
+input,
+button {
+	font-family: monospace;
+	font-size: 2em;
+}
+.button {
+	background-color: var(--main-col-dark)/*rgb(0, 140, 255)*/;
+	border: none;
+	color: var(--bg-col);
+	padding: 15px 32px;
+	text-align: center;
+	text-decoration: none;
+	display: inline-block;
+	font-size: 16px;
+	border-radius: 100px;
+	outline: none !important;
+	transition-duration: 0.25s;
+	margin: 0px 20px;
+}
+.button:hover {
+	background-color: rgb(0, 74, 233);
+}
+.button:active {
+	background-color: rgb(0, 102, 255);
+}
+#result-box {
+	border: rgb(0, 89, 255) dashed 3px;
+	height: 55px;
+	margin-top: 20px;
+}
+#result {
+	width: max-content;
+	font-size: 30px;
+}
+#question-num{
+	font-size: 30px;
+}
+/*PREVIOUS AND NEXT BUTTONS*/
+
+
+a:hover {
+	background-color: var(--main-col-active);
+	color: black;
+}
+
+
+.next-btn {
+	background-color: var(--main-col);
+	color: black;
+	text-decoration: none;
+	display: inline-block;
+	padding: 8px 16px;
+	font-size: 20px;
+	margin: 0px auto !important;
+	color: var(--bg-col);
+}
+::placeholder{
+	color: var(--main-col-dark);
+}
+/*OPTIONAL*/
+.round {
+	border-radius: 50%;
+}
+.hide{
+	display: none;
+}
+.center{
+	position: relative;
+	left: 30%
+}
+.fs-1{
+	font-size: 16px;
+}

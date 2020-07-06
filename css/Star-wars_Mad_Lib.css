@@ -1,0 +1,64 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans&display=swap");
+
+body {
+	width: 500px;
+	margin: auto;
+	background-color: rgb(0, 0, 0);
+	font-family: "Open Sans", sans-serif;
+	color: rgb(255, 215, 0);
+	background-image: url(https://i1.wp.com/scutumetlorica.com/wp-content/uploads/2018/02/loopable-tileable-stars-pattern-realistic-stars-slowly-twinkle-in-the-night-sky-seamless-tile-can-be-combined-into-8k-or-larger-frame-by-placing-clip-copies-side-by-side_vkpg6uy2__F0000.png?fit=4096%2C2304&ssl=1);
+}
+#lib-button {
+	background-color: rgb(255, 215, 0);
+	color: black;
+	padding: 15px 32px;
+	text-align: center;
+	text-decoration: none;
+	display: inline-block;
+	font-size: 16px;
+	margin: 4px 2px;
+	cursor: pointer;
+	border: none;
+}
+input {
+	background-color: black;
+	color: rgb(255, 0, 0);
+	text-align: center;
+	width: min-content;
+	border: solid 1.5px rgb(255, 215, 0);
+}
+.vader {
+	float: right;
+	opacity: 0.6;
+}
+.darth {
+	position: absolute;
+	top: 40%;
+	left: 60%;
+}
+
+.star {
+	float: right;
+}
+/*scroll bar*/
+
+/* width */
+::-webkit-scrollbar {
+	width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+	background-image: url(https://i1.wp.com/scutumetlorica.com/wp-content/uploads/2018/02/loopable-tileable-stars-pattern-realistic-stars-slowly-twinkle-in-the-night-sky-seamless-tile-can-be-combined-into-8k-or-larger-frame-by-placing-clip-copies-side-by-side_vkpg6uy2__F0000.png?fit=4096%2C2304&ssl=1);
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+	background: rgb(255, 215, 0) /*#888*/;
+	border-radius: 10px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+	background: rgb(163, 139, 0) /* #555*/;
+}

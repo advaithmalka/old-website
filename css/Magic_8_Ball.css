@@ -1,0 +1,25 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans&display=swap");
+h1 {
+	text-align: center;
+}
+body {
+	background-color: aqua;
+	text-align: center;
+	font-family: "Open Sans", sans-serif;
+}
+.button {
+	background-color: rgb(59, 59, 255) /*#fee715*/;
+	color: #101820;
+	padding: 15px 32px;
+	text-align: center;
+	text-decoration: none;
+	display: inline-block;
+	font-size: 20px;
+	margin: 30px 20px;
+	cursor: pointer;
+	border: none;
+	font-family: digital;
+	border-radius: 50px;
+	outline: currentColor;
+	font-family: "Open Sans", sans-serif;
+}

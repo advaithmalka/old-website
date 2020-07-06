@@ -1,0 +1,39 @@
+/*.btn, p, .jumbotron, body, h1, h2, h3, h4, h5, h6{
+	isolation: isolate;
+}*/
+body {
+	background-color: #1b1b1b !important;
+	color: #0088ff !important;
+}
+
+
+.card {
+	background-color: #202020 !important;
+}
+
+.jumbotron {
+	background-image: url("https://onlyvectorbackgrounds.com/wp-content/uploads/2019/03/Gradient-Abstract-Shapes-Background-Grey.jpg");
+}
+
+/*scroll bar*/
+/* width */
+::-webkit-scrollbar {
+	width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+	background-color: #101820;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+	background: #3f3f3f;
+	border-radius: 10px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+	background: rgba(73, 73, 73, 0.562);
+}
+/*# sourceMappingURL=website.css.map */

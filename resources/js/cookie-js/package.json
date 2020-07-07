@@ -1,6 +1,6 @@
 {
 	"name": "web-cookies-js",
-	"version": "1.2.1",
+	"version": "1.2.2",
 	"description": "Easily create and manage cookies for your new website with Cookie JS",
 	"main": "main/cookie.js",
 	"scripts": {
@@ -15,5 +15,9 @@
 	"bugs": {
 		"url": "https://github.com/AdvaithM26/Cookie-JS/issues"
 	},
-	"homepage": "https://github.com/AdvaithM26/Cookie-JS#readme"
+	"homepage": "https://github.com/AdvaithM26/Cookie-JS#readme",
+	"keywords": [
+		"cookies",
+		"website-cookies"
+	]
 }

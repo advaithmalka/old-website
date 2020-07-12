@@ -14,8 +14,6 @@ window.addEventListener("load", function () {
 	$("hr.lit-hr").addClass("bg-danger");
 	$("hr.lit-hr").addClass("mt-5");
 
-
-
 	$("#copy-lit-usage").on("click", function () {
 		copyText("#codebox-lit-usage", this);
 	});
@@ -117,21 +115,24 @@ window.addEventListener("load", function () {
 	};
 	ccFunc();
 
-	$("h1,h2,h3").each(function(){
-		$(this).append(`<a href='#${$(this).attr('id')}'>`)
-		$('<img>')
-			.attr('class', 'link-icon')
-			.attr('src', 'icons/link.png')
-			.attr('width', '30')
-			.appendTo($(`a[href='#${$(this).attr('id')}']`))
+	$("h1, h2, h3, h4").each(function () {
+		if ($(this).attr("id") && !$(this).hasClass('anchor-ignore') || $(this).hasClass('anchor-force')) {
+			console.log(this);
+			$(this).append(`<a class='text-decoration-none' href='#${$(
+				this
+			).attr("id")}'>
+		<img class="link-icon" src="icons/link.png" width="30">
+		</a>`);
 
-			$(`a[href='#${$(this).attr('id')}]'`).on('click', e =>{
-				setTimeout(function(){
-					$('html, body').animate({
-						scrollTop: 0
-					})
-				})
-			})
-		console.log(this)
-	})
+			$(`a[href='#${$(this).attr("id")}]'`).on("click", (e) => {
+				setTimeout(function () {
+					$("html, body").animate({
+						scrollTop: 0,
+					});
+				});
+			});
+		} else {
+			console.log(`${$(this)} false`);
+		}
+	});
 });

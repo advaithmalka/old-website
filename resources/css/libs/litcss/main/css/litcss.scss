@@ -1,64 +1,24 @@
 /*
 *
-* V1.0 LitCSS
+* V1.x.x LitCSS
 * Library managed and created by Advaith Malka
 *
 * If you are on VS Code I recommend using the comment anchors extension to highlight all of the sections: 
 * https://marketplace.visualstudio.com/items?itemName=ExodiusStudios.comment-anchors
 */
 //SECTION scss variables
-$color-blue: hsl(211, 100%, 50%);
-$color-yellow: #ffc107;
-$color-green: #28a745;
-$color-info: #17a2b8;
-$color-red: #dc3545;
-$color-grey: #6c757d;
 
-$color-lightblue: #bedcff;
-$color-lightyellow: #fffbbd;
-$color-lightred: #ffc5cb;
-$color-lightgreen: #a9ffbd;
-
+@import 'variables/variables.scss';
 
 //!SECTION
 
 //SECTION SCSS mixins
-@mixin transform($property) {
-	-webkit-transform: $property;
-	-ms-transform: $property;
-	-moz-transform: $property;
-	transform: $property;
-}
-
-@mixin width($sizeType, $size) {
-	.wd-#{$sizeType}-#{$size} {
-		width: $size + px !important;
-	}
-}
-
-@mixin height($sizeTypeH, $sizeH) {
-	.ht-#{$sizeTypeH}-#{$sizeH} {
-		height: $sizeH + px !important;
-	}
-}
-
-@mixin fontSize($sizeTypeF, $sizeF) {
-	.fs-#{$sizeTypeF}-#{$sizeF} {
-		font-size: $sizeF + px !important;
-	}
-}
-
-@mixin position($posType, $sizeP) {
-	.#{$posType}-#{$sizeP}{
-		#{$posType}: $sizeP + px !important;
-	}
-}
+@import 'mixins/mixins.scss';
 //!SECTION
-
+ 
 /*MAKES SURE GRADIENTS FILL THE WHOLE PAGE*/
 
 html {
-	scroll-behavior: smooth;
 	min-height: 100%;
 	min-width: 100%;
 }
@@ -76,6 +36,8 @@ body {
 	background-color: black !important;
 }
 /*SECTION Back to top button */
+
+
 
 /*!SECTION */
 /*SECTION SCALE*/
@@ -101,6 +63,14 @@ body {
 	-webkit-transform-origin: 0 0;
 	transform-origin: 0 0;
 	zoom: 3;
+}
+
+.scale-25-no-zoom {
+	@include transform(scale(0.25));
+	-moz-transform-origin: 0 0;
+	-o-transform-origin: 0 0;
+	-webkit-transform-origin: 0 0;
+	transform-origin: 0 0;
 }
 /*!SECTION */
 /*SECTION CODEBOX*/
@@ -242,6 +212,10 @@ body {
 .bl-round-5 {
 	border-top-left-radius: 5px;
 	border-bottom-left-radius: 5px;
+}
+
+.border-bottom-sm{
+	border-bottom: 1px solid black;
 }
 /*!SECTION */
 /*SECTION z-index*/
@@ -571,6 +545,20 @@ body {
 	position: sticky !important;
 }
 /*!SECTION */
+//SECTION Overflow
+@include overflow('', scroll);
+@include overflow('', auto);
+@include overflow('', hidden);
+
+@include overflow('-y', scroll);
+@include overflow('-y', auto);
+@include overflow('-y', hidden);
+
+@include overflow('-x', scroll);
+@include overflow('-x', auto);
+@include overflow('-x', hidden);
+
+//!SECTION
 /*SECTION SLIDER*/
 /*TOGGLE SWITCH*/
 .switch {
@@ -1008,7 +996,8 @@ button.no-outline {
 	-webkit-transform: rotate(45deg);
 }
 /*!SECTION */
-/*SECTION Back to top arrow*/
+/*SECTION Back to top arrow */
+//!IMPORTANT REQUIRES LITJS
 .back-to-top-btn {
 	display: inline-block;
 	background-color: #272727;
@@ -1161,7 +1150,7 @@ button.no-outline {
 .progress-bg {
 	position: fixed;
 	top: 0px;
-	z-index: 1;
+	z-index: 999;
 	width: 100%;
 	height: 5px;
 	background: #000;
@@ -1175,7 +1164,7 @@ button.no-outline {
 	border-bottom-right-radius: 5px !important;
 }
 /*!SECTION */
-/*SECTION POSITION CLASSES*/
+/*SECTION top, bottom, left and right CLASSES*/
 /*!IMPORTANT MAKE SURE TO HAVE POSITION RELATIVE, ABSOLUTE, OR FIXED OR THESE CLASSES WILL NOT WORK*/
 @include position(top, 5);
 @include position(top, 8);

@@ -1,6 +1,17 @@
 window.addEventListener("load", function () {
 	faviconGenerate("icons/cookie-favicon");
 
+
+	$(window).scrollTop(1)
+	$(window).scrollTop(0)
+
+	$("#cjs-hamburger").on("click", function () {
+		$(this).toggleClass("clicked");
+		setTimeout(e =>{
+			$("#inner-nav-hamburger").removeClass('clicked')
+		})
+	});
+
 	$("#contents-col").followTo(document.body.scrollHeight - 500, 200);
 
 	$("#copy-cjs-setCookie").on("click", function () {

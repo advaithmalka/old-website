@@ -3,6 +3,7 @@
 	<head>
 		<script src="./resources/all-website-resources/website-resources-head.js"></script>
 		<title>LitCSS documentation</title>
+		<link rel="stylesheet" type="text/css" href="css/litcss-docs.css" />
 		<script src="js/include-html.js"></script>
 	</head>
 
@@ -14,10 +15,17 @@
 		data-offset="250"
 	>
 		<!--NAVBAR-->
-		<div class="sticky-top my-0" w3-include-html="navbar.html"></div>
+		<div
+			id="navbar-html"
+			class="sticky-top my-0"
+			w3-include-html="navbar.html"
+		></div>
 
 		<div class="progress-bg bg-transparent">
-			<div class="progress-bar lg-blue-lightblue-r" id="si-bar"></div>
+			<div
+				class="progress-bar lg-blue-lightblue-r"
+				id="scroll-indicator"
+			></div>
 		</div>
 
 		<div class="container" style="margin-left: 70px;">
@@ -43,6 +51,7 @@
 				</ol>
 			</nav>
 		</div>
+
 		<!--CONTENT START-->
 		<a class="back-to-top-btn pt-2" title="Back to top"
 			><img src="icons/svg/chevron-up.svg"
@@ -61,149 +70,315 @@
 						aria-label="Toggle sidebar"
 						class="navbar-toggler d-lg-none outline-none mb-2"
 					>
-						<a class="hamburger-icon hamburger-spin m-0">
+						<a
+							class="hamburger-icon hamburger-spin m-0"
+							id="lit-hamburger"
+						>
 							<span class="bar bg-white"></span>
 							<span class="bar bg-white"></span>
 							<span class="bar bg-white"></span>
 						</a>
 					</button>
 				</div>
+
 				<div
 					id="contents-col"
-					class="col-3 col-lg-2 d-none d-lg-block"
-					style="top: 200px;"
+					class="col-3 col-lg-2 d-none d-lg-block px-0"
 				>
-					<div id="grid-view-list" class="list-group overflow-auto">
-						<a
-							class="list-group-item list-item-dark list-group-item-action"
-							href="#overview"
-							>Overview</a
-						>
-						<a
-							class="list-group-item list-item-dark list-group-item-action fs-md-23"
-							href="#setCookie"
-							><code>setCookie()</code></a
-						>
-						<a
-							class="list-group-item list-item-dark list-group-item-action fs-md-23"
-							data-offset="100"
-							href="#getCookie"
-							><code>getCookie()</code></a
-						>
-						<a
-							class="list-group-item list-item-dark list-group-item-action fs-md-23"
-							href="#deleteCookie"
-							><code>deleteCookie()</code></a
-						>
+					<div class="border-right" id="list-container">
+						<div id="grid-view-list" class="list-group">
+							<div class="nav border-bottom-sm">
+								<a
+									class="list-group-item list-item-dark list-group-item-action"
+									id="overview-li-g"
+									href="#overview"
+									>Overview
+									<img
+										class="z-max"
+										id="overview-drop"
+										src="icons/dropdown-arrow.png"
+										width="15"
+								/></a>
+								<div class="nav w-100">
+									<a
+										class="list-group-item list-item-dark list-group-item-action fs-16 list-group-item-nested"
+										id="comp-li-g-n"
+										href="#litjs-components"
+										>LitJS components</a
+									>
+									<a
+										class="list-group-item list-item-dark list-group-item-action list-group-item-nested"
+										id="def-li-g-n"
+										href="#default-values"
+										>Default CSS</a
+									>
+								</div>
+							</div>
+
+							<a
+								class="list-group-item list-item-dark list-group-item-action"
+								id="set-li-g"
+								href="#width-classes"
+								>Width</a
+							>
+							<a
+								class="list-group-item list-group-item-action list-item-dark"
+								data-offset="100"
+								href="#getCookie"
+								><code>getCookie()</code></a
+							>
+							<a
+								class="list-group-item list-item-dark list-group-item-action fs-md-23"
+								href="#deleteCookie"
+								><code>deleteCookie()</code></a
+							>
+							<a
+								class="list-group-item list-item-dark list-group-item-action"
+								id="def-li-g-n"
+								href="#default-values"
+								>Default CSS</a
+							>
+							<a
+								class="list-group-item list-item-dark list-group-item-action fs-md-23"
+								id="set-li-g"
+								href="#setCookie"
+								><code>setCookie()</code></a
+							>
+							<a
+								class="list-group-item list-item-dark list-group-item-action fs-md-23"
+								data-offset="100"
+								href="#getCookie"
+								><code>getCookie()</code></a
+							>
+							<a
+								class="list-group-item list-item-dark list-group-item-action fs-md-23"
+								href="#deleteCookie"
+								><code>deleteCookie()</code></a
+							>
+							<a
+								class="list-group-item list-item-dark list-group-item-action"
+								id="def-li-g-n"
+								href="#default-values"
+								>Default CSS</a
+							>
+							<a
+								class="list-group-item list-item-dark list-group-item-action fs-md-23"
+								id="set-li-g"
+								href="#setCookie"
+								><code>setCookie()</code></a
+							>
+							<a
+								class="list-group-item list-item-dark list-group-item-action fs-md-23"
+								data-offset="100"
+								href="#getCookie"
+								><code>getCookie()</code></a
+							>
+							<a
+								class="list-group-item list-item-dark list-group-item-action fs-md-23"
+								href="#deleteCookie"
+								><code>deleteCookie()</code></a
+							>
+						</div>
 					</div>
 				</div>
+
 				<div id="main" class="col-12 col-lg-9">
 					<div class="container-fluid">
 						<div>
 							<div>
-                
-								<h1 id="overview" class="mt-3">
-									Overview<a href="#overview"
+								<section id="overview">
+									<h1 class="mt-3">
+										Overview<a href="#overview"
+											><img
+												class="link-icon"
+												src="icons/link.png"
+												width="30"
+										/></a>
+									</h1>
+									<p class="lead">
+										LitCSS is is usually utilized with
+										<a
+											class="doc-link"
+											href="https://getbootstrap.com"
+											>Bootstrap CSS</a
+										>
+										but it can also be used by itself
+									</p>
+
+									<p>
+										Include LitCSS and LitJS if you haven't
+										already
+									</p>
+
+									<div class="codebox codebox-dark my-3 mt-4">
+										<button
+											id="copy-lit-usage"
+											class="copy-btn btn btn-danger fs-10 p-1 float-right"
+											onclick="this.blur()"
+										>
+											Copy
+										</button>
+
+										<pre><code id='codebox-lit-usage'>&lt;!--LitCSS--&gt;
+&lt;link href="https://cdn.jsdelivr.net/npm/css-litcss/main/css/litcss.min.css" crossorigin="anonymous"/&gt;
+&lt;!--jQuery--&gt;
+&lt;script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" crossorigin="anonymous"&gt;&lt;/script&gt;
+&lt;!--LitJS--&gt;
+&lt;script src="https://cdn.jsdelivr.net/npm/css-litcss/main/js/litjs.min.js"&gt;&lt;/script&gt;</code></pre>
+									</div>
+
+									<h2 class="mt-5" id="litjs-components">
+										Components that require LitJS<a
+											href="#litjs-components"
+											><img
+												class="link-icon"
+												src="icons/link.png"
+												width="30"
+										/></a>
+									</h2>
+									<p class="lead">
+										If you are planning to or using these
+										components, you must include LitJS
+									</p>
+
+									<ul>
+										<li>
+											<a
+												class="doc-link text-decoration-none"
+												href="#doc-btt"
+												>Back to top button</a
+											>
+										</li>
+										<li>
+											<a
+												href="#doc-scroll-progress"
+												class="doc-link text-decoration-none"
+												>Scroll progress indicator</a
+											>
+										</li>
+										<li>
+											<a
+												href="#doc-hamburger-icons"
+												class="doc-link text-decoration-none"
+												>Hamburger icons</a
+											>
+										</li>
+									</ul>
+								</section>
+
+								<section class="mt-4" id="default-values">
+									<h2>
+										Default CSS<a href="#default-values"
+											><img
+												class="link-icon"
+												src="icons/link.png"
+												width="30"
+										/></a>
+									</h2>
+									<p class="lead">
+										LitCSS ships with some default CSS
+										applied to the
+										<code>&lt;html&gt;</code> and
+										<code>&lt;body&gt;</code> tags:
+									</p>
+
+									<ol>
+										<li>
+											<code>min-height</code> and
+											<code>min-width</code> are both set
+											to <code>100%</code> for the
+											<code>html</code> element
+										</li>
+										<li>
+											The <code>height</code> and
+											<code>width</code> of the
+											<code>body</code> tag are set to
+											<code>100%</code>
+										</li>
+									</ol>
+
+									<p>
+										Changing any of these values may result
+										in unexpected errors
+									</p>
+								</section>
+
+								<hr class="lit-hr" />
+
+								<section id="width-classes">
+									<h1 class="mt-5">
+										Width
+										<a href="#width-classes"
+											><img
+												class="link-icon"
+												src="icons/link.png"
+												width="30"
+										/></a>
+									</h1>
+								</section>
+
+								<p class="lead">
+									Quickly set width in pixels using our width
+									classes
+								</p>
+
+								<h3 class="mt-4" id="wd-syntax">
+									Syntax<a href="#wd-syntax"
 										><img
 											class="link-icon"
 											src="icons/link.png"
 											width="30"
 									/></a>
-                </h1>
-                <p class="lead">
-                 LitCSS is is usually used with <a class="doc-link" href="https://getbootstrap.com">Bootstrap CSS</a> but it can also be used by itself
-                </p>
-								<p>
-									Cookie JS consists of three main functions:
-								</p>
-
-								<ol>
-									<li>
-										<code>setCookie()</code> to create and
-										set the cookies settings
-									</li>
-									<li>
-										<code>getCookie()</code> to retrieve the
-										data of a cookie
-									</li>
-									<li>
-										<code>deleteCookie()</code> to delete a
-										cookie
-									</li>
-								</ol>
-
-								<p>
-									Place this at the end of your HTML document
-									if you haven't already:
-								</p>
-
-								<div class="codebox codebox-dark my-3 mt-4">
-									<button
-										id="copy-jquery"
-										class="copy-btn btn btn-danger fs-10 p-1 float-right"
-										onclick="this.blur()"
+								</h3>
+								<p class="fs-25 mb-4">
+									<code
+										>wd-<span class="param"
+											>{bs4-breakpoint}</span
+										>-<span class="param">{px}</span></code
 									>
-										Copy
-									</button>
+								</p>
 
-									<pre><code id='codebox-usage'>&lt;!--Cookie JS--&gt;
-&lt;script src="https://cdn.jsdelivr.net/npm/web-cookies-js/main/cookie.min.js" crossorigin="anonymous"&gt;&lt;/script&gt;</code>
-</pre>
-								</div>
-
-								<h2 class="mt-5 fs-45" id="setCookie">
-									<code class="text-primary">setCookie()</code
-									><a href="#setCookie"
+								<h3 id="wd-syntax-explained">
+									Syntax explained<a
+										href="#wd-syntax-explained"
 										><img
 											class="link-icon"
 											src="icons/link.png"
-											width="40"
+											width="30"
 									/></a>
-								</h2>
-								<p class="fs-25 fw-200">
-									Creates a cookie with the name, value, and
-									days until expiration set by the user
-								</p>
-
-								<h3 class="mt-4">Syntax</h3>
-								<p class="fs-25">
-									<code
-										>setCookie(<span class="param"
-											>cookieName</span
-										>,
-										<span class="param">cookieValue</span>,
-										<span class="param"
-											>daysUntilExpiration</span
-										>)</code
-									>
-								</p>
-
-								<h3>Parameters</h3>
+								</h3>
 								<ol>
-									<li>
+									<li class="mb-3">
 										<code class="param fs-20"
-											>cookieName</code
+											>{bs4-breakpoint}</code
 										>
-										(string) takes in the name of the cookie
+										(optional) any Bootstrap 4 breakpoint
+										for responsive width. See
+										<a
+											href="https://getbootstrap.com/docs/4.5/layout/overview/#responsive-breakpoints"
+											class="doc-link"
+											>Bootstrap responsive breakpoints</a
+										>
+										to learn about breakpoints.
 									</li>
 									<li>
-										<code class="param fs-20"
-											>cookieValue</code
-										>
-										(string) takes in the value assigned to
-										the cookie name
-									</li>
-									<li>
-										<code class="param fs-20"
-											>daysUntilExpiration</code
-										>
-										(number) takes in the number of days
-										until the cookie is automatically
-										deleted
+										<code class="param fs-20">{px}</code>
+										(required, number) desired width in
+										pixels of the selected element
 									</li>
 								</ol>
 
-								<h3>Example</h3>
+								<h2 id="wd-available-classes">
+									Available classes<a
+										href="#wd-available-classes"
+										><img
+											class="link-icon"
+											src="icons/link.png"
+											width="30"
+									/></a>
+								</h2>
+
+								<h3 class="mt-4" id='examples'>Examples</h3>
 
 								<div
 									class="codebox codebox-dark my-4 overflow-auto"

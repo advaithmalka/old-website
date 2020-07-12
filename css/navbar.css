@@ -100,6 +100,13 @@ button.lit-btn {
 	margin-left: 85%;
 }
 
+#navbar-hamburger{
+	width: 65px;
+	height: 40px;
+	padding-top: 5px;
+	outline: none !important;
+}
+
 @media screen and (max-width: 991px) {
 	.mega-arrow {
 		display: inline;

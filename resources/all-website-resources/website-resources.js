@@ -6,7 +6,7 @@ function insertAfter(referenceNode, newNode) {
 
 let webScript = document.querySelector(
 	'script[src="./resources/all-website-resources/website-resources.js"]'
-);
+) || document.querySelector('script[src="resources/all-website-resources/website-resources.js"]');
 
 let deferAttr = document.createAttribute("defer");
 let asyncAttr = document.createAttribute("async");
@@ -51,6 +51,10 @@ insertAfter(copyFunc, linkOffsetNode);
 let litjs = document.createElement('script')
 litjs.src = 'resources/css/libs/litcss/main/js/litjs.js';
 insertAfter(linkOffsetNode, litjs)
+
+let litScrollspy = document.createElement('script')
+litScrollspy.src = 'resources/js/scrollspy/lit-scrollspy.js'
+insertAfter(litjs, litScrollspy)
 
 window.onload = function () {
 	$("<footer>").attr("w3-include-html", "footer.html").appendTo("body");
@@ -147,4 +151,7 @@ window.onload = function () {
 	if ($("body").hasClass("dark-mode") && getCookie("dm") === "false") {
 		darkMode();
 	}
+	
+
+	
 };

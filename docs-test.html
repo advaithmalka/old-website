@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<script src="./resources/all-website-resources/website-resources-head.js"></script>
+		<title>LitCSS documentation</title>
+		<script src="js/include-html.js"></script>
+	</head>
+
+	<!--ALL CARDS MUST HAVE THE CLASS .card-dark AND HAVE THE ID "card"-->
+	<body
+		class="dark-mode st w-100"
+		data-spy="scroll"
+		data-target="#grid-view-list"
+		data-offset="250"
+	>
+		<!--NAVBAR-->
+		<div class="sticky-top my-0" w3-include-html="navbar.html"></div>
+
+		<div class="progress-bg bg-transparent">
+			<div
+				class="progress-bar lg-blue-lightblue-r"
+				id="scroll-indicator"
+			></div>
+		</div>
+
+		<div class="container" style="margin-left: 70px;">
+			<nav aria-label="breadcrumb">
+				<ol class="breadcrumb my-1 py-2">
+					<li class="breadcrumb-item">
+						<a class="breadcrumb-link" href="index.html">Home</a>
+					</li>
+					<li class="breadcrumb-item">
+						<a class="breadcrumb-link" href="projects.html"
+							>Projects</a
+						>
+					</li>
+					<li class="breadcrumb-item">
+						<a class="breadcrumb-link" href="libraries.html"
+							>Libraries</a
+						>
+					</li>
+					<li class="breadcrumb-item">
+						<a class="breadcrumb-link" href="litcss.html">LitCSS</a>
+					</li>
+					<li class="breadcrumb-item active">LitCSS Docs</li>
+				</ol>
+			</nav>
+		</div>
+		<!--CONTENT START-->
+		<a class="back-to-top-btn pt-2" title="Back to top"
+			><img src="icons/svg/chevron-up.svg"
+    /></a>
+    
+		<div class="d-flex">
+      <div
+			class="container-fluid bg-white darker-item light-black p-4"
+			style="overflow-x: hidden;"
+      >
+      
+      <div class="row">
+        <div class="col-1 col-lg-2" id="collapse-col">
+					<button
+						id="gv-collapse"
+						type="button"
+						data-target="#grid-view-list"
+						aria-expanded="false"
+						aria-label="Toggle sidebar"
+						class="navbar-toggler d-lg-none outline-none mb-2"
+					>
+						<a class="hamburger-icon hamburger-spin m-0">
+							<span class="bar bg-white"></span>
+							<span class="bar bg-white"></span>
+							<span class="bar bg-white"></span>
+						</a>
+					</button>
+        </div>
+
+        <div 
+          id="contents-col"
+          class="col-3 col-lg-2 d-none d-lg-block"
+          style="top: 200px;"
+        >
+        	<!-- Sidebar -->
+			<div class="bg-light border-right" id="sidebar-wrapper">
+				<div class="list-group list-group-flush">
+					<a
+						class="list-group-item list-item-dark list-group-item-action"
+						id="overview-li-g"
+						href="#overview"
+						>Overview</a
+					>
+					<a
+						class="list-group-item list-item-dark list-group-item-action"
+						id="comp-li-g-n"
+						href="#litjs-components"
+						>Comp</a
+					>
+					<a
+						class="list-group-item list-item-dark list-group-item-action"
+						id="def-li-g-n"
+						href="#default-values"
+						>Default CSS</a
+					>
+					<a
+						class="list-group-item list-item-dark list-group-item-action fs-md-23"
+						href="#setCookie"
+						><code>setCookie()</code></a
+					>
+					<a
+						class="list-group-item list-item-dark list-group-item-action fs-md-23"
+						data-offset="100"
+						href="#getCookie"
+						><code>getCookie()</code></a
+					>
+					<a
+						class="list-group-item list-item-dark list-group-item-action fs-md-23 bg-light"
+						href="#deleteCookie"
+						><code>deleteCookie()</code></a
+					>
+					<a
+						href="#"
+						class="list-group-item list-group-item-action bg-light"
+						>Dashboard</a
+					>
+					<a
+						href="#"
+						class="list-group-item list-group-item-action bg-light"
+						>Shortcuts</a
+					>
+				</div>
+			</div>
+
+        </div>
+        
+
+
+
+      </div>
+    
+    
+    </div>
+
+    <div id='main' class="col-12 col-lg-9">
+      <div class="container-fluid">
+        <h1 class="mt-4">Simple Sidebar</h1>
+        <p>
+          The starting state of the menu will appear collapsed on
+          smaller screens, and will appear non-collapsed on larger
+          screens. When toggled using the button below, the menu
+          will change.
+        </p>
+        <p>
+          Make sure to keep all page content within the
+          <code>#page-content-wrapper</code>. The top navbar is
+          optional, and just for demonstration. Just create an
+          element with the <code>#menu-toggle</code> ID which will
+          toggle the menu when clicked.
+        </p>
+      </div>
+    </div>
+    </div>
+		
+
+			
+
+    
+		<!--CONTENT END-->
+		<!--ALL SCRIPTS NEEDED TO RUN THE WEBSITE-->
+		<script src="./resources/all-website-resources/website-resources.js"></script>
+		<script src="js/litcss-docs.js"></script>
+	</body>
+</html>

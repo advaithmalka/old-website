@@ -23,9 +23,11 @@ function darkMode() {
 	let darkerItem = document.querySelectorAll(".darker-item");
 	let svg = document.querySelectorAll(".svg");
 	let pagination = document.querySelectorAll(".dm-active");
-	let listItem = document.querySelectorAll('.list-group-item')
+	let listItem = document.querySelectorAll(".list-group-item");
 	let darkText = document.querySelectorAll(".dark-link");
-	let hamburgerIcon = document.querySelectorAll('.hamburger-icon .bar')
+	let hamburgerIcon = document.querySelectorAll(".hamburger-icon:not(.dm-ignore) .bar");
+	let codebox = document.querySelectorAll(".codebox");
+	let hr = document.getElementsByTagName("hr");
 	//body
 	body.classList.toggle("dark-mode");
 
@@ -54,12 +56,20 @@ function darkMode() {
 		darkText[i].classList.toggle("text-black");
 	}
 	//list item
-	for(let i = 0; i < listItem.length; i++) {
-		listItem[i].classList.toggle('list-item-dark')
+	for (let i = 0; i < listItem.length; i++) {
+		listItem[i].classList.toggle("list-item-dark");
 	}
 	//hamburger icon
-	for(let i =0; i < hamburgerIcon.length; i++){
-		hamburgerIcon[i].classList.toggle('bg-white')
+	for (let i = 0; i < hamburgerIcon.length; i++) {
+		hamburgerIcon[i].classList.toggle("bg-white");
+	}
+	//codebox
+	for (let i = 0; i < codebox.length; i++) {
+		codebox[i].classList.toggle("codebox-light");
+	}
+	//hr tags
+	for (let i = 0; i < hr.length; i++) {
+		hr[i].classList.toggle("bg-black");
 	}
 
 	/*let dItem = document.body

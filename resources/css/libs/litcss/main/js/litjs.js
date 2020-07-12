@@ -8,7 +8,7 @@ $(window).scroll(function () {
 		$bttBtn.removeClass("show");
 	}
 });
-//set the 
+
 $bttBtn.on("click", (e) => {
 	e.preventDefault();
 	$("html, body").animate({ scrollTop: 0 }, 0); //set animation length to 300 if smooth scrolling is disabled
@@ -16,7 +16,7 @@ $bttBtn.on("click", (e) => {
 /*!SECTION */
 
 /*SECTION SCROLL PROGRESS INDICATOR*/
-if (document.getElementById("si-bar")) {
+if (document.getElementById("scroll-indicator")) {
 	window.addEventListener("scroll", scrollIndicator);
 	function scrollIndicator() {
 		let winScroll =
@@ -25,7 +25,7 @@ if (document.getElementById("si-bar")) {
 			document.documentElement.scrollHeight -
 			document.documentElement.clientHeight;
 		let scrolled = (winScroll / docHeight) * 100;
-		document.getElementById("si-bar").style.width = `${scrolled}%`;
+		$("#scroll-indicator").css('width', `${scrolled}%`)
 	}
 }
 /*!SECTION */

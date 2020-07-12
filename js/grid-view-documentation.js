@@ -1,6 +1,16 @@
 window.addEventListener("load", function () {
 	faviconGenerate("icons/grid-view-png");
 
+	$(window).scrollTop(1)
+	$(window).scrollTop(0) 
+
+	$("#gv-hamburger").on("click", function () {
+		$(this).toggleClass("clicked");
+		setTimeout(e =>{
+			$("#inner-nav-hamburger").removeClass('clicked')
+		})
+	});
+
 	$("#contents-col").followTo(document.body.scrollHeight - 500, 200);
 
 	$("#copy-jquery").on("click", function () {

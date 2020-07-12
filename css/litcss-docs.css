@@ -1,0 +1,19 @@
+::-webkit-scrollbar-corner{
+  background-color: transparent;
+}
+
+#contents-col{
+	overflow: hidden;
+  height: 84%;
+  border-radius: 10px;
+  box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.1);
+}
+#contents-col:hover{
+  overflow: scroll;
+}
+
+@media (max-width: 992px){
+  #contents-col{
+    height: 73%;
+  }
+}

@@ -1,0 +1,40 @@
+@mixin transform($property) {
+	-webkit-transform: $property;
+	-ms-transform: $property;
+	-moz-transform: $property;
+	transform: $property;
+}
+
+@mixin width($sizeType, $size) {
+	.wd-#{$sizeType}-#{$size} {
+		width: $size + px !important;
+	}
+}
+
+@mixin height($sizeTypeH, $sizeH) {
+	.ht-#{$sizeTypeH}-#{$sizeH} {
+		height: $sizeH + px !important;
+	}
+}
+
+@mixin fontSize($sizeTypeF, $sizeF) {
+	.fs-#{$sizeTypeF}-#{$sizeF} {
+		font-size: $sizeF + px !important;
+	}
+}
+
+@mixin position($posType, $sizeP) {
+	.#{$posType}-#{$sizeP}{
+		#{$posType}: $sizeP + px !important;
+	}
+}
+
+@mixin overflow($overflow-direction, $overflow-type){
+	.overflow#{$overflow-direction}-#{$overflow-type}{
+		overflow#{$overflow-direction}: $overflow-type !important;
+	}
+}
+
+@mixin border($b-direction, $b-size){
+	.border#{$b-direction}
+}

@@ -260,6 +260,10 @@ footer.bc-dark-grey .container.p-4 .border-top.pt-4.mb-md-5.pt-md-5 .row h5 {
   margin: 0 !important;
 }
 
+.li-fs {
+  font-size: 15px;
+}
+
 .param {
   color: #ff7300;
 }

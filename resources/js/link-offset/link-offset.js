@@ -18,4 +18,16 @@ window.addEventListener('load', function(){
 })
 
 
+linkOffset = function(thisNode, e){
+	e.preventDefault();
+		var offset = 100; //Default offset
+		if ($(thisNode).data("offset") != undefined) offset = $(thisNode).data("offset");
+		$("html, body").animate(
+			{
+				scrollTop: $(thisNode).offset().top - offset,
+				},
+				0
+		);
+}
+
  

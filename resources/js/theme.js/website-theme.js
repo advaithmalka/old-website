@@ -28,49 +28,45 @@ function darkMode() {
 	let hamburgerIcon = document.querySelectorAll(".hamburger-icon:not(.dm-ignore) .bar");
 	let codebox = document.querySelectorAll(".codebox");
 	let hr = document.getElementsByTagName("hr");
+	let table = document.querySelectorAll('table.dm-active')
+	let text = document.querySelectorAll('.text-dm-active')
+
 	//body
 	body.classList.toggle("dark-mode");
 
+	let iterator = (target, className, optionalLine) =>{
+		for(let i = 0; i < target.length; i++) {
+			target[i].classList.toggle(className);
+			optionalLine
+		}
+	}
+
 	//body.classList.toggle(currTheme);
 	//cards
-	for (let i = 0; i < card.length; i++) {
-		card[i].classList.toggle("card-dark");
-	}
+	iterator(card,'card-dark')
 	//any items to trigger dark mode
-	for (let i = 0; i < darkItem.length; i++) {
-		darkItem[i].classList.toggle("card-dark");
-	}
+	iterator(darkItem,'card-dark')
 	//any items to trigger darker mode
-	for (let i = 0; i < darkerItem.length; i++) {
-		darkerItem[i].classList.toggle("light-black");
-	}
+	iterator(darkerItem,'light-black')
 	//dark pagination
-	for (let i = 0; i < pagination.length; i++) {
-		pagination[i].classList.toggle("pg-dark");
-	}
+	iterator(pagination,'pg-dark')
 	//change color of svg's
-	for (let i = 0; i < svg.length; i++) {
-		svg[i].classList.toggle("svg-fill-black");
-	}
-	for (let i = 0; i < darkText.length; i++) {
-		darkText[i].classList.toggle("text-black");
-	}
+	iterator(svg,'svg-fill-black')
+	iterator(darkText,'text-black')
 	//list item
-	for (let i = 0; i < listItem.length; i++) {
-		listItem[i].classList.toggle("list-item-dark");
-	}
+	iterator(listItem,'list-item-dark')
 	//hamburger icon
-	for (let i = 0; i < hamburgerIcon.length; i++) {
-		hamburgerIcon[i].classList.toggle("bg-white");
-	}
+	iterator(hamburgerIcon,'bg-white')
 	//codebox
-	for (let i = 0; i < codebox.length; i++) {
-		codebox[i].classList.toggle("codebox-light");
-	}
+	iterator(codebox,'codebox-light')
 	//hr tags
-	for (let i = 0; i < hr.length; i++) {
-		hr[i].classList.toggle("bg-black");
-	}
+	iterator(hr,'bg-black')
+	//tables
+	iterator(table,'table-dark')
+	//text
+	iterator(text,'text-black', iterator(text,'text-primary'))
+	
+	
 
 	/*let dItem = document.body
 		.getElementsByTagName("*")

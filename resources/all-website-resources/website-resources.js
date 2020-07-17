@@ -15,14 +15,11 @@ let jquery = document.createElement("script");
 jquery.src = "resources/js/jquery-3.5/jquery-3.5.1.min.js";
 insertAfter(webScript, jquery);
 
-let popper = document.createElement("script");
-popper.src = "resources/js/popper-2.4/popper-2.4.js";
-insertAfter(jquery, popper);
 
 let bjs = document.createElement("script");
 bjs.setAttributeNode(asyncAttr);
-bjs.src = "resources/js/bootstrap-4.5/bootstrap.js";
-insertAfter(popper, bjs);
+bjs.src = "resources/js/bootstrap-4.5/bootstrap.bundle.js";
+insertAfter(jquery, bjs);
 
 let wt = document.createElement("script");
 wt.src = "resources/js/theme.js/website-theme.js";

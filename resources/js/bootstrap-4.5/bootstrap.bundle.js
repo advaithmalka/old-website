@@ -240,6 +240,8 @@
     },
     jQueryDetection: function jQueryDetection() {
       if (typeof $ === 'undefined') {
+        //ANCHOR location.reload() ADDED IN BY ME
+				location.reload();
         throw new TypeError('Bootstrap\'s JavaScript requires jQuery. jQuery must be included before Bootstrap\'s JavaScript.');
       }
 

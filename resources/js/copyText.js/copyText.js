@@ -1,11 +1,10 @@
 
 function copyText(target, copybtn) {
-	// Selects the text content of the target
+	// select target
 	var targetNode = document.querySelector(target);
 	var range = document.createRange();
 	range.selectNode(targetNode);
 	window.getSelection().addRange(range);
-	console.log(target)
 	try {
 		var result = document.execCommand("copy");
 		var msg = result ? "successful" : "unsuccessful";

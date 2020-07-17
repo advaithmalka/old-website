@@ -7,17 +7,46 @@ window.addEventListener("load", function () {
 	//list group items
 	let overview = $("#overview-li-g");
 	let litWidth = $("#width-li-g");
+	let litfs = $("#fs-li-g");
+	let litfw = $("#fw-li-g");
+	copyShortener = (trigger) => {
+		return $(trigger).on("click", function () {
+			copyText(`#codebox${trigger.substr(trigger.indexOf("-"))}`, this);
+		});
+	};
 
-	let generatedLG = (name, href) => {
-		var id = `${href.substr(1)}-lgn`;
-		return `
+	//SECTION copy codebox
+	$('[id^="copy"]').each(function(){
+		copyShortener(`#${$(this).attr('id')}`)
+	})
+	//!SECTION
+	let determineDarkMode = (e) => {
+		if ($("body").hasClass("dark-mode")) return "list-item-dark";
+		else return;
+	};
+
+	let generatedLG = (name, href, OpClass) => {
+		if (OpClass === "active") {
+			var id = `${href.substr(1)}-lgn`;
+			return `
+			<a
+		class="list-group-item ${determineDarkMode()} list-group-item-action li-fs p-2 pg-contents-generated ${OpClass}"
+		style='border-bottom: solid black 3px'
+		href="${href}"
+		id='${id}'
+		>${name}</a
+	>`;
+		} else {
+			var id = `${href.substr(1)}-lgn`;
+			return `
 		<a
-		class="list-group-item ${determineDarkMode()} list-group-item-action li-fs p-2 pg-contents-generated"
+		class="list-group-item ${determineDarkMode()} list-group-item-action li-fs p-2 pg-contents-generated ${OpClass}"
 		href="${href}"
 		id='${id}'
 		>${name}</a
 	>
 `;
+		}
 	};
 
 	var generateContent = (e) => {
@@ -25,7 +54,8 @@ window.addEventListener("load", function () {
 			$(".lit-overview-lg").empty();
 			if ($(".lit-overview-lg").children().length === 0) {
 				$(".lit-overview-lg").append(
-					generatedLG("LitJS components", "#litjs-components") +
+					generatedLG("Overview", "#overview", "active") +
+						generatedLG("LitJS components", "#litjs-components") +
 						generatedLG("Default CSS", "#default-values")
 				);
 			}
@@ -33,7 +63,12 @@ window.addEventListener("load", function () {
 			$(".lit-overview-lg").empty();
 			if ($(".lit-overview-lg").children().length === 0) {
 				$(".lit-overview-lg").append(
-					generatedLG("Syntax", "#wd-syntax") +
+					generatedLG(
+						"Width and Height",
+						"#width-classes",
+						"active"
+					) +
+						generatedLG("Syntax", "#wd-syntax") +
 						generatedLG(
 							"Syntax explained",
 							"#wd-syntax-explained"
@@ -41,19 +76,60 @@ window.addEventListener("load", function () {
 						generatedLG(
 							"Available classes",
 							"#wd-available-classes"
-						) + 
+						) +
+						generatedLG("Width Examples", "#wd-examples") +
+						generatedLG("Height Examples", "#ht-examples")
+				);
+			}
+		} else if (litfs.hasClass("active")) {
+			$(".lit-overview-lg").empty();
+			if ($(".lit-overview-lg").children().length === 0) {
+				$(".lit-overview-lg").append(
+					generatedLG("Font size", "#fs-classes", "active") +
+						generatedLG("Syntax", "#fs-syntax") +
 						generatedLG(
-							"Examples",
-							"#wd-examples"
-						)
+							"Syntax explained",
+							"#fs-syntax-explained"
+						) +
+						generatedLG(
+							"Available classes",
+							"#fs-available-classes"
+						) +
+						generatedLG("Examples", "#fs-examples")
+				);
+			}
+		}else if (litfw.hasClass("active")) {
+			$(".lit-overview-lg").empty();
+			if ($(".lit-overview-lg").children().length === 0) {
+				$(".lit-overview-lg").append(
+					generatedLG("Font weight", "#fw-classes", "active") +
+						generatedLG("Syntax", "#fw-syntax") +
+						generatedLG(
+							"Syntax explained",
+							"#fw-syntax-explained"
+						) +
+						generatedLG(
+							"Available classes",
+							"#fw-available-classes"
+						) +
+						generatedLG("Examples", "#fw-examples")
 				);
 			}
 		}
 
-		$(
-			"#litjs-components-lgn, #default-values-lgn,#wd-syntax-explained-lgn,#wd-syntax-lgn, #wd-examples-lgn, #wd-available-classes-lgn"
+		/*$(
+			"#litjs-components-lgn, #default-values-lgn,#wd-syntax-explained-lgn,#wd-syntax-lgn, #wd-examples-lgn, #wd-available-classes-lgn,#ht-examples-lgn,#fw-syntax-explained-lgn,#fw-syntax-lgn, #fw-examples-lgn, #fw-available-classes-lgn"
 		).on("click", function () {
 			linkOffset($(this).attr("href"), event);
+		});*/
+		$(".pg-contents-generated").each(function () {
+			if ($(this).attr("href") === "javascript: void(0)") {
+				return;
+			} else {
+				$(this).on("click", function () {
+					linkOffset($(this).attr("href"), event);
+				});
+			}
 		});
 	};
 
@@ -81,20 +157,6 @@ window.addEventListener("load", function () {
 	$("hr.lit-hr").addClass("bg-danger");
 	$("hr.lit-hr").addClass("mt-5");
 
-	$("#copy-lit-usage").on("click", function () {
-		copyText("#codebox-lit-usage", this);
-	});
-
-	$("#copy-cjs-setCookie").on("click", function () {
-		copyText("#codebox-setCookie", this);
-	});
-
-	$("#copy-cjs-getCookie").on("click", function () {
-		copyText("#codebox-getCookie", this);
-	});
-	$("#copy-cjs-deleteCookie").on("click", function () {
-		copyText("#codebox-deleteCookie", this);
-	});
 	let x = true;
 	$("#gv-collapse").on("click", () => {
 		if (x) {
@@ -162,23 +224,20 @@ window.addEventListener("load", function () {
 	}
 	customMedia();
 
-	let determineDarkMode = (e) => {
-		if ($("body").hasClass("dark-mode")) return "list-item-dark";
-		else return;
-	};
 	$("#dark-mode").on("click"),
 		(e) => {
 			determineDarkMode();
 		};
-	determineDarkMode();
+
 	$(window).scroll(function () {
 		ccFunc();
 		determineDarkMode();
 		generateContent();
 	});
 
-	generateContent();
 	ccFunc();
+	determineDarkMode();
+	generateContent();
 
 	$("h1, h2, h3, h4").each(function () {
 		if (
@@ -200,4 +259,7 @@ window.addEventListener("load", function () {
 			});
 		}
 	});
+
+	$(window).scrollTop(1);
+	$(window).scrollTop(0);
 });

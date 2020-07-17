@@ -5,7 +5,10 @@
 		<title>LitCSS documentation</title>
 		<link rel="stylesheet" type="text/css" href="css/litcss-docs.css" />
 		<script src="js/include-html.js"></script>
-		<link rel="stylesheet" href="resources/js/highlight-js/styles/custom.css" />
+		<link
+			rel="stylesheet"
+			href="resources/js/highlight-js/styles/custom.css"
+		/>
 		<script src="resources/js/highlight-js/highlight.pack.js"></script>
 		<script>
 			hljs.initHighlightingOnLoad();
@@ -102,64 +105,73 @@
 								class="list-group-item list-item-dark list-group-item-action"
 								id="width-li-g"
 								href="#width-classes"
-								>Width</a
-							>
-							<a
-								class="list-group-item list-group-item-action list-item-dark"
-								data-offset="100"
-								href="#getCookie"
-								><code>getCookie()</code></a
-							>
-							<a
-								class="list-group-item list-item-dark list-group-item-action fs-md-23"
-								href="#deleteCookie"
-								><code>deleteCookie()</code></a
+								>Width and Height</a
 							>
 							<a
 								class="list-group-item list-item-dark list-group-item-action"
-								id="def-li-g-n"
-								href="#placehoder"
-								>Placeholder</a
-							>
-							<a
-								class="list-group-item list-item-dark list-group-item-action fs-md-23"
-								id="set-li-g"
-								href="#setCookie"
-								><code>setCookie()</code></a
-							>
-							<a
-								class="list-group-item list-item-dark list-group-item-action fs-md-23"
-								data-offset="100"
-								href="#getCookie"
-								><code>getCookie()</code></a
-							>
-							<a
-								class="list-group-item list-item-dark list-group-item-action fs-md-23"
-								href="#deleteCookie"
-								><code>deleteCookie()</code></a
+								id="fs-li-g"
+								href="#fs-classes"
+								>Font size</a
 							>
 							<a
 								class="list-group-item list-item-dark list-group-item-action"
-								id="def-li-g-n"
-								href="#placehoder"
+								id="fw-li-g"
+								href="#fw-classes"
+								>Font weight</a
+							>
+							<a
+								class="list-group-item list-item-dark list-group-item-action"
+								id="na-li-g"
+								href="#na-classes"
 								>Placeholder</a
 							>
 							<a
-								class="list-group-item list-item-dark list-group-item-action fs-md-23"
-								id="set-li-g"
-								href="#setCookie"
-								><code>setCookie()</code></a
+								class="list-group-item list-item-dark list-group-item-action"
+								id="na-li-g"
+								href="#na-classes"
+								>Placeholder</a
 							>
 							<a
-								class="list-group-item list-item-dark list-group-item-action fs-md-23"
-								data-offset="100"
-								href="#getCookie"
-								><code>getCookie()</code></a
+								class="list-group-item list-item-dark list-group-item-action"
+								id="na-li-g"
+								href="#na-classes"
+								>Placeholder</a
 							>
 							<a
-								class="list-group-item list-item-dark list-group-item-action fs-md-23"
-								href="#deleteCookie"
-								><code>deleteCookie()</code></a
+								class="list-group-item list-item-dark list-group-item-action"
+								id="na-li-g"
+								href="#na-classes"
+								>Placeholder</a
+							>
+							<a
+								class="list-group-item list-item-dark list-group-item-action"
+								id="na-li-g"
+								href="#na-classes"
+								>Placeholder</a
+							>
+							<a
+								class="list-group-item list-item-dark list-group-item-action"
+								id="na-li-g"
+								href="#na-classes"
+								>Placeholder</a
+							>
+							<a
+								class="list-group-item list-item-dark list-group-item-action"
+								id="na-li-g"
+								href="#na-classes"
+								>Placeholder</a
+							>
+							<a
+								class="list-group-item list-item-dark list-group-item-action"
+								id="na-li-g"
+								href="#na-classes"
+								>Placeholder</a
+							>
+							<a
+								class="list-group-item list-item-dark list-group-item-action"
+								id="na-li-g"
+								href="#na-classes"
+								>Placeholder</a
 							>
 						</div>
 					</div>
@@ -277,12 +289,12 @@
 
 								<section>
 									<h1 class="mt-5" id="width-classes">
-										Width
+										Height and Width classes
 									</h1>
 
 									<p class="lead">
-										Quickly set width in pixels using our
-										width classes
+										Quickly set the height or width of an
+										element in pixels using our lit classes
 									</p>
 
 									<h3 class="mt-4" id="wd-syntax">
@@ -290,7 +302,9 @@
 									</h3>
 									<p class="fs-25 mb-4">
 										<code
-											>wd-<span class="param"
+											><span class="param"
+												>{desired-dimension}</span
+											>-<span class="param"
 												>{bs4-breakpoint}</span
 											>-<span class="param"
 												>{px}</span
@@ -302,6 +316,15 @@
 										Syntax explained
 									</h3>
 									<ol>
+										<li class="mb-3">
+											<code class="param fs-20"
+												>{desired-dimension}</code
+											>
+											(required, <code>ht or wd</code>)
+											desired dimension you want to
+											change. <code>ht</code> for height
+											and <code>wd</code> for width
+										</li>
 										<li class="mb-3">
 											<code class="param fs-20"
 												>{bs4-breakpoint}</code
@@ -329,14 +352,16 @@
 										Available classes
 									</h2>
 									<p class="lead mb-4">
-										Here is a table showing all of width
-										classes included in LitCSS
+										Here is a table showing all of the
+										values included in LitCSS
 									</p>
 
 									<div class="note note-primary mb-4">
-										<span class="fw-600">Note:</span> You
-										can still use breakpoints for all of
-										these classes
+										<span class="fw-500"
+											>Note: <strong>D</strong></span
+										>
+										stands for dimension and
+										<strong>B</strong> stands for breakpoint
 									</div>
 
 									<div class="row">
@@ -353,108 +378,206 @@
 												<tbody>
 													<tr>
 														<td scope="col">
-															<code>.wd-10</code>
+															<code
+																><span
+																	class="param"
+																	>{D}</span
+																>-<span
+																	class="param"
+																	>{B}</span
+																>-<span
+																	class="param"
+																></span
+																>10</code
+															>
 														</td>
 														<td>
 															<code
 																class="text-primary text-dm-active"
-																>width:
-																10px</code
+																>10px</code
 															>
 														</td>
 													</tr>
 													<tr>
 														<td scope="col">
-															<code>.wd-15</code>
+															<code
+																><span
+																	class="param"
+																	>{D}</span
+																>-<span
+																	class="param"
+																	>{B}</span
+																>-<span
+																	class="param"
+																></span
+																>15</code
+															>
 														</td>
 														<td>
 															<code
 																class="text-primary text-dm-active"
-																>width:
+															>
 																15px</code
 															>
 														</td>
 													</tr>
 													<tr>
 														<td scope="col">
-															<code>.wd-25</code>
+															<code
+																><span
+																	class="param"
+																	>{D}</span
+																>-<span
+																	class="param"
+																	>{B}</span
+																>-<span
+																	class="param"
+																></span
+																>25</code
+															>
 														</td>
 														<td>
 															<code
 																class="text-primary text-dm-active"
-																>width:
+															>
 																25px</code
 															>
 														</td>
 													</tr>
 													<tr>
 														<td scope="col">
-															<code>.wd-35</code>
+															<code
+																><span
+																	class="param"
+																	>{D}</span
+																>-<span
+																	class="param"
+																	>{B}</span
+																>-<span
+																	class="param"
+																></span
+																>35</code
+															>
 														</td>
 														<td>
 															<code
 																class="text-primary text-dm-active"
-																>width:
+															>
 																35px</code
 															>
 														</td>
 													</tr>
 													<tr>
 														<td scope="col">
-															<code>.wd-50</code>
+															<code
+																><span
+																	class="param"
+																	>{D}</span
+																>-<span
+																	class="param"
+																	>{B}</span
+																>-<span
+																	class="param"
+																></span
+																>50</code
+															>
 														</td>
 														<td>
 															<code
 																class="text-primary text-dm-active"
-																>width:
+															>
 																50px</code
 															>
 														</td>
 													</tr>
 													<tr>
 														<td scope="col">
-															<code>.wd-60</code>
+															<code
+																><span
+																	class="param"
+																	>{D}</span
+																>-<span
+																	class="param"
+																	>{B}</span
+																>-<span
+																	class="param"
+																></span
+																>60</code
+															>
 														</td>
 														<td>
 															<code
 																class="text-primary text-dm-active"
-																>width:
+															>
 																60px</code
 															>
 														</td>
 													</tr>
 													<tr>
 														<td scope="col">
-															<code>.wd-75</code>
+															<code
+																><span
+																	class="param"
+																	>{D}</span
+																>-<span
+																	class="param"
+																	>{B}</span
+																>-<span
+																	class="param"
+																></span
+																>75</code
+															>
 														</td>
 														<td>
 															<code
 																class="text-primary text-dm-active"
-																>width:
+															>
 																75px</code
 															>
 														</td>
 													</tr>
 													<tr>
 														<td scope="col">
-															<code>.wd-85</code>
+															<code
+																><span
+																	class="param"
+																	>{D}</span
+																>-<span
+																	class="param"
+																	>{B}</span
+																>-<span
+																	class="param"
+																></span
+																>85</code
+															>
 														</td>
 														<td>
 															<code
 																class="text-primary text-dm-active"
-																>width:
+															>
 																85px</code
 															>
 														</td>
 													</tr>
 													<tr>
 														<td scope="col">
-															<code>.wd-100</code>
+															<code
+																><span
+																	class="param"
+																	>{D}</span
+																>-<span
+																	class="param"
+																	>{B}</span
+																>-<span
+																	class="param"
+																></span
+																>100</code
+															>
 														</td>
 														<td>
 															<code
 																class="text-primary text-dm-active"
-																>width:
+															>
 																100px</code
 															>
 														</td>
@@ -475,108 +598,207 @@
 												<tbody>
 													<tr>
 														<td scope="col">
-															<code>.wd-125</code>
+															<code
+																><span
+																	class="param"
+																	>{D}</span
+																>-<span
+																	class="param"
+																	>{B}</span
+																>-<span
+																	class="param"
+																></span
+																>125</code
+															>
 														</td>
 														<td>
 															<code
 																class="text-primary text-dm-active"
-																>width:
+															>
 																125px</code
 															>
 														</td>
 													</tr>
 													<tr>
 														<td scope="col">
-															<code>.wd-150</code>
+															<code
+																><span
+																	class="param"
+																	>{D}</span
+																>-<span
+																	class="param"
+																	>{B}</span
+																>-<span
+																	class="param"
+																></span
+																>150</code
+															>
 														</td>
 														<td>
 															<code
 																class="text-primary text-dm-active"
-																>width:
+															>
 																150px</code
 															>
 														</td>
 													</tr>
 													<tr>
 														<td scope="col">
-															<code>.wd-175</code>
+															<code
+																><span
+																	class="param"
+																	>{D}</span
+																>-<span
+																	class="param"
+																	>{B}</span
+																>-<span
+																	class="param"
+																></span
+																>175</code
+															>
 														</td>
 														<td>
 															<code
 																class="text-primary text-dm-active"
-																>width:
+															>
 																175px</code
 															>
 														</td>
 													</tr>
 													<tr>
 														<td scope="col">
-															<code>.wd-200</code>
+															<code
+																><span
+																	class="param"
+																	>{D}</span
+																>-<span
+																	class="param"
+																	>{B}</span
+																>-<span
+																	class="param"
+																></span
+																>200</code
+															>
 														</td>
 														<td>
 															<code
 																class="text-primary text-dm-active"
-																>width:
+															>
 																200px</code
 															>
 														</td>
 													</tr>
 													<tr>
 														<td scope="col">
-															<code>.wd-250</code>
+															<code
+																><span
+																	class="param"
+																	>{D}</span
+																>-<span
+																	class="param"
+																	>{B}</span
+																>-<span
+																	class="param"
+																></span
+																>250</code
+															>
 														</td>
 														<td>
 															<code
 																class="text-primary text-dm-active"
-																>width:
+															>
 																250px</code
 															>
 														</td>
 													</tr>
 													<tr>
 														<td scope="col">
-															<code>.wd-300</code>
+															<code
+																><span
+																	class="param"
+																	>{D}</span
+																>-<span
+																	class="param"
+																	>{B}</span
+																>-<span
+																	class="param"
+																></span
+																>300</code
+															>
 														</td>
 														<td>
 															<code
 																class="text-primary text-dm-active"
-																>width:
+															>
 																300px</code
 															>
 														</td>
 													</tr>
 													<tr>
 														<td scope="col">
-															<code>.wd-400</code>
+															<code
+																><span
+																	class="param"
+																	>{D}</span
+																>-<span
+																	class="param"
+																	>{B}</span
+																>-<span
+																	class="param"
+																></span
+																>400</code
+															>
 														</td>
 														<td>
 															<code
 																class="text-primary text-dm-active"
-																>width:
+															>
 																400px</code
 															>
 														</td>
 													</tr>
 													<tr>
 														<td scope="col">
-															<code>.wd-500</code>
+															<code
+																><span
+																	class="param"
+																	>{D}</span
+																>-<span
+																	class="param"
+																	>{B}</span
+																>-<span
+																	class="param"
+																></span
+																>500</code
+															>
 														</td>
 														<td>
 															<code
 																class="text-primary text-dm-active"
-																>width:
+															>
 																500px</code
 															>
 														</td>
 													</tr>
 													<tr>
 														<td scope="col">
-															<code>.wd-600</code>
+															<code
+																><span
+																	class="param"
+																	>{D}</span
+																>-<span
+																	class="param"
+																	>{B}</span
+																>-<span
+																	class="param"
+																></span
+																>600</code
+															>
 														</td>
 														<td>
 															<code
 																class="text-primary text-dm-active"
-																>width:
+															>
 																600px</code
 															>
 														</td>
@@ -597,48 +819,92 @@
 												<tbody>
 													<tr>
 														<td scope="col">
-															<code>.wd-700</code>
+															<code
+																><span
+																	class="param"
+																	>{D}</span
+																>-<span
+																	class="param"
+																	>{B}</span
+																>-<span
+																	class="param"
+																></span
+																>700</code
+															>
 														</td>
 														<td>
 															<code
 																class="text-primary text-dm-active"
-																>width:
+															>
 																700px</code
 															>
 														</td>
 													</tr>
 													<tr>
 														<td scope="col">
-															<code>.wd-750</code>
+															<code
+																><span
+																	class="param"
+																	>{D}</span
+																>-<span
+																	class="param"
+																	>{B}</span
+																>-<span
+																	class="param"
+																></span
+																>750</code
+															>
 														</td>
 														<td>
 															<code
 																class="text-primary text-dm-active"
-																>width:
+															>
 																750px</code
 															>
 														</td>
 													</tr>
 													<tr>
 														<td scope="col">
-															<code>.wd-800</code>
+															<code
+																><span
+																	class="param"
+																	>{D}</span
+																>-<span
+																	class="param"
+																	>{B}</span
+																>-<span
+																	class="param"
+																></span
+																>800</code
+															>
 														</td>
 														<td>
 															<code
 																class="text-primary text-dm-active"
-																>width:
+															>
 																800px</code
 															>
 														</td>
 													</tr>
 													<tr>
 														<td scope="col">
-															<code>.wd-900</code>
+															<code
+																><span
+																	class="param"
+																	>{D}</span
+																>-<span
+																	class="param"
+																	>{B}</span
+																>-<span
+																	class="param"
+																></span
+																>900</code
+															>
 														</td>
 														<td>
 															<code
 																class="text-primary text-dm-active"
-																>width:
+															>
 																900px</code
 															>
 														</td>
@@ -646,37 +912,68 @@
 													<tr>
 														<td scope="col">
 															<code
-																>.wd-1000</code
+																><span
+																	class="param"
+																	>{D}</span
+																>-<span
+																	class="param"
+																	>{B}</span
+																>-<span
+																	class="param"
+																></span
+																>1000</code
 															>
 														</td>
 														<td>
 															<code
 																class="text-primary text-dm-active"
-																>width:
+															>
 																1000px</code
 															>
 														</td>
 													</tr>
 													<tr>
 														<td scope="col">
-															<code>.wd-min</code>
+															<code
+																><span
+																	class="param"
+																	>{D}</span
+																>-<span
+																	class="param"
+																	>{B}</span
+																>-<span
+																	class="param"
+																></span
+																>min-content</code
+															>
 														</td>
 														<td>
 															<code
 																class="text-primary text-dm-active"
-																>width:
+															>
 																min-content</code
 															>
 														</td>
 													</tr>
 													<tr>
 														<td scope="col">
-															<code>.wd-max</code>
+															<code
+																><span
+																	class="param"
+																	>{D}</span
+																>-<span
+																	class="param"
+																	>{B}</span
+																>-<span
+																	class="param"
+																></span
+																>max-content</code
+															>
 														</td>
 														<td>
 															<code
 																class="text-primary text-dm-active"
-																>width:
+															>
 																max-content</code
 															>
 														</td>
@@ -684,14 +981,46 @@
 													<tr>
 														<td scope="col">
 															<code
-																>.wd-half</code
+																><span
+																	class="param"
+																	>{D}</span
+																>-<span
+																	class="param"
+																	>{B}</span
+																>-<span
+																	class="param"
+																></span
+																>half</code
 															>
 														</td>
 														<td>
 															<code
 																class="text-primary text-dm-active"
-																>width:
+															>
 																50%</code
+															>
+														</td>
+													</tr>
+													<tr>
+														<td scope="col">
+															<code
+																><span
+																	class="param"
+																	>{D}</span
+																>-<span
+																	class="param"
+																	>{B}</span
+																>-<span
+																	class="param"
+																></span
+																>max</code
+															>
+														</td>
+														<td>
+															<code
+																class="text-primary text-dm-active"
+															>
+																100%</code
 															>
 														</td>
 													</tr>
@@ -701,7 +1030,7 @@
 									</div>
 
 									<h3 class="mt-4" id="wd-examples">
-										Examples
+										Width Examples
 									</h3>
 
 									<div class="box">
@@ -711,188 +1040,740 @@
 											.wd-200
 										</div>
 										<div
-											class="p-2 bg-dark text-white wd-max"
+											class="p-2 bg-dark text-white wd-max-content"
 										>
-											.wd-max
+											.wd-max-content
 										</div>
 										<div
-											class="p-2 bg-danger text-white wd-min"
+											class="p-2 bg-danger text-white wd-min-content"
 										>
-											.wd-min
+											.wd-min-content
 										</div>
 										<div
 											class="p-2 bg-warning text-white wd-half"
 										>
 											.wd-half
 										</div>
+										<div
+											class="p-2 bg-success text-white wd-max"
+										>
+											.wd-max
+										</div>
+									</div>
+
+									<div
+										class="codebox codebox-dark my-4 overflow-auto"
+									>
+										<button
+											id="copy-wd-examples"
+											class="copy-btn btn btn-danger fs-10 p-1 float-right"
+											onclick="this.blur()"
+										>
+											Copy
+										</button>
+										<pre
+											class="pt-3"
+										><code id='codebox-wd-examples'>&lt;div class="p-2 bg-primary text-white wd-200"&gt;.wd-200&lt;/div&gt;
+&lt;div class="p-2 bg-dark text-white wd-max-content"&gt;.wd-max-content&lt;/div&gt;
+&lt;div class="p-2 bg-danger text-white wd-min-content"&gt;.wd-min-content&lt;/div&gt;
+&lt;div class="p-2 bg-warning text-white wd-half"&gt;.wd-half&lt;/div&gt
+&lt;div class="p-2 bg-warning text-white wd-max"&gt;.wd-max&lt;/div&gt</code></pre>
+									</div>
+
+									<h3 class="mt-5 mb-4" id="ht-examples">
+										Height Examples
+									</h3>
+
+									<div class="box">
+										<div
+											class="bg-primary p-2 text-white ht-60"
+										>
+											.ht-60
+										</div>
+										<div
+											class="p-2 bg-dark text-white ht-100"
+										>
+											.ht-100
+										</div>
+										<div
+											class="p-2 bg-danger text-white ht-250"
+										>
+											.ht-250
+										</div>
+									</div>
+									<div class="note note-danger my-4">
+										<span class="fw-500">Note: </span>The
+										values
+										<code
+											>max-content, min-content,
+											half,</code
+										>
+										and <code>max</code> don't work with the
+										height property
+									</div>
+
+									<div
+										class="codebox codebox-dark my-4 overflow-auto"
+									>
+										<button
+											id="copy-ht-examples"
+											class="copy-btn btn btn-danger fs-10 p-1 float-right"
+											onclick="this.blur()"
+										>
+											Copy
+										</button>
+										<pre
+											class="pt-3"
+										><code id='codebox-ht-examples'>&lt;div class="p-2 bg-primary text-white ht-60"&gt;.ht-60&lt;/div&gt;
+&lt;div class="p-2 bg-dark text-white ht-100"&gt;.ht-100&lt;/div&gt;
+&lt;div class="p-2 bg-danger text-white ht-250"&gt;.ht-250&lt;/div&gt;</code></pre>
+									</div>
+									<div class="note note-warning">
+										<span class="fw-500">Note: </span>The
+										code snippets above include some
+										Bootstrap classes
 									</div>
 								</section>
 
-								<div
-									class="codebox codebox-dark my-4 overflow-auto"
-								>
-									<button
-										id="copy-wd-examples"
-										class="copy-btn btn btn-danger fs-10 p-1 float-right"
-										onclick="this.blur()"
-									>
-										Copy
-									</button>
-									<pre
-										class="pt-3"
-									><code id='codebox-wd-examples'>&lt;div class="bg-primary p-2 text-white wd-200"&gt;.wd-200&lt;/div&gt;
-&lt;div class="p-2 bg-dark text-white wd-max"&gt;.wd-max&lt;/div&gt;
-&lt;div class="p-2 bg-danger text-white wd-min"&gt;.wd-min&lt;/div&gt;
-&lt;div class="p-2 bg-warning text-white wd-half"&gt;.wd-half&lt;/div&gt;</code></pre>
-								</div>
-								<p>
-									This example sets a cookie named "cookie"
-									with the value "chocolate" which expires one
-									day from the time it was created
-								</p>
-								<p>Click the button to set the cookie above</p>
-								<a
-									class="gradient-btn gradient-btn-blue gradient-btn-sm gradient-btn-pop"
-									id="try-setCookie"
-									>setCookie</a
-								>
+								<hr class="lit-hr" />
 
-								<p class="mt-2">
-									The alert is there only for demo purposes
-								</p>
 
-								<h2 class="mt-5 fs-45" id="getCookie">
-									<code class="text-primary"
-										>getCookie()</code
-									>
-								</h2>
-								<p class="fs-25 fw-200">
-									Returns the value (if any) that corresponds
-									with the cookie name inputted by the user
-								</p>
-								<h3 class="mt-4">Syntax</h3>
-								<p class="fs-25">
-									<code
-										>getCookie(<span class="param"
-											>cookieName</span
-										>)</code
-									>
-								</p>
+								<!--SECTION font size-->
+								<section>
+									<h1 class="mt-5" id="fs-classes">
+										Font size
+									</h1>
 
-								<h3>Parameters</h3>
-								<ol>
-									<li>
-										<code class="param fs-20"
-											>cookieName</code
+									<p class="lead">
+										Quickly set the desired font size, with or
+										without responsiveness, with LitCSS
+										classes
+									</p>
+
+									<h3 class="mt-4" id="fs-syntax">
+										Syntax
+									</h3>
+									<p class="fs-25 mb-4">
+										<code
+											>fs-<span class="param"
+												>{bs4-breakpoint}</span
+											>-<span class="param"
+												>{px}</span
+											></code
 										>
-										(string) takes in the name of the cookie
-										to return
-									</li>
-								</ol>
+									</p>
 
-								<h3>Example</h3>
+									<h3 id="fs-syntax-explained">
+										Syntax explained
+									</h3>
+									<ol>
+										<li class="mb-3">
+											<code class="param fs-20"
+												>{bs4-breakpoint}</code
+											>
+											(optional) any Bootstrap 4
+											breakpoint for responsive width. See
+											<a
+												href="https://getbootstrap.com/docs/4.5/layout/overview/#responsive-breakpoints"
+												class="doc-link"
+												>Bootstrap responsive
+												breakpoints</a
+											>
+											to learn about breakpoints.
+										</li>
+										<li>
+											<code class="param fs-20"
+												>{px}</code
+											>
+											(required, number) desired font size
+											in pixels of the selected element
+										</li>
+									</ol>
 
-								<div
-									class="codebox codebox-dark my-4 overflow-auto"
-								>
-									<button
-										id="copy-cjs-getCookie"
-										class="copy-btn btn btn-danger fs-10 p-1 float-right"
-										onclick="this.blur()"
+									<h2 id="fs-available-classes" class="mt-4">
+										Available classes
+									</h2>
+									<p class="lead mb-4">
+										Here is a table showing all of the font
+										size values in LitCSS
+									</p>
+
+									<div class="note note-primary mb-4">
+										<span class="fw-500"> Note:</span>
+										<strong>B</strong> stands for breakpoint
+									</div>
+
+									<div class="row">
+										<div class="col m-0 p-0">
+											<table
+												class="table table-striped table-hover dm-active table-dark"
+											>
+												<thead>
+													<tr>
+														<th>Class</th>
+														<th>Value</th>
+													</tr>
+												</thead>
+												<tbody>
+													<tr>
+														<td scope="col">
+															<code
+																>fs-<span
+																	class="param"
+																	>{B}</span
+																>-<span
+																	class="param"
+																></span
+																>7</code
+															>
+														</td>
+														<td>
+															<code
+																class="text-primary text-dm-active"
+																>font-size:
+																7px;</code
+															>
+														</td>
+													</tr>
+													<tr>
+														<td scope="col">
+															<code
+																>fs-<span
+																	class="param"
+																	>{B}</span
+																>-<span
+																	class="param"
+																></span
+																>10</code
+															>
+														</td>
+														<td>
+															<code
+																class="text-primary text-dm-active"
+																>font-size:
+																10px;</code
+															>
+														</td>
+													</tr>
+													<tr>
+														<td scope="col">
+															<code
+																>fs-<span
+																	class="param"
+																	>{B}</span
+																>-<span
+																	class="param"
+																></span
+																>13</code
+															>
+														</td>
+														<td>
+															<code
+																class="text-primary text-dm-active"
+															>
+																font-size:
+																13px;</code
+															>
+														</td>
+													</tr>
+													<tr>
+														<td scope="col">
+															<code
+																>fs-<span
+																	class="param"
+																	>{B}</span
+																>-<span
+																	class="param"
+																></span
+																>16</code
+															>
+														</td>
+														<td>
+															<code
+																class="text-primary text-dm-active"
+															>
+																font-size:
+																16px;</code
+															>
+														</td>
+													</tr>
+													<tr>
+														<td scope="col">
+															<code
+																>fs-<span
+																	class="param"
+																	>{B}</span
+																>-<span
+																	class="param"
+																></span
+																>18</code
+															>
+														</td>
+														<td>
+															<code
+																class="text-primary text-dm-active"
+															>
+																font-size:
+																18px;</code
+															>
+														</td>
+													</tr>
+												</tbody>
+											</table>
+										</div>
+										<div class="col m-0 p-0">
+											<table
+												class="table table-striped table-hover dm-active table-dark"
+											>
+												<thead>
+													<tr>
+														<th>Class</th>
+														<th>Value</th>
+													</tr>
+												</thead>
+												<tbody>
+													<tr>
+														<td scope="col">
+															<code
+																>fs-<span
+																	class="param"
+																	>{B}</span
+																>-<span
+																	class="param"
+																></span
+																>20</code
+															>
+														</td>
+														<td>
+															<code
+																class="text-primary text-dm-active"
+															>
+																font-size:
+																20px;</code
+															>
+														</td>
+													</tr>
+													<tr>
+														<td scope="col">
+															<code
+																>fs-<span
+																	class="param"
+																	>{B}</span
+																>-<span
+																	class="param"
+																></span
+																>23</code
+															>
+														</td>
+														<td>
+															<code
+																class="text-primary text-dm-active"
+															>
+																font-size:
+																23px;</code
+															>
+														</td>
+													</tr>
+													<tr>
+														<td scope="col">
+															<code
+																>fs-<span
+																	class="param"
+																	>{B}</span
+																>-<span
+																	class="param"
+																></span
+																>25</code
+															>
+														</td>
+														<td>
+															<code
+																class="text-primary text-dm-active"
+															>
+																font-size:
+																25px;</code
+															>
+														</td>
+													</tr>
+													<tr>
+														<td scope="col">
+															<code
+																>fs-<span
+																	class="param"
+																	>{B}</span
+																>-<span
+																	class="param"
+																></span
+																>35</code
+															>
+														</td>
+														<td>
+															<code
+																class="text-primary text-dm-active"
+															>
+																font-size:
+																35px;</code
+															>
+														</td>
+													</tr>
+													<tr>
+														<td scope="col">
+															<code
+																>fs-<span
+																	class="param"
+																	>{B}</span
+																>-<span
+																	class="param"
+																></span
+																>45</code
+															>
+														</td>
+														<td>
+															<code
+																class="text-primary text-dm-active"
+															>
+																font-size:
+																45px;</code
+															>
+														</td>
+													</tr>
+													<tr>
+														<td scope="col">
+															<code
+																>fs-<span
+																	class="param"
+																	>{B}</span
+																>-<span
+																	class="param"
+																></span
+																>60</code
+															>
+														</td>
+														<td>
+															<code
+																class="text-primary text-dm-active"
+															>
+																font-size:
+																60px;</code
+															>
+														</td>
+													</tr>
+												</tbody>
+											</table>
+										</div>
+									</div>
+
+									<h3 class="mt-4" id="fs-examples">
+										Examples
+									</h3>
+
+									<div class="box">
+										<p class="fs-10">.fs-10</p>
+										<p class="fs-18">.fs-18</p>
+										<p class="fs-35">.fs-35</p>
+										<p class="fs-60">.fs-60</p>
+									</div>
+
+									<div
+										class="codebox codebox-dark my-4 overflow-auto"
 									>
-										Copy
-									</button>
-									<pre
-										class="pt-3"
-									><code id='codebox-getCookie'>getCookie("cookie")</code></pre>
-								</div>
-								<p>
-									This example returns the value stored in the
-									cookie named "cookie"
-								</p>
-								<p>
-									Click the button to get the value of
-									"cookie"
-								</p>
-								<a
-									class="gradient-btn gradient-btn-blue gradient-btn-sm gradient-btn-pop"
-									id="try-getCookie"
-									>getCookie</a
-								>
-
-								<p class="mt-2">
-									The alert should return "chocolate"
-								</p>
-
-								<h2 class="mt-5 fs-45" id="deleteCookie">
-									<code class="text-primary"
-										>deleteCookie()</code
-									>
-								</h2>
-								<p class="fs-25 fw-200">
-									Deletes the cookie specified by the user
-								</p>
-								<h3 class="mt-4">Syntax</h3>
-								<p class="fs-25">
-									<code
-										>deleteCookie(<span class="param"
-											>cookieName</span
-										>)</code
-									>
-								</p>
-
-								<h3>Parameters</h3>
-								<ol>
-									<li>
-										<code class="param fs-20"
-											>cookieName</code
+										<button
+											id="copy-fs-examples"
+											class="copy-btn btn btn-danger fs-10 p-1 float-right"
+											onclick="this.blur()"
 										>
-										(string) takes in the name of the cookie
-										of which to be deleted
-									</li>
-								</ol>
+											Copy
+										</button>
+										<pre
+											class="pt-3"
+										><code id='codebox-fs-examples'>&lt;p class="fs-10"&gt;.fs-10&lt;/p&gt;
+&lt;p class="fs-18"&gt;.fs-18&lt;/p&gt;
+&lt;p class="fs-35"&gt;.fs-35&lt;/p&gt;
+&lt;p class="fs-60"&gt;.fs-60&lt;/p&gt;</code></pre>
+									</div>
+								</section>
 
-								<h3>Example</h3>
+								<hr class="lit-hr" />
+								<!--!SECTION -->
+								<!--SECTION font weight-->
+								<section>
+									<h1 class="mt-5" id="fw-classes">
+										Font weight
+									</h1>
 
-								<div
-									class="codebox codebox-dark my-4 overflow-auto"
-								>
-									<button
-										id="copy-cjs-deleteCookie"
-										class="copy-btn btn btn-danger fs-10 p-1 float-right"
-										onclick="this.blur()"
+									<p class="lead">
+										Easily set the font weight of text elements using our font weight classes
+									</p>
+
+									<h3 class="mt-4" id="fw-syntax">
+										Syntax
+									</h3>
+									<p class="fs-25 mb-4">
+										<code
+											>fs-<span class="param"
+												>{value}</span
+											></code
+										>
+									</p>
+
+									<h3 id="fw-syntax-explained">
+										Syntax explained
+									</h3>
+									<ol>
+										<li>
+											<code class="param fs-20"
+												>{value}</code
+											>
+											(required, number) desired font weight
+											value See <a class="doc-link" href="#fw-available-classes">Available classes</a>
+										</li>
+									</ol>
+
+									<h2 id="fw-available-classes" class="mt-4">
+										Available classes
+									</h2>
+									<p class="lead mb-4">
+										Here is a table showing all of the font
+										weight values included in LitCSS
+									</p>
+
+									<div class="row">
+										<div class="col m-0 p-0">
+											<table
+												class="table table-striped table-hover dm-active table-dark"
+											>
+												<thead>
+													<tr>
+														<th>Class</th>
+														<th>Value</th>
+													</tr>
+												</thead>
+												<tbody>
+													<tr>
+														<td scope="col">
+															<code
+																>fw-100</code
+															>
+														</td>
+														<td>
+															<code
+																class="text-primary text-dm-active"
+																>font-weight: 100;</code
+															>
+														</td>
+													</tr>
+													<tr>
+														<td scope="col">
+															<code
+																>fw-200</code
+															>
+														</td>
+														<td>
+															<code
+																class="text-primary text-dm-active"
+																>font-weight: 200;</code
+															>
+														</td>
+													</tr>
+													<tr>
+														<td scope="col">
+															<code
+																>fw-300</code
+															>
+														</td>
+														<td>
+															<code
+																class="text-primary text-dm-active"
+																>font-weight: 300;</code
+															>
+														</td>
+													</tr>
+													<tr>
+														<td scope="col">
+															<code
+																>fw-400</code
+															>
+														</td>
+														<td>
+															<code
+																class="text-primary text-dm-active"
+																>font-weight: 400;</code
+															>
+														</td>
+													</tr>
+													<tr>
+														<td scope="col">
+															<code
+																>fw-500</code
+															>
+														</td>
+														<td>
+															<code
+																class="text-primary text-dm-active"
+																>font-weight: 500;</code
+															>
+														</td>
+													</tr>
+													<tr>
+														<td scope="col">
+															<code
+																>fw-600</code
+															>
+														</td>
+														<td>
+															<code
+																class="text-primary text-dm-active"
+																>font-weight: 600;</code
+															>
+														</td>
+													</tr>
+												</tbody>
+											</table>
+										</div>
+										<div class="col m-0 p-0">
+											<table
+												class="table table-striped table-hover dm-active table-dark"
+											>
+												<thead>
+													<tr>
+														<th>Class</th>
+														<th>Value</th>
+													</tr>
+												</thead>
+												<tbody>
+													<tr>
+														<td scope="col">
+															<code
+																>fs-7</code
+															>
+														</td>
+														<td>
+															<code
+																class="text-primary text-dm-active"
+																>font-size:
+																7px;</code
+															>
+														</td>
+													</tr>
+													<tr>
+														<td scope="col">
+															<code
+																>fs-10</code
+															>
+														</td>
+														<td>
+															<code
+																class="text-primary text-dm-active"
+																>font-size:
+																10px;</code
+															>
+														</td>
+													</tr>
+													<tr>
+														<td scope="col">
+															<code
+																>fs-13</code
+															>
+														</td>
+														<td>
+															<code
+																class="text-primary text-dm-active"
+															>
+																font-size:
+																13px;</code
+															>
+														</td>
+													</tr>
+													<tr>
+														<td scope="col">
+															<code
+																>fs-16</code
+															>
+														</td>
+														<td>
+															<code
+																class="text-primary text-dm-active"
+															>
+																font-size:
+																16px;</code
+															>
+														</td>
+													</tr>
+													<tr>
+														<td scope="col">
+															<code
+																>fs-18</code
+															>
+														</td>
+														<td>
+															<code
+																class="text-primary text-dm-active"
+															>
+																font-size:
+																18px;</code
+															>
+														</td>
+													</tr>
+													<tr>
+														<td scope="col">
+															<code
+																>fs-18</code
+															>
+														</td>
+														<td>
+															<code
+																class="text-primary text-dm-active"
+															>
+																font-size:
+																18px;</code
+															>
+														</td>
+													</tr>
+												</tbody>
+											</table>
+										</div>
+										
+									</div>
+
+									<h3 class="mt-4" id="fw-examples">
+										Examples
+									</h3>
+
+									<div class="box">
+										<p class="fs-10">.fs-10</p>
+										<p class="fs-18">.fs-18</p>
+										<p class="fs-35">.fs-35</p>
+										<p class="fs-60">.fs-60</p>
+									</div>
+
+									<div
+										class="codebox codebox-dark my-4 overflow-auto"
 									>
-										Copy
-									</button>
-									<pre
-										class="pt-3"
-									><code id='codebox-deleteCookie'>deleteCookie("cookie")</code></pre>
-								</div>
-								<p>
-									This example completely deletes the
-									specified cookie before the expiration date
-								</p>
-								<p>
-									Click the button to delete "cookie"
-								</p>
-								<a
-									class="gradient-btn gradient-btn-blue gradient-btn-sm gradient-btn-pop"
-									id="try-deleteCookie"
-									>deleteCookie</a
-								>
+										<button
+											id="copy-fw-examples"
+											class="copy-btn btn btn-danger fs-10 p-1 float-right"
+											onclick="this.blur()"
+										>
+											Copy
+										</button>
+										<pre
+											class="pt-3"
+										><code id='codebox-fw-examples'>&lt;p class="fs-10"&gt;.fs-10&lt;/p&gt;
+&lt;p class="fs-18"&gt;.fs-18&lt;/p&gt;
+&lt;p class="fs-35"&gt;.fs-35&lt;/p&gt;
+&lt;p class="fs-60"&gt;.fs-60&lt;/p&gt;</code></pre>
+									</div>
 
-								<p class="mt-2">
-									The alert box shouldn't say anything
-								</p>
-								<p>
-									Try pressing the getCookie button from
-									before; it shouldn't return anything
-								</p>
+									<hr class="lit-hr" />
+								</section>
+								<!--!SECTION -->
+								<!--SECTION -->
+								
 
 								<h3 class="mt-5">
 									Wow you actually read the documentation!
 								</h3>
-								<p class="fw-200 fs-23">
+								<p class="fw-300 fs-23">
 									Now put your knowledge of Cookie JS to use
 									by making awesome websites!
 								</p>

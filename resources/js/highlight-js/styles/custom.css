@@ -39,7 +39,8 @@ Based on Gradient Dark by Samia Ali
 .hljs-section,
 .hljs-meta-keyword,
 .hljs-symbol,
-.hljs-type {
+.hljs-type,
+.hljs-tag {
 	color: #17fc95;
 }
 
@@ -49,8 +50,7 @@ Based on Gradient Dark by Samia Ali
 	color: #c5fe00;
 }
 
-.hljs-string,
-.hljs-tag {
+.hljs-string {
 	color: #38c0ff;
 }
 

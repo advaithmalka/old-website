@@ -76,7 +76,7 @@ body {
 /*SECTION CODEBOX*/
 .codebox {
 	background-color: #1a1a1a;
-	padding: 10px;
+	padding: 5px;
 	border-radius: 5px;
 }
 .codebox pre code {
@@ -355,23 +355,41 @@ body {
 }
 /*!SECTION */
 /*SECTION FONT WEIGHT CLASSES*/
-.fw-300,
-.fw-200 {
+.fw-bold{
+	font-weight: bold;
+}
+.fw-bolder{
+	font-weight: bolder;
+}
+.fw-lighter{
+	font-weight: lighter;
+}
+.fw-100{
+	font-weight: 100;
+}
+.fw-200{
+	font-weight: 200;
+}
+.fw-300{
 	font-weight: 300;
 }
 .fw-400 {
 	font-weight: 400;
 }
-.fw-500,
-.fw-600 {
+.fw-500{
 	font-weight: 500;
+}
+.fw-600 {
+	font-weight: 600;
 }
 .fw-700 {
 	font-weight: 700;
 }
-.fw-800,
-.fw-900 {
+.fw-800{
 	font-weight: 800;
+}
+.fw-900 {
+	font-weight: 900;
 }
 /*!SECTION */
 /*SECTION WIDTH CLASSES*/
@@ -444,14 +462,17 @@ body {
 .wd-1000 {
 	width: 1000px !important;
 }
-.wd-min {
+.wd-min-content {
 	width: min-content !important;
 }
-.wd-max {
+.wd-max-content {
 	width: max-content !important;
 }
 .wd-half {
 	width: 50%;
+}
+.wd-max {
+	width: 100%;
 }
 /*!SECTION */
 /*SECTION HEIGHT CLASSES*/
@@ -524,14 +545,17 @@ body {
 .ht-1000 {
 	height: 1000px !important;
 }
-.ht-min {
+.ht-min-content {
 	height: min-content !important;
 }
-.ht-max {
+.ht-max-content {
 	height: max-content !important;
 }
 .ht-half {
 	height: 50% !important;
+}
+.ht-max {
+	height: 100% !important;
 }
 /*!SECTION */
 /*SECTION POSITION*/
@@ -1745,14 +1769,17 @@ button.no-outline {
 	@include width(sm, 800);
 	@include width(sm, 900);
 	@include width(sm, 1000);
-	.wd-sm-min {
+	.wd-sm-min-content {
 		width: min-content !important;
 	}
-	.wd-sm-max {
+	.wd-sm-max-content {
 		width: max-content !important;
 	}
 	.wd-sm-half {
 		width: 50% !important;
+	}
+	.wd-sm-max {
+		width: 100% !important;
 	}
 	/*!SECTION */
 	/*SECTION Height sm media query*/
@@ -1779,14 +1806,17 @@ button.no-outline {
 	@include height(sm, 800);
 	@include height(sm, 900);
 	@include height(sm, 1000);
-	.ht-sm-min {
+	.ht-sm-min-content {
 		height: min-content !important;
 	}
-	.ht-sm-max {
+	.ht-sm-max-content {
 		width: max-content !important;
 	}
 	.ht-sm-half {
 		height: 50% !important;
+	}
+	.ht-sm-max {
+		height: 100% !important;
 	}
 	/*!SECTION */
 }
@@ -1829,14 +1859,17 @@ button.no-outline {
 	@include width(md, 800);
 	@include width(md, 900);
 	@include width(md, 1000);
-	.wd-md-min {
+	.wd-md-min-content {
 		width: min-content !important;
 	}
-	.wd-md-max {
+	.wd-md-max-content {
 		width: max-content !important;
 	}
 	.wd-md-half {
 		width: 50% !important;
+	}
+	.wd-md-max {
+		width: 100% !important;
 	}
 	/*!SECTION */
 	/*SECTION Height md media query*/
@@ -1863,14 +1896,17 @@ button.no-outline {
 	@include height(md, 800);
 	@include height(md, 900);
 	@include height(md, 1000);
-	.ht-md-min {
+	.ht-md-min-content {
 		height: min-content !important;
 	}
-	.ht-md-max {
+	.ht-md-max-content {
 		width: max-content !important;
 	}
 	.ht-md-half {
 		height: 50% !important;
+	}
+	.ht-md-max {
+		height: 100% !important;
 	}
 	/*!SECTION */
 }
@@ -1913,14 +1949,17 @@ button.no-outline {
 	@include width(lg, 800);
 	@include width(lg, 900);
 	@include width(lg, 1000);
-	.wd-lg-min {
+	.wd-lg-min-content {
 		width: min-content !important;
 	}
-	.wd-lg-max {
+	.wd-lg-max-content {
 		width: max-content !important;
 	}
 	.wd-lg-half {
 		width: 50% !important;
+	}
+	.wd-lg-max {
+		width: 100% !important;
 	}
 	/*!SECTION */
 	/*SECTION Height lg media query*/
@@ -1947,14 +1986,17 @@ button.no-outline {
 	@include height(lg, 800);
 	@include height(lg, 900);
 	@include height(lg, 1000);
-	.ht-lg-min {
+	.ht-lg-min-content {
 		height: min-content !important;
 	}
-	.ht-lg-max {
+	.ht-lg-max-content {
 		width: max-content !important;
 	}
 	.ht-lg-half {
 		height: 50% !important;
+	}
+	.ht-lg-max {
+		height: 100% !important;
 	}
 	/*!SECTION */
 }
@@ -1997,14 +2039,17 @@ button.no-outline {
 	@include width(xl, 800);
 	@include width(xl, 900);
 	@include width(xl, 1000);
-	.wd-xl-min {
+	.wd-xl-min-content {
 		width: min-content !important;
 	}
-	.wd-xl-max {
+	.wd-xl-max-content {
 		width: max-content !important;
 	}
 	.wd-xl-half {
 		width: 50% !important;
+	}
+	.wd-xl-max {
+		width: 100% !important;
 	}
 	/*!SECTION */
 	/*SECTION Height xl media query*/
@@ -2031,14 +2076,17 @@ button.no-outline {
 	@include height(xl, 800);
 	@include height(xl, 900);
 	@include height(xl, 1000);
-	.ht-xl-min {
+	.ht-xl-min-content {
 		height: min-content !important;
 	}
-	.ht-xl-max {
+	.ht-xl-max-content {
 		width: max-content !important;
 	}
 	.ht-xl-half {
 		height: 50% !important;
+	}
+	.ht-xl-max {
+		height: 100% !important;
 	}
 	/*!SECTION */
 }

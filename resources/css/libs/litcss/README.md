@@ -1,9 +1,7 @@
 # LitCSS
 A CSS utility library that is meant to cover classes that Bootstrap is missing
 
-## !!DOCUMENTATION STILL IN THE WORKS!!
-
-### Currently Version 1.2.3
+### Currently Version 1.5.1
 
 https://advaithm26.github.io/litcss.html
 
@@ -20,9 +18,9 @@ Then add this link tag in the ```<head>``` tag of your HTML document
 <link rel="stylesheet" type="text/css" href="path/to/css-litcss/main/css/litcss.css"/>
 ```
 
-Some componets require litJS; to see if you need to use litJS see the  [documentation](https://advaithm26.github.io/litcss-docs.html)
+Some components require litJS; to see if you need to use litJS see the  [documentation](https://advaithm26.github.io/litcss-docs.html)
 
-If you require litJS add this ```<script>``` tag at the bottom of your HTML docuemnt
+If you require litJS add this ```<script>``` tag at the bottom of your HTML document
 
 ```html
 <script src="path/to/css-litcss/main/js/litjs.js"></script>

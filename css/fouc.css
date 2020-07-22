@@ -1,3 +1,7 @@
+html{
+    background: linear-gradient(to bottom right, #fa8bff, #2bd2ff, #2bff88);
+    transition: ease 0.5;
+}
 body{
     display: none;
 }

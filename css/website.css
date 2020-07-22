@@ -166,14 +166,14 @@ html > body > .container > h6{
   background: -webkit-gradient(linear, left top, left bottom, from(#0015ff), to(#00a2ff));
   background: linear-gradient(#0015ff, #00a2ff);
   border-radius: 10px;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
 }
 
-/* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
   background: rgba(0, 110, 255, 0.562);
 }
 
-/*Handle active*/
 ::-webkit-scrollbar-thumb:active {
   background: rgba(0, 110, 255, 0.397);
 }

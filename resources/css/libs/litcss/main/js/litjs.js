@@ -16,16 +16,16 @@ $bttBtn.on("click", (e) => {
 /*!SECTION */
 
 /*SECTION SCROLL PROGRESS INDICATOR*/
-if (document.getElementById("scroll-indicator")) {
+if ($('#scroll-indicator')) {
 	window.addEventListener("scroll", scrollIndicator);
 	function scrollIndicator() {
-		let winScroll =
+		let windowTop =
 			document.body.scrollTop || document.documentElement.scrollTop;
-		let docHeight =
+		let pgHeight =
 			document.documentElement.scrollHeight -
 			document.documentElement.clientHeight;
-		let scrolled = (winScroll / docHeight) * 100;
-		$("#scroll-indicator").css('width', `${scrolled}%`)
+		let scroll = (windowTop / pgHeight) * 100;
+		$("#scroll-indicator").css('width', `${scroll}%`)
 	}
 }
 /*!SECTION */

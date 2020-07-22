@@ -6,7 +6,6 @@ Based on Gradient Dark by Samia Ali
 .hljs {
 	display: block;
 	overflow-x: auto;
-	padding: 0.5em;
 	color: #e7e4eb;
 }
 
@@ -18,7 +17,7 @@ Based on Gradient Dark by Samia Ali
 .hljs-meta,
 .hljs-comment,
 .hljs-quote {
-	color: #c6b9ff;
+	color: #747474;
 }
 
 .hljs-selector-tag,
@@ -71,7 +70,7 @@ Based on Gradient Dark by Samia Ali
 .hljs-title,
 .hljs-class,
 .hljs-function {
-	color: #ff2c2c;
+	color: #ff5959;
 }
 
 .hljs-selector-pseudo,

@@ -138,28 +138,28 @@ html > body > .container > h6{
 ::-webkit-scrollbar {
 	height: 8px;
 	width: 10px;
+	
 }
 
 /* Track */
 ::-webkit-scrollbar-track {
 	background: transparent;
+	
 }
 
 /* Handle */
 ::-webkit-scrollbar-thumb {
 	background: linear-gradient(#0015ff, #00a2ff);
 	border-radius: 10px;
+	transition: 0.3s;
+	&:hover{
+		background: rgba(0, 110, 255, 0.562);
+	}
+	&:active{
+		background: rgba(0, 110, 255, 0.397);
+	}
 }
 
-/* Handle on hover */
-::-webkit-scrollbar-thumb:hover {
-	background: rgba(0, 110, 255, 0.562);
-}
-
-/*Handle active*/
-::-webkit-scrollbar-thumb:active {
-	background: rgba(0, 110, 255, 0.397);
-}
 
 /*# sourceMappingURL=website.css.map */
 .breadcrumb-link:hover {
@@ -239,8 +239,6 @@ footer.bc-dark-grey .container.p-4 .border-top.pt-4.mb-md-5.pt-md-5 .row h5 {
 .param{
 	color: rgb(255, 115, 0);
 }
-
-
 
 //SECTION test
 .list-group-item-nested{

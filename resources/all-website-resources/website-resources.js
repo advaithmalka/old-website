@@ -4,9 +4,13 @@ function insertAfter(referenceNode, newNode) {
 	referenceNode.parentNode.insertBefore(newNode, referenceNode.nextSibling);
 }
 
-let webScript = document.querySelector(
-	'script[src="./resources/all-website-resources/website-resources.js"]'
-) || document.querySelector('script[src="resources/all-website-resources/website-resources.js"]');
+let webScript =
+	document.querySelector(
+		'script[src="./resources/all-website-resources/website-resources.js"]'
+	) ||
+	document.querySelector(
+		'script[src="resources/all-website-resources/website-resources.js"]'
+	);
 
 let deferAttr = document.createAttribute("defer");
 let asyncAttr = document.createAttribute("async");
@@ -14,7 +18,6 @@ let asyncAttr = document.createAttribute("async");
 let jquery = document.createElement("script");
 jquery.src = "resources/js/jquery-3.5/jquery-3.5.1.min.js";
 insertAfter(webScript, jquery);
-
 
 let bjs = document.createElement("script");
 bjs.setAttributeNode(asyncAttr);
@@ -45,19 +48,25 @@ let linkOffsetNode = document.createElement("script");
 linkOffsetNode.src = "resources/js/link-offset/link-offset.js";
 insertAfter(copyFunc, linkOffsetNode);
 
-let litjs = document.createElement('script')
-litjs.src = 'resources/css/libs/litcss/main/js/litjs.js';
-insertAfter(linkOffsetNode, litjs)
+let litjs = document.createElement("script");
+litjs.src = "resources/css/libs/litcss/main/js/litjs.js";
+insertAfter(linkOffsetNode, litjs);
 
-let litScrollspy = document.createElement('script')
-litScrollspy.src = 'resources/js/scrollspy/lit-scrollspy.js'
-insertAfter(litjs, litScrollspy)
+let litScrollspy = document.createElement("script");
+litScrollspy.src = "resources/js/scrollspy/lit-scrollspy.js";
+insertAfter(litjs, litScrollspy);
 
+let clipBoard = document.createElement("script");
+clipBoard.src = "resources/js/clipboard.js/dist/clipboard.min.js";
+insertAfter(litjs, clipBoard);
 window.onload = function () {
 	$("<footer>").attr("w3-include-html", "footer.html").appendTo("body");
 	includeHTML();
+
 	document.getElementById("style").remove();
 	/*********************************************/
+
+	new ClipboardJS('.copy-btn').on('success', e =>{e.clearSelection()})
 
 	let getTheme = getCookie("theme");
 	var currTheme = lg[themes[getTheme]];
@@ -78,7 +87,6 @@ window.onload = function () {
 		console.log(getTheme);
 		console.log(currTheme);
 	}
-
 
 	$("#dark-drop").hide();
 	$("#theme-arrow").hover(
@@ -148,7 +156,5 @@ window.onload = function () {
 	if ($("body").hasClass("dark-mode") && getCookie("dm") === "false") {
 		darkMode();
 	}
-	
 
-	
 };

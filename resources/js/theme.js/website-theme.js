@@ -18,18 +18,18 @@ const themes = {
 
 //body.classList.add(currTheme);
 function darkMode() {
-	let card = document.querySelectorAll(".card");
-	let darkItem = document.querySelectorAll(".dark-item");
-	let darkerItem = document.querySelectorAll(".darker-item");
-	let svg = document.querySelectorAll(".svg");
-	let pagination = document.querySelectorAll(".dm-active");
+	let card = document.querySelectorAll(".card:not(.dm-ignore)");
+	let darkItem = document.querySelectorAll(".dark-item:not(.dm-ignore)");
+	let darkerItem = document.querySelectorAll(".darker-item:not(.dm-ignore)");
+	let svg = document.querySelectorAll(".svg:not(.dm-ignore)");
+	let pagination = document.querySelectorAll(".dm-active:not(.dm-ignore)");
 	let listItem = document.querySelectorAll(".list-group-item");
-	let darkText = document.querySelectorAll(".dark-link");
+	let darkText = document.querySelectorAll(".dark-link:not(.dm-ignore)");
 	let hamburgerIcon = document.querySelectorAll(".hamburger-icon:not(.dm-ignore) .bar");
-	let codebox = document.querySelectorAll(".codebox");
+	let codebox = document.querySelectorAll(".codebox.dm-active:not(.dm-ignore)");
 	let hr = document.getElementsByTagName("hr");
-	let table = document.querySelectorAll('table.dm-active')
-	let text = document.querySelectorAll('.text-dm-active')
+	let table = document.querySelectorAll('table.dm-active:not(.dm-ignore)')
+	let text = document.querySelectorAll('.text-dm-active:not(.dm-ignore)')
 
 	//body
 	body.classList.toggle("dark-mode");

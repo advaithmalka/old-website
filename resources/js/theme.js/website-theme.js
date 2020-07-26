@@ -22,6 +22,7 @@ function darkMode() {
 	let darkItem = document.querySelectorAll(".dark-item:not(.dm-ignore)");
 	let darkerItem = document.querySelectorAll(".darker-item:not(.dm-ignore)");
 	let svg = document.querySelectorAll(".svg:not(.dm-ignore)");
+	let svg2 = document.querySelectorAll('.svg-dm');
 	let pagination = document.querySelectorAll(".dm-active:not(.dm-ignore)");
 	let listItem = document.querySelectorAll(".list-group-item");
 	let darkText = document.querySelectorAll(".dark-link:not(.dm-ignore)");
@@ -52,6 +53,7 @@ function darkMode() {
 	iterator(pagination,'pg-dark')
 	//change color of svg's
 	iterator(svg,'svg-fill-black')
+	iterator(svg2,'svg-fill-white')
 	iterator(darkText,'text-black')
 	//list item
 	iterator(listItem,'list-item-dark')

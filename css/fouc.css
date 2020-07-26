@@ -1,6 +1,8 @@
 html{
-    background: linear-gradient(to bottom right, #fa8bff, #2bd2ff, #2bff88);
-    transition: ease 0.5;
+    background-image: url('../pics/misc/loading.gif');
+    background-color: #262626;
+    background-repeat:   no-repeat;
+    background-position: center center;   
 }
 body{
     display: none;

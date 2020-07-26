@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<script src="./resources/all-website-resources/website-resources-head.js"></script>
+		<title>Camera</title>
+		<script src="js/include-html.js"></script>
+	</head>
+
+	<!--ALL CARDS MUST HAVE THE CLASS .card-dark AND HAVE THE ID "card"-->
+	<body class="dark-mode">
+		<!--NAVBAR-->
+		<div class="sticky-top my-0" w3-include-html="navbar.html"></div>
+
+		<div class="container">
+			<nav aria-label="breadcrumb">
+				<ol class="breadcrumb my-1 py-2">
+					<li class="breadcrumb-item">
+						<a class="breadcrumb-link" href="index.html">Home</a>
+					</li>
+					<li class="breadcrumb-item">
+						<a class="breadcrumb-link" href="projects.html"
+							>Projects</a
+						>
+					</li>
+					<li class="breadcrumb-item">
+						<a class="breadcrumb-link" href="html-projects.html"
+							>HTML</a
+						>
+					</li>
+					<li class="breadcrumb-item active">Camera</li>
+				</ol>
+			</nav>
+		</div>
+		<!--CONTENT START-->
+		<img
+			class="svg-dm svg-fill-white hoverable right-25 pos-absolute"
+			src="icons/svg/fullscreen-fit.svg"
+      width="30"
+      style="top: 70px;"
+			id="cam-fullscreen"
+		/>
+		<iframe
+			id="cam-iframe"
+			src="apps/camera/index.html"
+      width="100%"
+      class="m-0 p-0"
+      style="height: 87vh;"
+      frameborder
+		></iframe>
+		<!--CONTENT END-->
+		<!--ALL SCRIPTS NEEDED TO RUN THE WEBSITE-->
+		<script src="./resources/all-website-resources/website-resources.js"></script>
+		<script>
+			window.addEventListener("load", function () {
+				function fullscreen(element) {
+					if (element.requestFullscreen) {
+						element.requestFullscreen();
+					} else if (element.mozRequestFullScreen) {
+						element.mozRequestFullScreen();
+					} else if (element.webkitRequestFullscreen) {
+						element.webkitRequestFullscreen();
+					} else if (element.msRequestFullscreen) {
+						element.msRequestFullscreen();
+					}
+				}
+				$("#cam-fullscreen").on("click", function () {
+					fullscreen(document.querySelector("#cam-iframe"));
+				});
+			});
+		</script>
+	</body>
+</html>

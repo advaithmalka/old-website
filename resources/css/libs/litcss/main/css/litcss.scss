@@ -781,7 +781,6 @@ a.gradient-btn,
 a.gradient-btn:hover,
 a.gradient-btn:focus,
 a.gradient-btn:active {
-	border: none;
 	outline: none;
 	text-decoration: none;
 	color: white;
@@ -789,12 +788,12 @@ a.gradient-btn:active {
 }
 
 button.gradient-btn {
-	border: none;
 	outline: none;
 	cursor: pointer;
 }
 
 .gradient-btn {
+	border:none !important;
 	display: inline-block;
 	font-family: "Montserrat", Helvetica, Arial, sans-serif;
 	font-size: 17px;

@@ -1,10 +1,14 @@
 /**PREVENTS THE PAGE FROM DISPLAYING UN-STYLED CONTENT */
+function insertAfter(referenceNode, newNode) {
+	referenceNode.parentNode.insertBefore(newNode, referenceNode.nextSibling);
+}
+
 let pre = document.createElement("link");
 pre.rel = "stylesheet";
 pre.type = "text/css";
 pre.href = "css/fouc.css";
 pre.id = "style";
-document.head.prepend(pre); 
+document.head.prepend(pre);
 
 //FAVICON
 let f1 = document.createElement("link");
@@ -33,7 +37,18 @@ manifest.href = "icons/favicon_io/site.webmanifest";
 document.head.appendChild(manifest);
 
 //Responsive meta tag
-let viewport = document.createElement('meta')
-viewport.name = 'viewport'
-viewport.content = "width=device-width, initial-scale=1, shrink-to-fit=no"
-document.head.prepend(viewport)
+let viewport = document.createElement("meta");
+viewport.name = "viewport";
+viewport.content = "width=device-width, initial-scale=1, shrink-to-fit=no";
+document.head.prepend(viewport);
+
+let asyncAttr2 = document.createAttribute("async");
+
+let gtagjs = document.createElement("script");
+gtagjs.setAttributeNode(asyncAttr2);
+gtagjs.src = "https://www.googletagmanager.com/gtag/js?id=UA-174312447-1";
+document.head.appendChild(gtagjs);
+
+let gtagf = document.createElement("script");
+gtagf.src = "resources/all-website-resources/gtag.js";
+insertAfter(gtagjs, gtagf);

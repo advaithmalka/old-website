@@ -197,16 +197,16 @@ $("#di-toggle").on("input", () => {
 	}
 });
 
-$("#trash-can").on('click', () => {
-	$(`#${z}`).remove()
-	for(let f = z; f <= $("#images img").length; f++){
-		$(`#${f+1}`).attr('id', $(`#${f+1}`).attr('id') -  1)
+$("#trash-can").on("click", () => {
+	$(`#${z}`).remove();
+	for (let f = z; f <= $("#images img").length; f++) {
+		$(`#${f + 1}`).attr("id", $(`#${f + 1}`).attr("id") - 1);
 	}
 
-	if(z === 1) {
-		z++
+	if (z === 1) {
+		z++;
 	}
-	z--
-	$(`#${z}`).show()
-	checkI()
-})
+	z--;
+	$(`#${z}`).show();
+	checkI();
+});

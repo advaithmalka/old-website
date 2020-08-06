@@ -3,6 +3,8 @@
 }*/
 html {
   scroll-behavior: smooth !important;
+  min-height: 100%;
+  min-width: 100%;
 }
 
 body {
@@ -10,6 +12,8 @@ body {
   font-size: large;
   -webkit-transition: color 0.3s !important;
   transition: color 0.3s !important;
+  height: 100%;
+  width: 100%;
 }
 
 .over-y-s {

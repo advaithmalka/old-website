@@ -4,11 +4,15 @@
 
 html{
 	scroll-behavior: smooth !important ;
+	min-height: 100%;
+	min-width: 100%;
 }
 body {
 	background-color: whitesmoke;
 	font-size: large;
 	transition: color 0.3s !important;
+	height: 100%;
+	width: 100%;
 }
 
 .over-y-s{

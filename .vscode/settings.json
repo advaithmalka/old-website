@@ -4,5 +4,6 @@
     "litcss",
     "litjs",
     "mixins"
-  ]
+  ],
+  "liveServer.settings.port": 70
 }

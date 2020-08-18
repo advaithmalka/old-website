@@ -1,9 +1,11 @@
-html{
+html {
     background-image: url('../pics/misc/loading.gif');
     background-color: #262626;
-    background-repeat:   no-repeat;
-    background-position: center center;   
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
 }
-body{
+
+body {
     display: none;
 }

@@ -30,6 +30,13 @@ button.lit-btn {
 	margin-left: 15%;
 	border: none;
 	padding: 0px;
+	transition: 200ms;
+}
+#home-logo:hover{
+	opacity: 0.7;
+}
+.nav-color{
+	background-color: rgb(0, 0, 0) !important;
 }
 /*
 .nav-link.text-small.pb-0{
@@ -41,11 +48,12 @@ button.lit-btn {
 	color: rgba(255, 255, 255, 0.692)
 }*/
 
-.nav-link.fs-16.font-weight-bold.text-uppercase {
-	color: white;
+.nav-title {
+	color: white !important;
+	transition: 300ms;
 }
-.nav-link.fs-16.font-weight-bold.text-uppercase:hover {
-	color: rgba(255, 255, 255, 0.486);
+.nav-title:hover {
+	color: rgba(255, 255, 255, 0.486) !important;
 }
 .nav-link.fs-16.pictures-dropdown-items {
 	color: rgb(97, 97, 97) !important;
@@ -69,12 +77,24 @@ button.lit-btn {
 .nav-content {
 	margin-right: 20px;
 }
+.dm-img{
+	border-radius: 50px;
+}
+.dm-img:hover{
+	border-radius: 50px;
+}
 #dark-mode {
 	position: absolute;
 	margin-left: 80%;
 	border: none;
 	padding: 0px;
+	outline: none !important;
+	transition: opacity 200ms;
 }
+#dark-mode:hover{
+	opacity: .7;
+}
+
 #dark-drop {
 	color: black;
 	position: absolute;
@@ -82,6 +102,7 @@ button.lit-btn {
 	top: 45px;
 	margin-left: 83%;
 	z-index: 3;
+
 }
 .theme-colors {
 	width: 100%;
@@ -95,9 +116,13 @@ button.lit-btn {
 	color: black;
 	background-color: rgb(0, 132, 255);
 }
-#theme-arrow {
+#theme-arrow{
 	position: absolute;
-	margin-left: 85%;
+	margin-left: 84%;
+	transition: color 300ms;
+}
+#theme-arrow:hover .nav-arrow-img{
+	filter: brightness(70%);
 }
 
 #navbar-hamburger{
@@ -106,13 +131,25 @@ button.lit-btn {
 	padding-top: 5px;
 	outline: none !important;
 }
+@media screen and (min-width: 992px){
+	.nav-arrow{
+		position: absolute;
+		left: calc(50% - 85px)	!important;
+	}
+}
 
+.nav-arrow-img{
+	transition: 300ms;
+}
+.nav-arrow:hover .nav-arrow-img{
+	filter: brightness(70%);
+}
 @media screen and (max-width: 991px) {
 	.mega-arrow {
 		display: inline;
 		position: absolute;
-		top: 35px;
-		left: 58px;
+		top: 55px;
+		left: 105px;
 	}
 	.mega-arrow-pictures {
 		top: 75px;
@@ -123,21 +160,23 @@ button.lit-btn {
 	}
 	#dark-mode {
 		bottom: 130px;
+		right: 80px;
+	}
+	#theme-arrow {
+		position: absolute;
+		top: 50px;
+		right: 90px;
 	}
 	#dark-drop {
 		position: absolute;
 		top: 25%;
 		margin-left: 78%;
 	}
-	#theme-arrow {
-		top: 60px;
-		margin-left: 82%;
-	}
 	.ta-bg {
 		top: 40px !important;
 	}
 }
-@media screen and (max-width: 800px) {
+/* @media screen and (max-width: 800px) {
 	#dark-mode {
 		right: 70px;
 	}
@@ -154,7 +193,7 @@ button.lit-btn {
 		left: 2%;
 	}
 }
-/*THEME ARROW SETTINGS*/
+/*THEME ARROW SETTINGS
 @media screen and (max-width: 670px) {
 	#theme-arrow {
 		left: 0% !important;
@@ -174,4 +213,4 @@ button.lit-btn {
 	#theme-arrow {
 		margin-left: 86%;
 	}
-}
+} */

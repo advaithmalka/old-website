@@ -3,12 +3,12 @@
 	<head>
 		<meta charset="utf-8" />
 		<title>Error</title>
-
 		<link
 			rel="stylesheet"
 			type="text/css"
 			href="resources/css/bootstrap-4.5/bootstrap.css"
 		/>
+		<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
 		<link rel="stylesheet" type="text/css" href="css/navbar.css" />
 		<link
 			rel="stylesheet"
@@ -19,11 +19,11 @@
 	</head>
 	<body>
 		<nav
-			class="navbar navbar-expand-lg navbar-light bc-dark-grey py-2 shadow"
+			class="navbar navbar-expand-lg navbar-light nav-color py-2 shadow"
 		>
 			<a
 				href="index.html"
-				class="navbar-brand font-weight-bold d-block d-lg-none"
+				class="navbar-brand d-block d-lg-none"
 				><img
 					src="icons/favicon_io/android-chrome-512x512.png"
 					width="40px"
@@ -61,7 +61,7 @@
 					<li class="nav-item">
 						<a
 							href="projects.html"
-							class="nav-link fs-16 font-weight-bold text-uppercase"
+							class="nav-link fs-16 text-uppercase nav-title"
 							>Projects</a
 						>
 					</li>
@@ -73,9 +73,10 @@
 							data-toggle="dropdown"
 							aria-haspopup="true"
 							aria-expanded="false"
-							class="mega-arrow pt-1 ml-n2 font-weight-bold text-uppercase nav-link"
+							class="mega-arrow nav-arrow pt-1 ml-n2 nav-title nav-link"
 						>
-							<i class="mega-arrow arrow-white arrow-down"></i>
+							<img class="nav-arrow-img" src="icons/svg/down-chev.svg" width="30">
+							<!-- <i class="mega-arrow arrow-white arrow-down"></i> -->
 						</a>
 
 						<div
@@ -89,9 +90,9 @@
 									<div class="col-lg-6 col-xl-12">
 										<div class="p-4">
 											<div class="row">
-												<div class="col-lg-3 mb-4">
+												<div class="col-lg mb-4">
 													<h6
-														class="font-weight-bold text-uppercase dropdown text-decoration-none"
+														class=" text-uppercase dropdown text-decoration-none"
 													>
 														<a
 															class="text-decoration-none"
@@ -190,9 +191,10 @@
 														</li>
 													</ul>
 												</div>
-												<div class="col-lg-3 mb-4">
+												<!--PHP dropdown-->											
+												<div class="col-lg mb-4">
 													<h6
-														class="font-weight-bold text-uppercase dropdown text-decoration-none"
+														class="text-uppercase dropdown text-decoration-none"
 													>
 														<a
 															class="text-decoration-none"
@@ -211,11 +213,33 @@
 														</li>
 													</ul>
 												</div>
+												<!--Python dropdown-->											
+												<div class="col-lg mb-4">
+													<h6
+														class="text-uppercase dropdown text-decoration-none"
+													>
+														<a
+															class="text-decoration-none"
+															href="#maybe-soon"
+															>Python</a
+														>
+													</h6>
+													<ul class="list-unstyled ml-lg-n2">
+														<li class="nav-item">
+															<a
+																target="_blank"
+																href="https://advaiths-money-tracker.herokuapp.com/"
+																class="nav-link text-small pb-0"
+																>Money tracker</a
+															>
+														</li>
+													</ul>
+												</div>
 
 												<!--PROCESSING DROPDOWN-->
-												<div class="col-lg-3 mb-4">
+												<div class="col-lg mb-4">
 													<h6
-														class="font-weight-bold text-uppercase"
+														class="text-uppercase"
 													>
 														<a
 															class="text-decoration-none"
@@ -271,9 +295,9 @@
 														</li>
 													</ul>
 												</div>
-												<div class="col-lg-3 mb-4">
+												<div class="col-lg mb-4">
 													<h6
-														class="font-weight-bold text-uppercase"
+														class="text-uppercase"
 													>
 														<a
 															class="text-decoration-none"
@@ -331,14 +355,14 @@
 					<li class="nav-item nav-content">
 						<a
 							href="change-log.html"
-							class="nav-link font-weight-bold text-uppercase fs-16"
+							class="nav-link nav-title text-uppercase fs-16"
 							>Changelog</a
 						>
 					</li>
 					<li class="nav-item nav-content">
 						<a
 							href="about.html"
-							class="nav-link font-weight-bold text-uppercase fs-16"
+							class="nav-link nav-title text-uppercase fs-16"
 							>About</a
 						>
 					</li>
@@ -352,13 +376,13 @@
 					data-placement="top"
 					title="Try out dark mode!"
 				>
-					<img src="pics/misc/dark-mode-img.png" width="45px" />
+					<img class="dm-img" src="pics/misc/dark-mode-img.png" width="45px" />
 				</button>
 
 				<div
 					id="theme-arrow"
-					class="arrow-white arrow-down navbar-brand content-right z-5"
-				></div>
+					class="navbar-brand content-right z-5"
+				><img class="nav-arrow-img" src="icons/svg/down-chev.svg" width="30"></div>
 				<div
 					id="theme-arrow"
 					class="ta-bg wd-25 ht-25 mt-3 navbar-brand content-right"

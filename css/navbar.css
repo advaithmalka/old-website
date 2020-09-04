@@ -134,7 +134,7 @@ button.lit-btn {
 @media screen and (min-width: 992px){
 	.nav-arrow{
 		position: absolute;
-		left: calc(50% - 85px)	!important;
+		left: calc(50% - 135px)	!important;
 	}
 }
 

@@ -920,10 +920,17 @@ input:focus + .slider {
   background: linear-gradient(to right, #fa6c9f 0%, #ffe140 80%, #ffe140 100%);
 }
 
+.gradient-btn-purple,
+.gradient-btn-purple:before {
+  background: -webkit-gradient(linear, left top, right top, from(#7f00ff), to(#e100ff));
+  background: linear-gradient(to right, #7f00ff, #e100ff);
+}
+
 a.gradient-btn, a.gradient-btn-blue,
 a.gradient-btn-blue:before, a.gradient-btn-green,
 a.gradient-btn-green:before, a.gradient-btn-orange,
-a.gradient-btn-orange:before,
+a.gradient-btn-orange:before, a.gradient-btn-purple,
+a.gradient-btn-purple:before,
 a.gradient-btn:hover,
 a.gradient-btn-blue:hover,
 a.gradient-btn-blue:hover:before,
@@ -931,6 +938,8 @@ a.gradient-btn-green:hover,
 a.gradient-btn-green:hover:before,
 a.gradient-btn-orange:hover,
 a.gradient-btn-orange:hover:before,
+a.gradient-btn-purple:hover,
+a.gradient-btn-purple:hover:before,
 a.gradient-btn:focus,
 a.gradient-btn-blue:focus,
 a.gradient-btn-blue:focus:before,
@@ -938,13 +947,17 @@ a.gradient-btn-green:focus,
 a.gradient-btn-green:focus:before,
 a.gradient-btn-orange:focus,
 a.gradient-btn-orange:focus:before,
+a.gradient-btn-purple:focus,
+a.gradient-btn-purple:focus:before,
 a.gradient-btn:active,
 a.gradient-btn-blue:active,
 a.gradient-btn-blue:active:before,
 a.gradient-btn-green:active,
 a.gradient-btn-green:active:before,
 a.gradient-btn-orange:active,
-a.gradient-btn-orange:active:before {
+a.gradient-btn-orange:active:before,
+a.gradient-btn-purple:active,
+a.gradient-btn-purple:active:before {
   outline: none;
   text-decoration: none;
   color: white;
@@ -954,7 +967,8 @@ a.gradient-btn-orange:active:before {
 button.gradient-btn, button.gradient-btn-blue,
 button.gradient-btn-blue:before, button.gradient-btn-green,
 button.gradient-btn-green:before, button.gradient-btn-orange,
-button.gradient-btn-orange:before {
+button.gradient-btn-orange:before, button.gradient-btn-purple,
+button.gradient-btn-purple:before {
   outline: none;
   cursor: pointer;
 }
@@ -962,7 +976,8 @@ button.gradient-btn-orange:before {
 .gradient-btn, .gradient-btn-blue,
 .gradient-btn-blue:before, .gradient-btn-green,
 .gradient-btn-green:before, .gradient-btn-orange,
-.gradient-btn-orange:before {
+.gradient-btn-orange:before, .gradient-btn-purple,
+.gradient-btn-purple:before {
   border: none !important;
   display: inline-block;
   font-family: "Montserrat", Helvetica, Arial, sans-serif;
@@ -982,10 +997,11 @@ button.gradient-btn-orange:before {
 .gradient-btn:before,
 .gradient-btn-blue:before,
 .gradient-btn-green:before,
-.gradient-btn-orange:before {
+.gradient-btn-orange:before,
+.gradient-btn-purple:before {
   content: "";
   display: inline-block;
-  height: 40px;
+  height: 30px;
   position: absolute;
   bottom: -5px;
   left: 30px;
@@ -1003,21 +1019,25 @@ button.gradient-btn-orange:before {
 .gradient-btn:focus, .gradient-btn-blue:focus,
 .gradient-btn-blue:focus:before, .gradient-btn-green:focus,
 .gradient-btn-green:focus:before, .gradient-btn-orange:focus,
-.gradient-btn-orange:focus:before,
+.gradient-btn-orange:focus:before, .gradient-btn-purple:focus,
+.gradient-btn-purple:focus:before,
 .gradient-btn:active,
 .gradient-btn-blue:active,
 .gradient-btn-blue:active:before,
 .gradient-btn-green:active,
 .gradient-btn-green:active:before,
 .gradient-btn-orange:active,
-.gradient-btn-orange:active:before {
+.gradient-btn-orange:active:before,
+.gradient-btn-purple:active,
+.gradient-btn-purple:active:before {
   color: #ffffff;
 }
 
 .gradient-btn:not(.gradient-btn-pop):active, .gradient-btn-blue:not(.gradient-btn-pop):active,
 .gradient-btn-blue:not(.gradient-btn-pop):active:before, .gradient-btn-green:not(.gradient-btn-pop):active,
 .gradient-btn-green:not(.gradient-btn-pop):active:before, .gradient-btn-orange:not(.gradient-btn-pop):active,
-.gradient-btn-orange:not(.gradient-btn-pop):active:before {
+.gradient-btn-orange:not(.gradient-btn-pop):active:before, .gradient-btn-purple:not(.gradient-btn-pop):active,
+.gradient-btn-purple:not(.gradient-btn-pop):active:before {
   -webkit-transform: scale(0.9);
           transform: scale(0.9);
 }
@@ -1025,7 +1045,8 @@ button.gradient-btn-orange:before {
 .gradient-btn:hover, .gradient-btn-blue:hover,
 .gradient-btn-blue:hover:before, .gradient-btn-green:hover,
 .gradient-btn-green:hover:before, .gradient-btn-orange:hover,
-.gradient-btn-orange:hover:before {
+.gradient-btn-orange:hover:before, .gradient-btn-purple:hover,
+.gradient-btn-purple:hover:before {
   color: #ffffff;
   -webkit-filter: brightness(1.05) contrast(1.05);
   filter: brightness(1.05) contrast(1.05);
@@ -1036,25 +1057,26 @@ button.gradient-btn-orange:before {
 .gradient-btn:hover:before,
 .gradient-btn-blue:hover:before,
 .gradient-btn-green:hover:before,
-.gradient-btn-orange:hover:before {
+.gradient-btn-orange:hover:before,
+.gradient-btn-purple:hover:before {
   bottom: 0;
   -webkit-filter: blur(5px) brightness(0.95);
   filter: blur(5px) brightness(0.95);
 }
 
-.gradient-btn.gradient-btn-pop:before, .gradient-btn-pop.gradient-btn-blue:before, .gradient-btn-pop.gradient-btn-green:before, .gradient-btn-pop.gradient-btn-orange:before {
+.gradient-btn.gradient-btn-pop:before, .gradient-btn-pop.gradient-btn-blue:before, .gradient-btn-pop.gradient-btn-green:before, .gradient-btn-pop.gradient-btn-orange:before, .gradient-btn-pop.gradient-btn-purple:before {
   opacity: 0;
-  bottom: 5px;
+  bottom: -5px;
 }
 
-.gradient-btn.gradient-btn-pop:hover:before, .gradient-btn-pop.gradient-btn-blue:hover:before, .gradient-btn-pop.gradient-btn-green:hover:before, .gradient-btn-pop.gradient-btn-orange:hover:before {
-  bottom: -4px;
+.gradient-btn.gradient-btn-pop:hover:before, .gradient-btn-pop.gradient-btn-blue:hover:before, .gradient-btn-pop.gradient-btn-green:hover:before, .gradient-btn-pop.gradient-btn-orange:hover:before, .gradient-btn-pop.gradient-btn-purple:hover:before {
+  bottom: -5px;
   opacity: 1;
   -webkit-filter: blur(10px);
   filter: blur(10px);
 }
 
-.gradient-btn.gradient-btn-pop:hover, .gradient-btn-pop.gradient-btn-blue:hover, .gradient-btn-pop.gradient-btn-blue:hover:before, .gradient-btn-pop.gradient-btn-green:hover, .gradient-btn-pop.gradient-btn-green:hover:before, .gradient-btn-pop.gradient-btn-orange:hover, .gradient-btn-pop.gradient-btn-orange:hover:before {
+.gradient-btn.gradient-btn-pop:hover, .gradient-btn-pop.gradient-btn-blue:hover, .gradient-btn-pop.gradient-btn-blue:hover:before, .gradient-btn-pop.gradient-btn-green:hover, .gradient-btn-pop.gradient-btn-green:hover:before, .gradient-btn-pop.gradient-btn-orange:hover, .gradient-btn-pop.gradient-btn-orange:hover:before, .gradient-btn-pop.gradient-btn-purple:hover, .gradient-btn-pop.gradient-btn-purple:hover:before {
   -webkit-transform: scale(1.04);
   transform: scale(1.04);
 }
@@ -1062,11 +1084,12 @@ button.gradient-btn-orange:before {
 .gradient-btn.gradient-btn-pop:hover:active, .gradient-btn-pop.gradient-btn-blue:hover:active,
 .gradient-btn-pop.gradient-btn-blue:hover:active:before, .gradient-btn-pop.gradient-btn-green:hover:active,
 .gradient-btn-pop.gradient-btn-green:hover:active:before, .gradient-btn-pop.gradient-btn-orange:hover:active,
-.gradient-btn-pop.gradient-btn-orange:hover:active:before {
+.gradient-btn-pop.gradient-btn-orange:hover:active:before, .gradient-btn-pop.gradient-btn-purple:hover:active,
+.gradient-btn-pop.gradient-btn-purple:hover:active:before {
   -webkit-filter: brightness(1) contrast(1);
   filter: brightness(1) contrast(1);
-  -webkit-transform: scale(1);
-  transform: scale(1);
+  -webkit-transform: scale(0.95);
+  transform: scale(0.95);
   -webkit-transition: all 0.15s ease-out;
   transition: all 0.15s ease-out;
 }
@@ -1074,7 +1097,8 @@ button.gradient-btn-orange:before {
 .gradient-btn.gradient-btn-pop:hover:active:before,
 .gradient-btn-pop.gradient-btn-blue:hover:active:before,
 .gradient-btn-pop.gradient-btn-green:hover:active:before,
-.gradient-btn-pop.gradient-btn-orange:hover:active:before {
+.gradient-btn-pop.gradient-btn-orange:hover:active:before,
+.gradient-btn-pop.gradient-btn-purple:hover:active:before {
   bottom: 0;
   -webkit-filter: blur(5px) brightness(0.95);
   filter: blur(5px) brightness(0.95);
@@ -1102,19 +1126,19 @@ button.gradient-btn-orange:before {
   filter: blur(10px) brightness(0.95);
 }
 
-.gradient-btn.gradient-btn-pop.gradient-btn-lg:hover:before, .gradient-btn-pop.gradient-btn-lg.gradient-btn-blue:hover:before, .gradient-btn-pop.gradient-btn-lg.gradient-btn-green:hover:before, .gradient-btn-pop.gradient-btn-lg.gradient-btn-orange:hover:before {
+.gradient-btn.gradient-btn-pop.gradient-btn-lg:hover:before, .gradient-btn-pop.gradient-btn-lg.gradient-btn-blue:hover:before, .gradient-btn-pop.gradient-btn-lg.gradient-btn-green:hover:before, .gradient-btn-pop.gradient-btn-lg.gradient-btn-orange:hover:before, .gradient-btn-pop.gradient-btn-lg.gradient-btn-purple:hover:before {
   bottom: -7px;
   opacity: 1;
   -webkit-filter: blur(20px);
   filter: blur(20px);
 }
 
-.gradient-btn.gradient-btn-pop.gradient-btn-lg:before, .gradient-btn-pop.gradient-btn-lg.gradient-btn-blue:before, .gradient-btn-pop.gradient-btn-lg.gradient-btn-green:before, .gradient-btn-pop.gradient-btn-lg.gradient-btn-orange:before {
+.gradient-btn.gradient-btn-pop.gradient-btn-lg:before, .gradient-btn-pop.gradient-btn-lg.gradient-btn-blue:before, .gradient-btn-pop.gradient-btn-lg.gradient-btn-green:before, .gradient-btn-pop.gradient-btn-lg.gradient-btn-orange:before, .gradient-btn-pop.gradient-btn-lg.gradient-btn-purple:before {
   opacity: 0;
   bottom: 10px;
 }
 
-.gradient-btn.gradient-btn-pop.gradient-btn-lg:hover:active:before, .gradient-btn-pop.gradient-btn-lg.gradient-btn-blue:hover:active:before, .gradient-btn-pop.gradient-btn-lg.gradient-btn-green:hover:active:before, .gradient-btn-pop.gradient-btn-lg.gradient-btn-orange:hover:active:before {
+.gradient-btn.gradient-btn-pop.gradient-btn-lg:hover:active:before, .gradient-btn-pop.gradient-btn-lg.gradient-btn-blue:hover:active:before, .gradient-btn-pop.gradient-btn-lg.gradient-btn-green:hover:active:before, .gradient-btn-pop.gradient-btn-lg.gradient-btn-orange:hover:active:before, .gradient-btn-pop.gradient-btn-lg.gradient-btn-purple:hover:active:before {
   bottom: 0;
   -webkit-filter: blur(10px) brightness(0.95);
   filter: blur(10px) brightness(0.95);

@@ -767,6 +767,11 @@ input:focus + .slider {
 		#ffe140 100%
 	);
 }
+.gradient-btn-purple,
+.gradient-btn-purple:before {
+	@extend .gradient-btn;
+	background: linear-gradient(to right, #7f00ff, #e100ff);
+}
 
 a.gradient-btn,
 a.gradient-btn:hover,
@@ -803,7 +808,7 @@ button.gradient-btn {
 .gradient-btn:before {
 	content: "";
 	display: inline-block;
-	height: 40px;
+	height: 30px;
 	position: absolute;
 	bottom: -5px;
 	left: 30px;
@@ -842,11 +847,11 @@ button.gradient-btn {
 
 .gradient-btn.gradient-btn-pop:before {
 	opacity: 0;
-	bottom: 5px;
+	bottom: -5px;
 }
 
 .gradient-btn.gradient-btn-pop:hover:before {
-	bottom: -4px;
+	bottom: -5px;
 	opacity: 1;
 	-webkit-filter: blur(10px);
 	filter: blur(10px);
@@ -859,8 +864,8 @@ button.gradient-btn {
 .gradient-btn.gradient-btn-pop:hover:active {
 	-webkit-filter: brightness(1) contrast(1);
 	filter: brightness(1) contrast(1);
-	-webkit-transform: scale(1);
-	transform: scale(1);
+	-webkit-transform: scale(.95);
+	transform: scale(.95);
 	-webkit-transition: all 0.15s ease-out;
 	transition: all 0.15s ease-out;
 }
